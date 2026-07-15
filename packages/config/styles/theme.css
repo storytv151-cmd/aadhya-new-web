@@ -1,0 +1,482 @@
+/**
+ * Aadhya design system — Liquid Glass, premium & calm. Tailwind v4, CSS-first.
+ * Subtle translucency · hairline borders · soft shadow · ~90% neutral, 10% accent.
+ */
+
+/* Class-based dark mode: `dark:` applies inside a `.dark` ancestor (set on <html>). */
+@custom-variant dark (&:is(.dark *));
+
+/* ============================ LIGHT THEME ============================ */
+:root {
+  --background: #f7f8fb;
+  --background-secondary: #eef1f6;
+  --foreground: #0f1115;
+  --foreground-secondary: #454b57;
+  --card: #ffffff;
+  --card-foreground: #0f1115;
+  --popover: #ffffff;
+  --popover-foreground: #0f1115;
+
+  --surface-1: #ffffff;
+  --surface-2: #f3f5f8;
+  --surface-3: #e9edf2;
+
+  --primary: #0467ff;
+  --primary-foreground: #ffffff;
+  --glow: #3d8bff;
+  --accent-cyan: #38d7ff;
+  --accent-indigo: #5e6dff;
+
+  --secondary: #eef1f6;
+  --secondary-foreground: #0f1115;
+  --muted: #eef1f6;
+  --muted-foreground: #6b7280;
+  --accent: #eef1f6;
+  --accent-foreground: #454b57;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --success: #22c55e;
+  --success-foreground: #ffffff;
+  --warning: #f59e0b;
+  --warning-foreground: #0f1115;
+
+  --border: #e5e8ee;
+  --input: #e5e8ee;
+  --ring: #0467ff;
+  --skeleton-shine: #ffffff;
+
+  /* Premium glass (light) — translucent white, hairline dark edge, soft shadow */
+  --glass-bg: rgba(255, 255, 255, 0.62);
+  --glass-bg-strong: rgba(255, 255, 255, 0.76);
+  --glass-border: rgba(17, 24, 39, 0.07);
+  --glass-highlight: rgba(255, 255, 255, 0.85);
+  --glass-shadow: 0 20px 45px -24px rgba(15, 23, 42, 0.16);
+  --glass-blur: 16px;
+  --glass-saturate: 150%;
+
+  /* Navigation — layered physical glass material */
+  --nav-fill: rgba(255, 255, 255, 0.72);
+  --nav-inner-light: rgba(255, 255, 255, 0.75);
+  --nav-border: rgba(15, 23, 42, 0.07);
+  --nav-sheen: rgba(255, 255, 255, 0.5);
+  --nav-shadow: 0 14px 34px -16px rgba(15, 23, 42, 0.22);
+
+  --brand-from: #0467ff;
+  --brand-via: #4f8bff;
+  --brand-to: #38d7ff;
+
+  --radius: 1rem;
+
+  --font-sans:
+    var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.5, 1);
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 700ms;
+  --duration-slower: 1000ms;
+}
+
+/* ============================ ULTRA DARK (default) ============================ */
+.dark {
+  --background: #08090c;
+  --background-secondary: #0c0d11;
+  --foreground: #f5f6f8;
+  --foreground-secondary: #b9bfca;
+  --card: #101116;
+  --card-foreground: #f5f6f8;
+  --popover: #101116;
+  --popover-foreground: #f5f6f8;
+
+  --surface-1: #101116;
+  --surface-2: #15161c;
+  --surface-3: #1b1c23;
+
+  --primary: #0467ff;
+  --primary-foreground: #ffffff;
+  --glow: #3d8bff;
+  --accent-cyan: #38d7ff;
+  --accent-indigo: #5e6dff;
+
+  --secondary: #16171d;
+  --secondary-foreground: #f5f6f8;
+  --muted: #16171d;
+  --muted-foreground: #8b91a1;
+  --accent: #1a1b22;
+  --accent-foreground: #e8eaf0;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --success: #22c55e;
+  --success-foreground: #ffffff;
+  --warning: #f59e0b;
+  --warning-foreground: #0f1115;
+
+  --border: #202128;
+  --input: #202128;
+  --ring: #3d8bff;
+  --skeleton-shine: #22232b;
+
+  /* Premium glass (dark) — a whisper of frost, hairline light edge, soft shadow */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-bg-strong: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-highlight: rgba(255, 255, 255, 0.16);
+  --glass-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.6);
+  --glass-blur: 16px;
+  --glass-saturate: 140%;
+
+  /* Navigation — layered physical glass material (ultra subtle) */
+  --nav-fill: rgba(17, 18, 24, 0.62);
+  --nav-inner-light: rgba(255, 255, 255, 0.06);
+  --nav-border: rgba(255, 255, 255, 0.07);
+  --nav-sheen: rgba(255, 255, 255, 0.11);
+  --nav-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.62);
+
+  --brand-from: #0467ff;
+  --brand-via: #4f8bff;
+  --brand-to: #38d7ff;
+}
+
+/* ============================ TAILWIND THEME MAP ============================ */
+@theme inline {
+  --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-glow: var(--glow);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-indigo: var(--accent-indigo);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand-from: var(--brand-from);
+  --color-brand-via: var(--brand-via);
+  --color-brand-to: var(--brand-to);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 3px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 14px);
+  --radius-3xl: calc(var(--radius) + 22px);
+  --radius-4xl: 2rem;
+
+  --ease-expo: var(--ease-out-expo);
+  --ease-quart: var(--ease-out-quart);
+  --ease-in-out-quart: var(--ease-in-out-quart);
+  --ease-spring: var(--ease-spring);
+
+  --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 8px 24px rgb(15 23 42 / 0.06);
+  --shadow-elevated: 0 2px 4px rgb(15 23 42 / 0.05), 0 20px 48px rgb(15 23 42 / 0.12);
+  --shadow-glow: 0 0 0 1px rgb(4 103 255 / 0.14), 0 12px 40px -10px rgb(61 139 255 / 0.45);
+
+  --animate-gradient: gradient-shift 8s ease infinite;
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-float-slow: float 12s ease-in-out infinite;
+  --animate-marquee: marquee 44s linear infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-aurora: aurora-drift 30s ease-in-out infinite;
+  --animate-accordion-down: accordion-down 0.28s cubic-bezier(0.25, 1, 0.5, 1);
+  --animate-accordion-up: accordion-up 0.28s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ============================ KEYFRAMES ============================ */
+@keyframes accordion-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+}
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+@keyframes aurora-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(3%, -3%, 0) scale(1.08);
+  }
+}
+@keyframes light-sweep {
+  0% {
+    transform: translateX(-140%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(240%) skewX(-18deg);
+  }
+}
+
+/* ============================ GLASS MATERIALS ============================ */
+/* Level 1 — quiet surfaces / form fields. */
+@utility glass-surface {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(12px) saturate(130%);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
+  border: 1px solid var(--glass-border);
+}
+
+/* Level 2 — default translucent surface. */
+@utility glass {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    var(--glass-shadow),
+    inset 0 1px 0 0 var(--glass-highlight);
+}
+
+/* Level 3 — elevated (nav, key cards). */
+@utility glass-floating {
+  background-color: var(--glass-bg-strong);
+  backdrop-filter: blur(calc(var(--glass-blur) + 4px)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 4px)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    var(--glass-shadow),
+    inset 0 1px 0 0 var(--glass-highlight);
+}
+
+/* Level 4 — hero showcase (a little more presence). */
+@utility glass-showcase {
+  background-color: var(--glass-bg-strong);
+  backdrop-filter: blur(calc(var(--glass-blur) + 8px)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 8px)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 40px 100px -32px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 0 var(--glass-highlight);
+}
+
+@utility glass-interactive {
+  transition:
+    background-color 0.4s var(--ease-out-quart),
+    box-shadow 0.4s var(--ease-out-quart),
+    transform 0.4s var(--ease-spring);
+  &:hover {
+    background-color: var(--glass-bg-strong);
+    box-shadow:
+      var(--glass-shadow),
+      inset 0 1px 0 0 var(--glass-highlight);
+  }
+}
+
+/* Navigation glass — a believable, layered physical glass object. Illuminated, not
+   outlined: the edge softly catches light instead of wearing a stroke.
+   Layer 1 subtle fill · Layer 2 backdrop blur · Layer 3 soft feathered specular
+   (::before dome, fades to the sides) · Layer 4 soft ambient shadow · Layer 5 uniform
+   ~7% hairline (masked ::after, no bright edge) · Layer 6 soft internal light. */
+@utility glass-nav {
+  position: relative;
+  background: linear-gradient(180deg, var(--nav-inner-light) 0%, transparent 55%), var(--nav-fill);
+  backdrop-filter: blur(28px) saturate(135%);
+  -webkit-backdrop-filter: blur(28px) saturate(135%);
+  box-shadow: var(--nav-shadow);
+  /* soft specular — a feathered dome of light near the top-centre that fades in every
+     direction (its centre sits above the edge, and it narrows to ~90% width so it never
+     reaches the corners). Reads as illumination, never a straight line. Below content. */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(90% 150% at 50% -32%, var(--nav-sheen), transparent 62%);
+    pointer-events: none;
+  }
+  /* extremely subtle uniform hairline — defines the silhouette softly, no bright edge */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--nav-border);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+/* True refraction — Chromium only, layered over a base glass surface. Reserved for
+   the hero mockup + nav. Non-supporting browsers keep the base blur. */
+@supports (backdrop-filter: url("#g")) {
+  .glass-refract {
+    backdrop-filter: url(#glass-refraction) blur(8px) saturate(var(--glass-saturate));
+    will-change: transform;
+  }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-reduced-motion: reduce) {
+  .glass-refract {
+    backdrop-filter: none;
+  }
+}
+
+/* Loading skeleton shimmer (reduced-motion → static muted block). */
+@utility skeleton {
+  background-color: var(--muted);
+  background-image: linear-gradient(
+    90deg,
+    var(--muted) 0%,
+    var(--skeleton-shine) 50%,
+    var(--muted) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ============================ BASE ============================ */
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background-color: color-mix(in oklab, var(--primary) 24%, transparent);
+  }
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.035em;
+  }
+}
+
+/* ============================ ACCESSIBILITY / PERF FALLBACKS ============================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root,
+  .dark {
+    --glass-bg: var(--surface-2);
+    --glass-bg-strong: var(--surface-3);
+    --glass-border: var(--border);
+    --glass-blur: 0px;
+    --glass-saturate: 100%;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --glass-border: rgba(15, 23, 42, 0.45);
+    --glass-bg: rgba(255, 255, 255, 0.9);
+  }
+  .dark {
+    --glass-border: rgba(255, 255, 255, 0.35);
+    --glass-bg: rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* Mobile — lower blur (main GPU cost) + a touch more fill for definition. */
+@media (max-width: 640px) {
+  :root {
+    --glass-blur: 10px;
+    --glass-bg: rgba(255, 255, 255, 0.72);
+    --glass-bg-strong: rgba(255, 255, 255, 0.82);
+  }
+  .dark {
+    --glass-blur: 10px;
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-bg-strong: rgba(255, 255, 255, 0.1);
+  }
+}

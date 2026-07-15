@@ -1,0 +1,23 @@
+{
+  "name": "@aadhya/config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles/theme.css": "./styles/theme.css",
+    "./package.json": "./package.json"
+  },
+  "types": "./src/index.ts",
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "motion": "catalog:"
+  },
+  "devDependencies": {
+    "motion": "catalog:",
+    "typescript": "catalog:"
+  }
+}

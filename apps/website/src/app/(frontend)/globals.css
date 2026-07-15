@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@aadhya/config/styles/theme.css";
+@import "@aadhya/ui/styles/globals.css";
+
+/* Scan this app's own source (src/) for class names. */
+@source "../../";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Lenis smooth-scroll integration. */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: clip;
+  }
+
+  /* Nicer default heading balance. */
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* Utility: subtle grid/dot backdrop for hero + section texture. */
+@utility bg-grid {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in oklab, var(--border) 60%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--border) 60%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 56px 56px;
+}
