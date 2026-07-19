@@ -130,6 +130,10 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "App Development",
     description: "An Android app to save and re-share WhatsApp statuses effortlessly.",
     technologies: ["Android", "Kotlin"],
+    image: {
+      url: "/portfolio/whatsapp-status-saver.svg",
+      alt: "WhatsApp Status Saver app screens",
+    },
   },
   {
     slug: "daily-quotes",
@@ -137,6 +141,7 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "App Development",
     description: "A daily quotes application delivering fresh motivation every day.",
     technologies: ["Android", "Flutter"],
+    image: { url: "/portfolio/daily-quotes.svg", alt: "Daily Quotes app screens" },
   },
   {
     slug: "calculator-tape",
@@ -144,6 +149,67 @@ export const portfolioProjects: PortfolioProject[] = [
     category: "App Development",
     description: "A smart calculator app with tape history to review every calculation.",
     technologies: ["Android"],
+    image: {
+      url: "/portfolio/calculator-tape.svg",
+      alt: "Calculator — Tape to Calculate app screens",
+    },
+  },
+  // --- Game Development ---
+  {
+    slug: "accubow",
+    title: "AccuBow",
+    category: "Game Development",
+    description:
+      "An immersive archery hunting game with realistic bow mechanics and multiple modes.",
+    technologies: ["Unity", "C#"],
+    image: { url: "/portfolio/accubow.webp", alt: "AccuBow archery game" },
+  },
+  {
+    slug: "zombie-shooter",
+    title: "Zombie Shooter",
+    category: "Game Development",
+    description:
+      "A fast-paced survival shooter — hold back relentless waves of zombies across intense levels.",
+    technologies: ["Unity", "C#"],
+    image: { url: "/portfolio/zombie-shooter.webp", alt: "Zombie Shooter game" },
+  },
+  {
+    slug: "highway-traffic-rider",
+    title: "Highway Traffic Rider",
+    category: "Game Development",
+    description: "An endless racing game weaving through highway traffic at high speed.",
+    technologies: ["Unity", "C#"],
+    image: { url: "/portfolio/highway-traffic-rider.webp", alt: "Highway Traffic Rider game" },
+  },
+  // --- Website Development ---
+  {
+    slug: "gift-shop",
+    title: "Gift Shop",
+    category: "Website Development",
+    description:
+      "A warm e-commerce storefront for curated gifts, built for an effortless shopping flow.",
+    technologies: ["React", "Node.js"],
+    image: { url: "/portfolio/gift-shop.jpg", alt: "Gift Shop e-commerce website" },
+    href: "https://shop-gift.netlify.app",
+  },
+  {
+    slug: "vedarch-design",
+    title: "Vedarch Design",
+    category: "Website Development",
+    description: "A refined portfolio site for an architecture and interior-design studio.",
+    technologies: ["React", "Tailwind"],
+    image: { url: "/portfolio/vedarch.jpg", alt: "Vedarch Design architecture website" },
+    href: "https://vedartharchitech.netlify.app",
+  },
+  {
+    slug: "asal-masala",
+    title: "Asal Masala",
+    category: "Website Development",
+    description:
+      "A flavourful brand site for a premium spice company, rich with taste and character.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    image: { url: "/portfolio/asal-masala.jpg", alt: "Asal Masala spice brand website" },
+    href: "https://effulgent-bonbon-a558df.netlify.app",
   },
 ];
 

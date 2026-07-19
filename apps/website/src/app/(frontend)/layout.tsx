@@ -57,7 +57,12 @@ export const viewport: Viewport = {
 export default function FrontendLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning className={cn(GeistSans.variable, GeistMono.variable)}>
-      <body className="bg-background text-foreground min-h-dvh font-sans antialiased">
+      {/* suppressHydrationWarning: browser extensions (ColorZilla's cz-shortcut-listen,
+          Grammarly, etc.) mutate <body> before hydration; ignore those attribute diffs. */}
+      <body
+        suppressHydrationWarning
+        className="bg-background text-foreground min-h-dvh font-sans antialiased"
+      >
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
         <AuroraBackground />
