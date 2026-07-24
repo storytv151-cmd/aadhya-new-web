@@ -1,4 +1,5 @@
 import type { FooterColumn, NavLink, SocialLink } from "@aadhya/types";
+import { products } from "@/content/products";
 
 /**
  * Navigation for Aadhya Infotech (a software & digital-services company).
@@ -18,6 +19,16 @@ export const mainNav: NavLink[] = [
       { label: "Cyber Security", href: "/services#cyber-security" },
       { label: "Cloud Services", href: "/services#cloud-services" },
     ],
+  },
+  {
+    label: "Products",
+    href: "/products",
+    // Dropdown lists our own products; each item opens its detail page.
+    children: products.map((product) => ({
+      label: product.name,
+      href: `/products/${product.slug}`,
+      description: product.tagline,
+    })),
   },
   { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
@@ -40,6 +51,7 @@ export const footerColumns: FooterColumn[] = [
     title: "Company",
     links: [
       { label: "About Us", href: "/about" },
+      { label: "Products", href: "/products" },
       { label: "Portfolio", href: "/portfolio" },
       { label: "Blog", href: "/blog" },
       { label: "Careers", href: "/careers" },

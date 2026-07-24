@@ -3,6 +3,8 @@ import {
   Code2,
   Gamepad2,
   Globe,
+  KeyRound,
+  LayoutDashboard,
   Palette,
   PenTool,
   Rocket,
@@ -10,6 +12,7 @@ import {
   ShieldCheck,
   Smartphone,
   Sparkles,
+  TicketPercent,
   type LucideIcon,
 } from "lucide-react";
 
@@ -24,6 +27,9 @@ const iconMap: Record<string, LucideIcon> = {
   "pen-tool": PenTool,
   "code-2": Code2,
   rocket: Rocket,
+  "key-round": KeyRound,
+  "ticket-percent": TicketPercent,
+  "layout-dashboard": LayoutDashboard,
 };
 
 export function getIcon(name?: string): LucideIcon {

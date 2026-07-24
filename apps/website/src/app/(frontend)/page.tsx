@@ -3,6 +3,7 @@ import { CTA } from "@/components/sections/cta";
 import { Faqs } from "@/components/sections/faq";
 import { Hero } from "@/components/sections/hero";
 import { LatestBlog } from "@/components/sections/latest-blog";
+import { OurProduct } from "@/components/sections/our-product";
 import { Portfolio } from "@/components/sections/portfolio";
 import { Pricing } from "@/components/sections/pricing";
 import { Process } from "@/components/sections/process";
@@ -20,6 +21,7 @@ export default function Home() {
       <Services />
       <Process />
       <Portfolio />
+      <OurProduct />
       <WhyChooseUs />
       <Stats />
       <Technologies />
