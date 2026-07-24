@@ -1,12 +1,11 @@
 "use server";
 
 import { newsletterSchema, type ApiResult, ERROR_CODES } from "@aadhya/types";
-import { getPayloadClient } from "@/lib/payload/client";
 
 /**
- * Newsletter subscription. Validates against the shared contract now.
- * W8 layers in Turnstile verification and persistence to the Payload `Subscribers`
- * collection; the return contract stays the same.
+ * Newsletter subscription. Validates against the shared contract and rejects honeypot
+ * hits. This is a frontend-only build with no data store — wire an email / ESP here to
+ * store the subscriber. The return contract is unchanged.
  */
 export async function subscribeToNewsletter(
   _prevState: ApiResult | null,
@@ -32,24 +31,6 @@ export async function subscribeToNewsletter(
     return { ok: false, error: ERROR_CODES.SPAM_REJECTED, message: "Submission rejected." };
   }
 
-  try {
-    const payload = await getPayloadClient();
-    const existing = await payload.find({
-      collection: "subscribers",
-      where: { email: { equals: parsed.data.email } },
-      limit: 1,
-      overrideAccess: true,
-    });
-    if (existing.totalDocs === 0) {
-      await payload.create({
-        collection: "subscribers",
-        data: { email: parsed.data.email, source: parsed.data.source ?? "footer" },
-        overrideAccess: true,
-      });
-    }
-  } catch (error) {
-    console.error("[newsletter] failed to persist subscriber", error);
-  }
-
+  // TODO: store the subscriber (email / ESP). This build has no backend store.
   return { ok: true, data: undefined };
 }

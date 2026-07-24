@@ -3,8 +3,7 @@ import { products } from "@/content/products";
 
 /**
  * Navigation for Aadhya Infotech (a software & digital-services company).
- * Content mirrors the live site. In W5 the Payload `Navigation` / `Footer` globals
- * can override these; the shapes match, so it is a drop-in swap.
+ * Content mirrors the live site.
  */
 
 export const mainNav: NavLink[] = [

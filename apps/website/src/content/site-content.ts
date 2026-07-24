@@ -11,8 +11,8 @@ import type {
 
 /**
  * Real Aadhya Infotech content, sourced from the live site (aadhya-infotech.com).
- * This is the single source of truth for the homepage today and becomes the Payload
- * seed in W5. Placeholder values (stats, testimonials) are flagged — replace via CMS.
+ * This is the single source of truth for the site's content (frontend-only build).
+ * Some values (stats, testimonials) are placeholders — replace with real figures.
  *
  * `icon` values are lucide-react icon names, mapped to components at render time.
  */

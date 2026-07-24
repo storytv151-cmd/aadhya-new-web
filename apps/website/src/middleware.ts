@@ -11,8 +11,7 @@ import { NextResponse, type NextRequest } from "next/server";
  * (unavoidable with statically-rendered Next + next-themes). This preserves static
  * rendering while still blocking external script/style/frame injection.
  *
- * Payload's /admin and /api are excluded via the matcher — Payload manages its own
- * headers and needs a more permissive policy for its editor.
+ * The matcher skips only Next internals and static assets.
  */
 const isDev = process.env.NODE_ENV !== "production";
 
@@ -68,8 +67,8 @@ export function middleware(_request: NextRequest) {
 }
 
 export const config = {
-  // Apply to all routes except Payload admin/api, Next internals and static assets.
+  // Apply to all routes except Next internals and static assets.
   matcher: [
-    "/((?!admin|api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|manifest.webmanifest|media).*)",
+    "/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|manifest.webmanifest).*)",
   ],
 };
