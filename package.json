@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev --turbopack --port 17500",
     "build": "next build",
-    "start": "next start --port 17500",
+    "start": "next start --port 17500 --hostname 0.0.0.0",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },
