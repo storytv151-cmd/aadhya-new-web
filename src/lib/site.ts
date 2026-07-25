@@ -6,7 +6,7 @@ export const siteConfig = {
   tagline: "We Craft Software Masterpieces.",
   description:
     "Aadhya Infotech is a software company delivering app, game and web development, UI/UX design, cloud, cyber security and digital marketing solutions for businesses.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:17500",
   locale: "en_US",
   contact: {
     email: "aadhyainfotech02@gmail.com",
