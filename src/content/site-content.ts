@@ -23,7 +23,7 @@ export const heroContent = {
   announcement: {
     badge: "New",
     text: "Go Cart — turn your Shopify store into a mobile app",
-    href: "/products/gocart",
+    href: "/GoCart",
   },
   headline: "We Craft Software Masterpieces.",
   subhead:

@@ -9,6 +9,7 @@ import { Button, Magnetic, Sheet, SheetClose, SheetContent, SheetTitle, SheetTri
 import { cn } from "@/utils";
 import { mainNav } from "@/lib/navigation";
 import { Logo } from "./logo";
+import { SiteLink } from "./site-link";
 import { ThemeToggle } from "./theme-toggle";
 
 export function Navbar() {
@@ -63,16 +64,17 @@ export function Navbar() {
                       pill's own blur, so a translucent panel let the page bleed through. */}
                   <div className="bg-popover text-popover-foreground rounded-2xl border border-[var(--glass-border)] p-2 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.55)]">
                     {link.children.map((child) => (
-                      <Link
+                      <SiteLink
                         key={child.href}
                         href={child.href}
+                        external={child.external}
                         className="hover:bg-foreground/[0.06] flex flex-col gap-0.5 rounded-xl px-3 py-2.5 transition-colors"
                       >
                         <span className="text-foreground text-sm font-medium">{child.label}</span>
                         {child.description && (
                           <span className="text-muted-foreground text-xs leading-snug">{child.description}</span>
                         )}
-                      </Link>
+                      </SiteLink>
                     ))}
                   </div>
                 </div>
@@ -140,12 +142,13 @@ export function Navbar() {
                         <div className="border-border ml-4 flex flex-col gap-0.5 border-l pl-3">
                           {link.children.map((child) => (
                             <SheetClose asChild key={child.href}>
-                              <Link
+                              <SiteLink
                                 href={child.href}
+                                external={child.external}
                                 className="text-muted-foreground hover:text-foreground rounded-xl px-3 py-2 text-sm transition-colors"
                               >
                                 {child.label}
-                              </Link>
+                              </SiteLink>
                             </SheetClose>
                           ))}
                         </div>

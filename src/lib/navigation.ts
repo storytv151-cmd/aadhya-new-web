@@ -22,10 +22,11 @@ export const mainNav: NavLink[] = [
   {
     label: "Products",
     href: "/products",
-    // Dropdown lists our own products; each item opens its detail page.
+    // Dropdown lists our own products; each item goes straight to the product.
     children: products.map((product) => ({
       label: product.name,
-      href: `/products/${product.slug}`,
+      href: product.href,
+      external: product.external,
       description: product.tagline,
     })),
   },

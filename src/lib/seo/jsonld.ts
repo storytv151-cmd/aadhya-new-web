@@ -1,3 +1,4 @@
+import { goCartPlans } from "@/content/gocart";
 import { siteConfig } from "@/lib/site";
 
 export function organizationJsonLd() {
@@ -27,5 +28,35 @@ export function websiteJsonLd() {
     name: siteConfig.name,
     url: siteConfig.url,
     publisher: { "@id": `${siteConfig.url}/#organization` },
+  };
+}
+
+/** Go Cart (/GoCart) as a SoftwareApplication with its monthly INR plans as offers. */
+export function goCartJsonLd({ description }: { description: string }) {
+  const url = `${siteConfig.url}/GoCart`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": `${url}#software`,
+    name: "Go Cart",
+    url,
+    description,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web, Android, iOS",
+    publisher: { "@id": `${siteConfig.url}/#organization` },
+    offers: goCartPlans.map((plan) => ({
+      "@type": "Offer",
+      name: `Go Cart ${plan.name}`,
+      url: `${url}#pricing`,
+      price: plan.monthly.toFixed(2),
+      priceCurrency: "INR",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: plan.monthly.toFixed(2),
+        priceCurrency: "INR",
+        billingDuration: "P1M",
+        unitText: "MONTH",
+      },
+    })),
   };
 }

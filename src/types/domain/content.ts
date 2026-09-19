@@ -111,6 +111,8 @@ export type NavLink = {
   label: string;
   href: string;
   description?: string;
+  /** Served by another app on this domain (e.g. /DevStore) — render a plain <a>, not next/link. */
+  external?: boolean;
   /** Optional nested links for mega-menu / dropdown. */
   children?: NavLink[];
   badge?: string;

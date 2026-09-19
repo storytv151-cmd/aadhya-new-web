@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button, Container, Glass, Reveal, Section } from "@/ui";
 import { PageHeader } from "@/components/layout/page-header";
+import { SiteLink } from "@/components/layout/site-link";
 import { CTA } from "@/components/sections/cta";
 import { products } from "@/content/products";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -55,22 +55,13 @@ export default function ProductsPage() {
                       </div>
                     </div>
 
-                    <div className="flex shrink-0 flex-wrap items-center gap-x-5 gap-y-3">
+                    <div className="shrink-0">
                       <Button asChild>
-                        <Link href={`/products/${product.slug}`}>
-                          View details <span className="sr-only">for {product.name}</span>
+                        <SiteLink href={product.href} external={product.external}>
+                          {product.cta}
                           <ArrowRight className="size-4" />
-                        </Link>
+                        </SiteLink>
                       </Button>
-                      <a
-                        href={product.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary inline-flex items-center gap-1 text-sm font-medium transition-colors"
-                      >
-                        Visit {product.name} <span className="sr-only">(opens in a new tab)</span>
-                        <ArrowUpRight className="size-4" />
-                      </a>
                     </div>
                   </div>
                 </Glass>

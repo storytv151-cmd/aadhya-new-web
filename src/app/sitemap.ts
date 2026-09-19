@@ -1,14 +1,14 @@
 import type { MetadataRoute } from "next";
-import { products } from "@/content/products";
 import { siteConfig } from "@/lib/site";
 
-// Indexable pages only (privacy/terms are noindex). The separately hosted apps under
-// /GoCart and /DevStore are not part of this site and are deliberately not listed.
+// Indexable pages only (privacy/terms are noindex). /GoCart is this site's Go Cart landing
+// page; the separately hosted apps (/DevStore, and the Go Cart dashboard + API under
+// /GoCart/app and /GoCart/api) are not part of this site and are deliberately not listed.
 const routes = [
   "",
   "/services",
   "/products",
-  ...products.map((product) => `/products/${product.slug}`),
+  "/GoCart",
   "/portfolio",
   "/about",
   "/blog",

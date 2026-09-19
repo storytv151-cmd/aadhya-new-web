@@ -1,7 +1,8 @@
 /**
  * Aadhya Infotech's own software products (distinct from client portfolio work).
  * The single source of truth for the "Products" nav dropdown, the /products listing
- * and each /products/[slug] detail page. Add a new object here to publish a product.
+ * and the home "Our products" section — every one of them links straight to the
+ * product (`href`). Add a new object here to publish a product.
  */
 
 export type ProductFeature = {
@@ -22,12 +23,18 @@ export type Product = {
   tagline: string;
   /** One-paragraph teaser for cards. */
   summary: string;
-  /** Longer detail copy for the product page. */
-  overview: string[];
   features: ProductFeature[];
   stack: string[];
-  /** Live product URL. */
-  url: string;
+  /** Where the product lives — a site-relative path on this domain. */
+  href: string;
+  /**
+   * True when `href` is served by another app on this domain (not this Next app), so
+   * links must be a plain <a> (full page load) — next/link would route it client-side
+   * inside this app and 404.
+   */
+  external: boolean;
+  /** Label for the product's primary call to action. */
+  cta: string;
 };
 
 export const products: Product[] = [
@@ -39,11 +46,6 @@ export const products: Product[] = [
     tagline: "Web to App Builder — your Shopify store as a native app.",
     summary:
       "Turn your Shopify store into a branded Android and iOS app — with push notifications, automations, India-ready checkout and app analytics.",
-    overview: [
-      "Go Cart turns a merchant's Shopify storefront into a branded Android and iOS app. The app loads the live store, so every theme feature and installed Shopify app keeps working — and adds native extras on top: a bottom tab bar, a live cart badge, a promo banner with tap-to-copy coupons, and the merchant's own colours and splash screen.",
-      "Merchants can send push notifications with images and deep links, schedule them and target audience segments. Automations cover welcome pushes, abandoned-cart reminders, order-shipped updates and back-in-stock alerts (the last three on the Pro plan). Checkout is India-ready — UPI apps such as GPay, PhonePe and Paytm and Indian payment gateways work inside the app — and built-in analytics track installs, app opens and push open rates.",
-      "Plans are Basic at ₹1,499/month and Pro at ₹3,999/month; yearly billing charges 10 months (2 months free), and every plan starts with a 14-day free trial. Go Cart connects securely to Shopify over OAuth 2.0 and is built with Flutter, Node.js and MySQL by our team.",
-    ],
     features: [
       {
         icon: "tablet-smartphone",
@@ -82,7 +84,10 @@ export const products: Product[] = [
       },
     ],
     stack: ["Flutter", "Node.js", "MySQL", "Shopify OAuth 2.0"],
-    url: "https://www.aadhya-infotech.com/GoCart/",
+    // The Go Cart landing page is part of this site (app/(frontend)/GoCart).
+    href: "/GoCart",
+    external: false,
+    cta: "Explore Go Cart",
   },
   {
     slug: "devstore",
@@ -92,11 +97,6 @@ export const products: Product[] = [
     tagline: "Developer products, ready to ship.",
     summary:
       "Our single-vendor storefront platform for premium templates, UI kits and starter projects — with license keys, versioned releases and lifetime updates.",
-    overview: [
-      "DevStore is Aadhya Infotech's flagship product: a single-vendor storefront where one owner and their team sell premium developer products — templates, UI kits and production-ready starter projects.",
-      "It ships with everything a modern digital-product business needs: enterprise role-based access control, passwordless magic-link authentication, license-key delivery with versioned releases and lifetime updates, and a full admin suite for products, coupons, reviews, support and analytics.",
-      "Built on a modern, proven stack — Next.js, NestJS, PostgreSQL and Redis — and designed, built and maintained end-to-end by our team.",
-    ],
     features: [
       {
         icon: "shield-check",
@@ -120,10 +120,9 @@ export const products: Product[] = [
       },
     ],
     stack: ["Next.js 15", "NestJS", "PostgreSQL", "Prisma", "Redis"],
-    url: "https://www.aadhya-infotech.com/DevStore",
+    // DevStore is a separate app served on this domain.
+    href: "/DevStore",
+    external: true,
+    cta: "Visit DevStore",
   },
 ];
-
-export function getProduct(slug: string): Product | undefined {
-  return products.find((product) => product.slug === slug);
-}
