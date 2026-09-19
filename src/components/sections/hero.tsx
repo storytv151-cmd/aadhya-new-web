@@ -11,10 +11,26 @@ export function Hero() {
     <section className="relative overflow-hidden pt-36 sm:pt-44">
       <Container className="relative flex flex-col items-center text-center">
         <Reveal direction="none">
-          <span className="border-border text-muted-foreground inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-medium">
-            <span className="bg-primary size-1.5 rounded-full" />
-            {hero.eyebrow}
-          </span>
+          {hero.announcement ? (
+            <Link
+              href={hero.announcement.href}
+              className="border-border text-muted-foreground hover:border-primary/50 hover:text-foreground group inline-flex max-w-full items-center gap-2 rounded-full border py-1 pl-1 pr-3.5 text-xs font-medium transition-colors"
+            >
+              <span className="bg-primary text-primary-foreground rounded-full px-2 py-0.5 text-[11px] font-semibold">
+                {hero.announcement.badge}
+              </span>
+              <span className="truncate">{hero.announcement.text}</span>
+              <ArrowRight
+                className="size-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
+            </Link>
+          ) : (
+            <span className="border-border text-muted-foreground inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-medium">
+              <span className="bg-primary size-1.5 rounded-full" />
+              {hero.eyebrow}
+            </span>
+          )}
         </Reveal>
 
         <h1 className="mx-auto mt-8 max-w-4xl text-balance text-[2.9rem] font-semibold leading-[1.03] tracking-[-0.045em] sm:text-6xl lg:text-[5rem] lg:leading-[0.98]">

@@ -24,10 +24,10 @@ export default function Home() {
     <main>
       <Hero />
       <About />
+      <OurProduct />
       <Services />
       <Process />
       <Portfolio />
-      <OurProduct />
       <WhyChooseUs />
       <Stats />
       <Technologies />

@@ -19,6 +19,12 @@ import type {
 
 export const heroContent = {
   eyebrow: "Welcome to Aadhya Infotech",
+  /** Optional launch pill shown instead of the eyebrow; links to the product page. */
+  announcement: {
+    badge: "New",
+    text: "Go Cart — turn your Shopify store into a mobile app",
+    href: "/products/gocart",
+  },
   headline: "We Craft Software Masterpieces.",
   subhead:
     "A software company providing app, game and web development, design, cloud, security and digital solutions — engineered to help your business grow.",
