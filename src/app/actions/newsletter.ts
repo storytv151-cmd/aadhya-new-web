@@ -2,6 +2,7 @@
 
 import { newsletterSchema, type ApiResult, ERROR_CODES } from "@/types";
 import { isRateLimited } from "@/lib/rate-limit";
+import { isMailConfigured, sendMail } from "@/lib/mailer";
 
 /**
  * Newsletter subscription. Validates against the shared contract and rejects honeypot
@@ -40,6 +41,18 @@ export async function subscribeToNewsletter(
     return { ok: false, error: ERROR_CODES.SPAM_REJECTED, message: "Submission rejected." };
   }
 
-  // TODO: store the subscriber (email / ESP). This build has no backend store.
+  if (!isMailConfigured()) {
+    console.error("[newsletter] SMTP is not configured; subscriber not delivered");
+    return { ok: false, error: ERROR_CODES.SERVER_ERROR, message: "Subscriptions are temporarily unavailable. Please try again later." };
+  }
+  try {
+    await sendMail({
+      subject: `New newsletter subscriber: ${parsed.data.email}`,
+      rows: [["Email", parsed.data.email], ["Source", parsed.data.source]],
+    });
+  } catch (err) {
+    console.error("[newsletter] send failed:", err instanceof Error ? err.message : err);
+    return { ok: false, error: ERROR_CODES.SERVER_ERROR, message: "We couldn't save your subscription right now. Please try again shortly." };
+  }
   return { ok: true, data: undefined };
 }

@@ -2,11 +2,11 @@
 
 import { contactFormSchema, type ApiResult, type ContactFormResponse, ERROR_CODES } from "@/types";
 import { isRateLimited } from "@/lib/rate-limit";
+import { isMailConfigured, sendMail } from "@/lib/mailer";
 
 /**
  * Contact / lead capture. Validates against the shared contract and rejects honeypot
- * hits. This is a frontend-only build with no data store — wire an email / CRM /
- * webhook here to deliver the lead. The return contract is unchanged.
+ * hits. Delivers the lead by email (see lib/mailer). The return contract is unchanged.
  */
 export async function submitContact(
   _prevState: ApiResult<ContactFormResponse> | null,
@@ -46,6 +46,23 @@ export async function submitContact(
     return { ok: false, error: ERROR_CODES.SPAM_REJECTED, message: "Submission rejected." };
   }
 
-  // TODO: deliver the lead (email / CRM / webhook). This build has no backend store.
+  if (!isMailConfigured()) {
+    console.error("[contact] SMTP is not configured; lead not delivered");
+    return { ok: false, error: ERROR_CODES.SERVER_ERROR, message: "Email is temporarily unavailable. Please write to us directly." };
+  }
+  const d = parsed.data;
+  try {
+    await sendMail({
+      subject: `Website enquiry from ${d.name}${d.company ? ` (${d.company})` : ""}`,
+      replyTo: d.email,
+      rows: [
+        ["Name", d.name], ["Email", d.email], ["Phone", d.phone], ["Company", d.company],
+        ["Service", d.service], ["Budget", d.budget], ["Message", d.message],
+      ],
+    });
+  } catch (err) {
+    console.error("[contact] send failed:", err instanceof Error ? err.message : err);
+    return { ok: false, error: ERROR_CODES.SERVER_ERROR, message: "We couldn't send your message right now. Please try again shortly." };
+  }
   return { ok: true, data: {} };
 }

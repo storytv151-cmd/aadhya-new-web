@@ -36,7 +36,7 @@ const tiers = [
       "Security & compliance",
       "Cloud & DevOps",
       "Dedicated architect",
-      "24/7 support",
+      "Dedicated support channel",
     ],
     cta: "Contact sales",
     featured: false,
