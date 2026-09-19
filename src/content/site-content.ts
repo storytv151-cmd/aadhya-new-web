@@ -238,6 +238,10 @@ export const technologies: Technology[] = [
  * Placeholder statistics — the live site shows 0+ everywhere. Replace with real
  * numbers via the CMS before launch.
  */
+/**
+ * NOT PUBLISHED — these numbers are unverified, so the Stats section is not rendered
+ * anywhere. Replace with real, sourced figures before adding <Stats /> back to a page.
+ */
 export const stats: Stat[] = [
   { id: "clients", label: "Happy clients", value: 50, suffix: "+" },
   { id: "experts", label: "Expert engineers", value: 15, suffix: "+" },
@@ -246,8 +250,8 @@ export const stats: Stat[] = [
 ];
 
 /**
- * Placeholder testimonials — the live site uses lorem ipsum. Replace with real
- * client quotes via the CMS.
+ * NOT PUBLISHED — placeholder quotes, not real clients, so the Testimonials section is not
+ * rendered anywhere. Replace with real, consented client quotes before adding it back.
  */
 export const testimonials: Testimonial[] = [
   {
