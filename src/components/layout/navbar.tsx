@@ -58,8 +58,10 @@ export function Navbar() {
                   />
                 </Link>
                 {/* Dropdown — revealed on hover or keyboard focus (pt-3 bridges the gap) */}
-                <div className="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-                  <div className="glass rounded-2xl p-2">
+                <div className="invisible absolute left-1/2 top-full w-80 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                  {/* Opaque on purpose: a nested backdrop-filter can't blur through the nav
+                      pill's own blur, so a translucent panel let the page bleed through. */}
+                  <div className="bg-popover text-popover-foreground rounded-2xl border border-[var(--glass-border)] p-2 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.55)]">
                     {link.children.map((child) => (
                       <Link
                         key={child.href}
@@ -68,7 +70,7 @@ export function Navbar() {
                       >
                         <span className="text-foreground text-sm font-medium">{child.label}</span>
                         {child.description && (
-                          <span className="text-muted-foreground text-xs">{child.description}</span>
+                          <span className="text-muted-foreground text-xs leading-snug">{child.description}</span>
                         )}
                       </Link>
                     ))}
