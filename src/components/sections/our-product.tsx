@@ -1,36 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, KeyRound, LayoutDashboard, ShieldCheck, TicketPercent } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-import { Button, Container, Eyebrow, Glass, GradientText, Magnetic, Reveal, Section } from "@/ui";
+import { ArrowRight, BellRing, House, LayoutGrid, ShoppingCart, User } from "lucide-react";
+import type { ReactNode } from "react";
+import { Button, Container, Glass, GradientText, Magnetic, Reveal, Section } from "@/ui";
 import { cn } from "@/utils";
-
-/** DevStore's live URL. Update to the real deployment when it changes. */
-const DEVSTORE_URL = "https://devstore.aadhya-infotech.com";
-
-const features: { icon: LucideIcon; title: string; description: string }[] = [
-  {
-    icon: ShieldCheck,
-    title: "Enterprise RBAC",
-    description: "One owner, unlimited staff — governed by granular roles and permissions.",
-  },
-  {
-    icon: KeyRound,
-    title: "Passwordless auth",
-    description: "Secure magic-link sign-in for staff and customers. No passwords to leak.",
-  },
-  {
-    icon: TicketPercent,
-    title: "Licensing & releases",
-    description: "License keys, versioned releases and lifetime updates, out of the box.",
-  },
-  {
-    icon: LayoutDashboard,
-    title: "Full admin suite",
-    description: "Products, coupons, reviews, support and analytics in one dashboard.",
-  },
-];
-
-const stack = ["Next.js 15", "NestJS", "PostgreSQL", "Prisma", "Redis"];
+import { products, type Product } from "@/content/products";
+import { getIcon } from "./icon-map";
+import { SectionHeading } from "./section-heading";
 
 // Full class strings so Tailwind picks up each gradient (no dynamic concatenation).
 // All on the blue/indigo/cyan brand ramp — no off-system palette colours.
@@ -64,7 +39,7 @@ function DevStoreMockup() {
             <span className="bg-foreground/15 size-2.5 rounded-full" />
           </span>
           <span className="glass-surface text-muted-foreground mx-auto min-w-0 max-w-full truncate rounded-full px-4 py-1 text-xs">
-            devstore.aadhya-infotech.com
+            aadhya-infotech.com/DevStore
           </span>
         </div>
 
@@ -102,84 +77,223 @@ function DevStoreMockup() {
   );
 }
 
-export function OurProduct() {
+/** A merchant's store running inside the Go Cart app shell — abstract shapes only. */
+function GoCartMockup() {
+  const tabs = [House, LayoutGrid, ShoppingCart, User];
   return (
-    <Section id="product" className="relative overflow-hidden">
-      <Container className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-        {/* Left — the pitch */}
-        <div>
-          <Reveal direction="none">
-            <Eyebrow>Our product</Eyebrow>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.08]">
-              DevStore — developer products, <GradientText>ready to ship</GradientText>
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="text-muted-foreground mt-5 text-pretty leading-relaxed">
-              Our own single-vendor storefront platform for premium templates, UI kits and starter
-              projects — with license keys, versioned releases and lifetime updates. Designed, built
-              and run by Aadhya Infotech.
-            </p>
-          </Reveal>
+    // Purely decorative illustration — hidden from AT.
+    <div aria-hidden="true" className="relative mx-auto w-full max-w-[18rem]">
+      <div
+        aria-hidden="true"
+        className="absolute -inset-8 -z-10 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,var(--glow),transparent_66%)] opacity-[0.1] blur-3xl"
+      />
 
-          <Reveal delay={0.15}>
-            <ul className="mt-8 grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-              {features.map((feature) => (
+      {/* push notification */}
+      <div className="glass-floating absolute -right-3 top-16 z-20 flex w-48 items-center gap-2.5 rounded-2xl p-2.5 sm:-right-10">
+        <span className="bg-primary/15 text-primary flex size-8 shrink-0 items-center justify-center rounded-xl">
+          <BellRing className="size-4" />
+        </span>
+        <span className="flex flex-1 flex-col gap-1.5">
+          <span className="bg-foreground/[0.14] h-2 w-3/4 rounded" />
+          <span className="bg-foreground/[0.07] h-2 w-full rounded" />
+        </span>
+      </div>
+
+      <Glass
+        strength="showcase"
+        specular
+        refract
+        interactive={false}
+        className="overflow-hidden rounded-[2.25rem]"
+      >
+        {/* status bar */}
+        <div className="flex justify-center pt-3">
+          <span className="bg-foreground/15 h-1.5 w-16 rounded-full" />
+        </div>
+
+        {/* promo banner with coupon */}
+        <div className="from-brand-from/25 to-brand-to/20 mx-4 mt-4 flex items-center justify-between gap-3 rounded-2xl bg-gradient-to-r p-3">
+          <span className="flex flex-1 flex-col gap-1.5">
+            <span className="bg-foreground/[0.16] h-2 w-2/3 rounded" />
+            <span className="bg-foreground/[0.08] h-2 w-1/2 rounded" />
+          </span>
+          <span className="border-primary/50 h-6 w-14 shrink-0 rounded-lg border border-dashed" />
+        </div>
+
+        {/* store content */}
+        <div className="grid grid-cols-2 gap-3 p-4">
+          {productTiles.map((tile, i) => (
+            <div key={i} className="glass-surface rounded-2xl p-2.5">
+              <div className={cn("aspect-square rounded-xl bg-gradient-to-br", tile.grad)} />
+              <span className="bg-foreground/[0.12] mt-2.5 block h-2 w-3/4 rounded" />
+              <span className="bg-foreground/[0.06] mt-1.5 block h-2 w-1/2 rounded" />
+            </div>
+          ))}
+        </div>
+
+        {/* bottom tab bar with live cart badge */}
+        <div className="flex items-center justify-around border-t border-white/[0.06] px-4 pb-5 pt-3">
+          {tabs.map((Icon, i) => (
+            <span
+              key={i}
+              className={cn(
+                "relative flex size-9 items-center justify-center rounded-xl",
+                i === 0 ? "text-primary bg-primary/12" : "text-muted-foreground",
+              )}
+            >
+              <Icon className="size-[18px]" />
+              {i === 2 && (
+                <span className="bg-primary text-primary-foreground absolute -right-0.5 -top-0.5 flex size-4 items-center justify-center rounded-full text-[9px] font-bold">
+                  2
+                </span>
+              )}
+            </span>
+          ))}
+        </div>
+      </Glass>
+    </div>
+  );
+}
+
+/**
+ * Home-page presentation for each product. Copy, features, stack and links come from
+ * `content/products.ts`; this only adds the headline treatment and illustration.
+ */
+const showcase: Record<string, { headline: ReactNode; mockup: ReactNode }> = {
+  devstore: {
+    headline: (
+      <>
+        DevStore — developer products, <GradientText>ready to ship</GradientText>
+      </>
+    ),
+    mockup: <DevStoreMockup />,
+  },
+  gocart: {
+    headline: (
+      <>
+        Go Cart — your Shopify store as a <GradientText>native app</GradientText>
+      </>
+    ),
+    mockup: <GoCartMockup />,
+  },
+};
+
+function ProductSpotlight({ product, reverse }: { product: Product; reverse: boolean }) {
+  const presentation = showcase[product.slug];
+
+  return (
+    <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+      {/* The pitch */}
+      <div>
+        <Reveal direction="none">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="bg-primary/12 text-primary rounded-full px-3 py-1 text-xs font-medium">
+              {product.category}
+            </span>
+            <span className="bg-foreground/[0.06] text-muted-foreground rounded-full px-3 py-1 text-xs font-medium">
+              {product.status}
+            </span>
+          </div>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <h3 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.08]">
+            {presentation?.headline ?? product.name}
+          </h3>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <p className="text-muted-foreground mt-5 text-pretty leading-relaxed">
+            {product.summary}
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.15}>
+          <ul className="mt-8 grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            {product.features.slice(0, 4).map((feature) => {
+              const Icon = getIcon(feature.icon);
+              return (
                 <li key={feature.title} className="flex gap-3.5">
                   <span className="bg-primary/12 text-primary ring-primary/15 flex size-10 shrink-0 items-center justify-center rounded-xl ring-1 ring-inset">
-                    <feature.icon className="size-5" />
+                    <Icon className="size-5" />
                   </span>
                   <div>
-                    <h3 className="text-sm font-semibold tracking-tight">{feature.title}</h3>
+                    <h4 className="text-sm font-semibold tracking-tight">{feature.title}</h4>
                     <p className="text-muted-foreground mt-1 text-sm leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
                 </li>
-              ))}
-            </ul>
-          </Reveal>
-
-          <Reveal delay={0.2}>
-            <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
-              <Magnetic strength={0.3}>
-                <Button asChild size="lg">
-                  <a href={DEVSTORE_URL} target="_blank" rel="noopener noreferrer">
-                    Visit DevStore
-                    <ArrowRight className="size-4" />
-                  </a>
-                </Button>
-              </Magnetic>
-              <Link
-                href="/contact"
-                className="text-foreground hover:text-primary group inline-flex items-center gap-1.5 text-sm font-medium transition-colors"
-              >
-                Talk to us about it
-                <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-              </Link>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.25}>
-            <div className="mt-8 flex flex-wrap gap-2">
-              {stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="bg-foreground/[0.06] text-foreground-secondary rounded-full px-3 py-1 text-xs font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-
-        {/* Right — a DevStore storefront mockup */}
-        <Reveal direction="left" delay={0.1}>
-          <DevStoreMockup />
+              );
+            })}
+          </ul>
         </Reveal>
+
+        <Reveal delay={0.2}>
+          <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <Magnetic strength={0.3}>
+              <Button asChild size="lg">
+                <a href={product.url} target="_blank" rel="noopener noreferrer">
+                  Visit {product.name}
+                  <ArrowRight className="size-4" />
+                </a>
+              </Button>
+            </Magnetic>
+            <Link
+              href={`/products/${product.slug}`}
+              className="text-foreground hover:text-primary group inline-flex items-center gap-1.5 text-sm font-medium transition-colors"
+            >
+              Learn more <span className="sr-only">about {product.name}</span>
+              <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+            </Link>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.25}>
+          <div className="mt-8 flex flex-wrap gap-2">
+            {product.stack.map((tech) => (
+              <span
+                key={tech}
+                className="bg-foreground/[0.06] text-foreground-secondary rounded-full px-3 py-1 text-xs font-medium"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+
+      {/* The illustration — alternates sides on large screens */}
+      {presentation && (
+        <Reveal
+          direction={reverse ? "right" : "left"}
+          delay={0.1}
+          className={cn(reverse && "lg:order-first")}
+        >
+          {presentation.mockup}
+        </Reveal>
+      )}
+    </div>
+  );
+}
+
+export function OurProduct() {
+  return (
+    <Section id="product" className="relative overflow-hidden">
+      <Container>
+        <SectionHeading
+          eyebrow="Our products"
+          title={
+            <>
+              Software we <GradientText>build and run</GradientText>
+            </>
+          }
+          description="Our own products — designed, built and maintained end-to-end by Aadhya Infotech."
+        />
+
+        <div className="mt-16 flex flex-col gap-24 lg:mt-20 lg:gap-32">
+          {products.map((product, index) => (
+            <ProductSpotlight key={product.slug} product={product} reverse={index % 2 === 1} />
+          ))}
+        </div>
       </Container>
     </Section>
   );

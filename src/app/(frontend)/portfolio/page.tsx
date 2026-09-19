@@ -3,13 +3,14 @@ import { CTA } from "@/components/sections/cta";
 import { Portfolio } from "@/components/sections/portfolio";
 import { Technologies } from "@/components/sections/technologies";
 import { PageHeader } from "@/components/layout/page-header";
+import { pageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Portfolio",
   description:
     "A selection of apps, games and products Aadhya Infotech has designed, built and shipped.",
-  alternates: { canonical: "/portfolio" },
-};
+  path: "/portfolio",
+});
 
 export default function PortfolioPage() {
   return (

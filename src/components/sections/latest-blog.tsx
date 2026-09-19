@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button, Container, Eyebrow, Glass, GradientText, Reveal, Section } from "@/ui";
-import { formatDate, formatReadingTime } from "@/utils";
+import { cn, formatDate, formatReadingTime } from "@/utils";
 import { getLatestPosts } from "@/lib/content";
 
 export async function LatestBlog() {
@@ -35,7 +35,7 @@ export async function LatestBlog() {
             <Reveal>
               <Glass
                 specular
-                interactive
+                interactive={Boolean(featured.href)}
                 className="group flex h-full flex-col overflow-hidden rounded-[2rem]"
               >
                 <div className="from-brand-from/20 via-brand-via/10 to-brand-to/20 relative flex aspect-[16/9] items-center justify-center bg-gradient-to-br">
@@ -48,18 +48,25 @@ export async function LatestBlog() {
                     {formatDate(featured.publishedAt)} ·{" "}
                     {formatReadingTime(featured.readingTimeMinutes)}
                   </div>
-                  <h3 className="group-hover:text-primary mt-2 text-2xl font-semibold tracking-tight transition-colors">
+                  <h3
+                    className={cn(
+                      "mt-2 text-2xl font-semibold tracking-tight transition-colors",
+                      featured.href && "group-hover:text-primary",
+                    )}
+                  >
                     {featured.title}
                   </h3>
                   <p className="text-muted-foreground mt-2 flex-1 text-sm leading-relaxed">
                     {featured.excerpt}
                   </p>
-                  <Link
-                    href={featured.href}
-                    className="text-primary mt-5 inline-flex items-center gap-1 text-sm font-medium"
-                  >
-                    Read more <ArrowRight className="size-4" />
-                  </Link>
+                  {featured.href && (
+                    <Link
+                      href={featured.href}
+                      className="text-primary mt-5 inline-flex items-center gap-1 text-sm font-medium"
+                    >
+                      Read more <ArrowRight className="size-4" />
+                    </Link>
+                  )}
                 </div>
               </Glass>
             </Reveal>
@@ -67,24 +74,33 @@ export async function LatestBlog() {
 
           {/* List */}
           <div className="flex flex-col gap-4">
-            {rest.map((post, index) => (
-              <Reveal key={post.slug} delay={0.05 + index * 0.06} className="flex-1">
-                <Link href={post.href} className="block h-full">
-                  <Glass
-                    interactive
-                    className="flex h-full flex-col justify-center rounded-[1.75rem] p-6"
-                  >
-                    <div className="text-muted-foreground text-xs">
-                      {post.category} · {formatReadingTime(post.readingTimeMinutes)}
-                    </div>
-                    <h3 className="mt-2 text-lg font-semibold tracking-tight">{post.title}</h3>
-                    <p className="text-muted-foreground mt-2 line-clamp-2 text-sm leading-relaxed">
-                      {post.excerpt}
-                    </p>
-                  </Glass>
-                </Link>
-              </Reveal>
-            ))}
+            {rest.map((post, index) => {
+              const card = (
+                <Glass
+                  interactive={Boolean(post.href)}
+                  className="flex h-full flex-col justify-center rounded-[1.75rem] p-6"
+                >
+                  <div className="text-muted-foreground text-xs">
+                    {post.category} · {formatReadingTime(post.readingTimeMinutes)}
+                  </div>
+                  <h3 className="mt-2 text-lg font-semibold tracking-tight">{post.title}</h3>
+                  <p className="text-muted-foreground mt-2 line-clamp-2 text-sm leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                </Glass>
+              );
+              return (
+                <Reveal key={post.slug} delay={0.05 + index * 0.06} className="flex-1">
+                  {post.href ? (
+                    <Link href={post.href} className="block h-full">
+                      {card}
+                    </Link>
+                  ) : (
+                    card
+                  )}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </Container>

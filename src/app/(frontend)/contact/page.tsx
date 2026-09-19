@@ -5,13 +5,14 @@ import { Container } from "@/ui";
 import { ContactForm } from "@/components/contact/contact-form";
 import { PageHeader } from "@/components/layout/page-header";
 import { siteConfig } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description:
     "Get in touch with Aadhya Infotech. Tell us about your app, web, game or design project and we'll get back to you fast.",
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 function ContactItem({
   icon: Icon,

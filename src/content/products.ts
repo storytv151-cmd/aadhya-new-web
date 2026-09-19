@@ -67,7 +67,60 @@ export const products: Product[] = [
       },
     ],
     stack: ["Next.js 15", "NestJS", "PostgreSQL", "Prisma", "Redis"],
-    url: "https://devstore.aadhya-infotech.com",
+    url: "https://www.aadhya-infotech.com/DevStore",
+  },
+  {
+    slug: "gocart",
+    name: "Go Cart",
+    category: "SaaS Platform",
+    status: "Live",
+    tagline: "Web to App Builder — your Shopify store as a native app.",
+    summary:
+      "Turn your Shopify store into a branded Android and iOS app — with push notifications, automations, India-ready checkout and app analytics.",
+    overview: [
+      "Go Cart turns a merchant's Shopify storefront into a branded Android and iOS app. The app loads the live store, so every theme feature and installed Shopify app keeps working — and adds native extras on top: a bottom tab bar, a live cart badge, a promo banner with tap-to-copy coupons, and the merchant's own colours and splash screen.",
+      "Merchants can send push notifications with images and deep links, schedule them and target audience segments. Automations cover welcome pushes, abandoned-cart reminders, order-shipped updates and back-in-stock alerts (the last three on the Pro plan). Checkout is India-ready — UPI apps such as GPay, PhonePe and Paytm and Indian payment gateways work inside the app — and built-in analytics track installs, app opens and push open rates.",
+      "Plans are Basic at ₹1,499/month and Pro at ₹3,999/month; yearly billing charges 10 months (2 months free), and every plan starts with a 14-day free trial. Go Cart connects securely to Shopify over OAuth 2.0 and is built with Flutter, Node.js and MySQL by our team.",
+    ],
+    features: [
+      {
+        icon: "tablet-smartphone",
+        title: "Your store, as an app",
+        description:
+          "A branded Android and iOS app that loads your live Shopify store — every theme feature and app keeps working.",
+      },
+      {
+        icon: "bell-ring",
+        title: "Push notifications",
+        description:
+          "Rich pushes with images and deep links, scheduling and audience segments.",
+      },
+      {
+        icon: "zap",
+        title: "Automations",
+        description:
+          "Welcome push, abandoned-cart reminders, order-shipped updates and back-in-stock alerts (the last three on Pro).",
+      },
+      {
+        icon: "indian-rupee",
+        title: "India-ready checkout",
+        description:
+          "UPI apps (GPay, PhonePe, Paytm…) and Indian payment gateways work inside the app.",
+      },
+      {
+        icon: "palette",
+        title: "Native extras",
+        description:
+          "Bottom tab bar, live cart badge, promo banner with tap-to-copy coupon, your colours and splash screen.",
+      },
+      {
+        icon: "chart-column",
+        title: "App analytics",
+        description: "Track installs, app opens and push open rates.",
+      },
+    ],
+    stack: ["Flutter", "Node.js", "MySQL", "Shopify OAuth 2.0"],
+    url: "https://www.aadhya-infotech.com/GoCart/",
   },
 ];
 

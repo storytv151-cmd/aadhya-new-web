@@ -3,13 +3,14 @@ import Link from "next/link";
 import { Button, Container } from "@/ui";
 import { PageHeader } from "@/components/layout/page-header";
 import { siteConfig } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Careers",
   description:
     "Join Aadhya Infotech. We're always looking for talented engineers, designers and problem-solvers.",
-  alternates: { canonical: "/careers" },
-};
+  path: "/careers",
+});
 
 export default function CareersPage() {
   return (

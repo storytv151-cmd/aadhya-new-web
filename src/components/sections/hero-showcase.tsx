@@ -10,7 +10,8 @@ import { cn } from "@/utils";
  */
 export function HeroShowcase({ className }: { className?: string }) {
   return (
-    <div className={cn("relative mx-auto w-full max-w-3xl", className)}>
+    // Purely decorative illustration — hidden from AT.
+    <div aria-hidden="true" className={cn("relative mx-auto w-full max-w-3xl", className)}>
       {/* soft glow */}
       <div
         aria-hidden="true"
@@ -31,7 +32,7 @@ export function HeroShowcase({ className }: { className?: string }) {
             <span className="bg-foreground/15 size-2.5 rounded-full" />
           </span>
           <span className="glass-surface text-muted-foreground mx-auto rounded-full px-4 py-1 text-xs">
-            aadhyainfotech.com
+            aadhya-infotech.com
           </span>
         </div>
 

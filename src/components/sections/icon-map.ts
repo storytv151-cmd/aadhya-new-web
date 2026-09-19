@@ -1,8 +1,11 @@
 import {
+  BellRing,
+  ChartColumn,
   Cloud,
   Code2,
   Gamepad2,
   Globe,
+  IndianRupee,
   KeyRound,
   LayoutDashboard,
   Palette,
@@ -12,7 +15,9 @@ import {
   ShieldCheck,
   Smartphone,
   Sparkles,
+  TabletSmartphone,
   TicketPercent,
+  Zap,
   type LucideIcon,
 } from "lucide-react";
 
@@ -30,6 +35,11 @@ const iconMap: Record<string, LucideIcon> = {
   "key-round": KeyRound,
   "ticket-percent": TicketPercent,
   "layout-dashboard": LayoutDashboard,
+  "tablet-smartphone": TabletSmartphone,
+  "bell-ring": BellRing,
+  zap: Zap,
+  "indian-rupee": IndianRupee,
+  "chart-column": ChartColumn,
 };
 
 export function getIcon(name?: string): LucideIcon {

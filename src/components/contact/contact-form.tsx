@@ -93,6 +93,9 @@ export function ContactForm() {
             id="name"
             name="name"
             required
+            minLength={2}
+            maxLength={120}
+            autoComplete="name"
             aria-invalid={Boolean(getFieldError(state, "name"))}
           />
         </Field>
@@ -102,14 +105,16 @@ export function ContactForm() {
             name="email"
             type="email"
             required
+            maxLength={200}
+            autoComplete="email"
             aria-invalid={Boolean(getFieldError(state, "email"))}
           />
         </Field>
-        <Field label="Phone (optional)" htmlFor="phone">
-          <Input id="phone" name="phone" type="tel" />
+        <Field label="Phone (optional)" htmlFor="phone" error={getFieldError(state, "phone")}>
+          <Input id="phone" name="phone" type="tel" maxLength={40} autoComplete="tel" />
         </Field>
-        <Field label="Company (optional)" htmlFor="company">
-          <Input id="company" name="company" />
+        <Field label="Company (optional)" htmlFor="company" error={getFieldError(state, "company")}>
+          <Input id="company" name="company" maxLength={160} autoComplete="organization" />
         </Field>
         <Field label="Service" htmlFor="service">
           <select id="service" name="service" defaultValue="" className={cn(selectClass)}>
@@ -139,6 +144,8 @@ export function ContactForm() {
           name="message"
           rows={5}
           required
+          minLength={10}
+          maxLength={5000}
           placeholder="Tell us about your project…"
           aria-invalid={Boolean(getFieldError(state, "message"))}
         />

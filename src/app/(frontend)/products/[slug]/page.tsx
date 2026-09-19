@@ -6,6 +6,11 @@ import { Button, Container, Eyebrow, Glass, Magnetic, Reveal, Section } from "@/
 import { CTA } from "@/components/sections/cta";
 import { getIcon } from "@/components/sections/icon-map";
 import { getProduct, products } from "@/content/products";
+import { pageMetadata } from "@/lib/seo/metadata";
+
+// Only the slugs in the static product list exist — anything else is a real 404
+// (without this, unknown slugs were rendered on demand and streamed with HTTP 200).
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -19,11 +24,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const product = getProduct(slug);
   if (!product) return {};
-  return {
+  return pageMetadata({
     title: product.name,
     description: product.summary,
-    alternates: { canonical: `/products/${product.slug}` },
-  };
+    path: `/products/${product.slug}`,
+  });
 }
 
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {

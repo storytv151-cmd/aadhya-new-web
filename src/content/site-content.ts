@@ -306,6 +306,10 @@ export const faqs: Faq[] = [
   },
 ];
 
+/**
+ * Blog teasers. There are no individual post pages on this site yet, so these carry no
+ * `href` (linking to /blog/<slug> produced 404s). Add `href` once a post page exists.
+ */
 export const blogPosts: BlogPostSummary[] = [
   {
     slug: "comprehensive-seo-services-for-increased-visibility",
@@ -316,7 +320,6 @@ export const blogPosts: BlogPostSummary[] = [
     author: { name: "Aadhya Infotech" },
     publishedAt: "2022-05-04",
     readingTimeMinutes: 6,
-    href: "/blog/comprehensive-seo-services-for-increased-visibility",
   },
   {
     slug: "professional-web-design-for-modern-businesses",
@@ -327,7 +330,6 @@ export const blogPosts: BlogPostSummary[] = [
     author: { name: "Aadhya Infotech" },
     publishedAt: "2022-04-04",
     readingTimeMinutes: 5,
-    href: "/blog/professional-web-design-for-modern-businesses",
   },
   {
     slug: "creative-branding-solutions-to-elevate-your-brand",
@@ -338,6 +340,5 @@ export const blogPosts: BlogPostSummary[] = [
     author: { name: "Aadhya Infotech" },
     publishedAt: "2022-04-04",
     readingTimeMinutes: 5,
-    href: "/blog/creative-branding-solutions-to-elevate-your-brand",
   },
 ];

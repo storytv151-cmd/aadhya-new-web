@@ -103,7 +103,8 @@ export type BlogPostSummary = {
   publishedAt: string; // ISO date
   readingTimeMinutes: number;
   image?: ImageAsset;
-  href: string;
+  /** Link to the full post. Omit until the post page exists — cards render unlinked. */
+  href?: string;
 };
 
 export type NavLink = {

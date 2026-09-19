@@ -1,6 +1,7 @@
 "use server";
 
 import { newsletterSchema, type ApiResult, ERROR_CODES } from "@/types";
+import { isRateLimited } from "@/lib/rate-limit";
 
 /**
  * Newsletter subscription. Validates against the shared contract and rejects honeypot
@@ -11,6 +12,14 @@ export async function subscribeToNewsletter(
   _prevState: ApiResult | null,
   formData: FormData,
 ): Promise<ApiResult> {
+  if (await isRateLimited("newsletter", { limit: 5, windowMs: 10 * 60 * 1000 })) {
+    return {
+      ok: false,
+      error: ERROR_CODES.RATE_LIMITED,
+      message: "Too many attempts. Please try again in a few minutes.",
+    };
+  }
+
   const parsed = newsletterSchema.safeParse({
     email: formData.get("email"),
     source: formData.get("source") ?? "footer",

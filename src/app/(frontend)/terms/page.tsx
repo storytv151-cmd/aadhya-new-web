@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { Container } from "@/ui";
 import { PageHeader } from "@/components/layout/page-header";
 import { siteConfig } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Terms of Service",
   description: "The terms that govern the use of the Aadhya Infotech website and services.",
-  alternates: { canonical: "/terms" },
-  robots: { index: false },
-};
+  path: "/terms",
+  noIndex: true,
+});
 
 export default function TermsPage() {
   return (

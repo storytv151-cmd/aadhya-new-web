@@ -5,13 +5,14 @@ import { Stats } from "@/components/sections/stats";
 import { Testimonials } from "@/components/sections/testimonials";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { PageHeader } from "@/components/layout/page-header";
+import { pageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
     "Aadhya Infotech is a software company delivering app, web and game development, design, cloud and security solutions for businesses.",
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

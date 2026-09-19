@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { Container } from "@/ui";
 import { PageHeader } from "@/components/layout/page-header";
 import { siteConfig } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy",
   description: "How Aadhya Infotech collects, uses and protects your information.",
-  alternates: { canonical: "/privacy" },
-  robots: { index: false },
-};
+  path: "/privacy",
+  noIndex: true,
+});
 
 export default function PrivacyPage() {
   return (

@@ -1,6 +1,7 @@
 "use server";
 
 import { contactFormSchema, type ApiResult, type ContactFormResponse, ERROR_CODES } from "@/types";
+import { isRateLimited } from "@/lib/rate-limit";
 
 /**
  * Contact / lead capture. Validates against the shared contract and rejects honeypot
@@ -11,6 +12,14 @@ export async function submitContact(
   _prevState: ApiResult<ContactFormResponse> | null,
   formData: FormData,
 ): Promise<ApiResult<ContactFormResponse>> {
+  if (await isRateLimited("contact", { limit: 5, windowMs: 10 * 60 * 1000 })) {
+    return {
+      ok: false,
+      error: ERROR_CODES.RATE_LIMITED,
+      message: "Too many messages in a short time. Please try again in a few minutes.",
+    };
+  }
+
   const parsed = contactFormSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),

@@ -4,13 +4,14 @@ import { Process } from "@/components/sections/process";
 import { Services } from "@/components/sections/services";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { PageHeader } from "@/components/layout/page-header";
+import { pageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Services",
   description:
     "App, game and web development, UI/UX design, cyber security and cloud services — everything you need to design, build and scale software.",
-  alternates: { canonical: "/services" },
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

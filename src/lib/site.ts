@@ -6,7 +6,9 @@ export const siteConfig = {
   tagline: "We Craft Software Masterpieces.",
   description:
     "Aadhya Infotech is a software company delivering app, game and web development, UI/UX design, cloud, cyber security and digital marketing solutions for businesses.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:17500",
+  // Canonical origin for metadata, sitemap, robots and JSON-LD. Defaults to production so
+  // a server without NEXT_PUBLIC_SITE_URL never publishes localhost canonical URLs.
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.aadhya-infotech.com").replace(/\/+$/, ""),
   locale: "en_US",
   contact: {
     email: "aadhyainfotech02@gmail.com",

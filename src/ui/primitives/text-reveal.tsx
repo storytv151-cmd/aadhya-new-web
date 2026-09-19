@@ -1,7 +1,10 @@
 "use client";
 
-import { m, useReducedMotion, type Variants } from "motion/react";
+import { m, type Variants } from "motion/react";
 import { transitions } from "@/config";
+// SSR-safe (false until mounted). motion's own useReducedMotion reads matchMedia during
+// the first client render, so reduced-motion users got a server/client hydration mismatch.
+import { useReducedMotion } from "@/hooks";
 import { cn } from "@/utils";
 
 export type TextRevealProps = {
