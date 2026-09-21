@@ -70,13 +70,13 @@ export const goCartFeatures: ProductFeature[] = [
     icon: "bell-ring",
     title: "Push notifications",
     description:
-      "Rich pushes with images and deep links. Schedule them ahead and target audience segments (Pro).",
+      "Rich pushes with images and deep links. Schedule them ahead, and target customers and segments on WebView Growth.",
   },
   {
     icon: "zap",
     title: "Automations",
     description:
-      "Welcome push, abandoned-cart reminders, order-shipped updates and back-in-stock alerts — the last three on Pro.",
+      "Welcome push, abandoned-cart reminders, order-shipped updates and back-in-stock alerts — the last three on WebView Growth.",
   },
   {
     icon: "indian-rupee",
@@ -133,7 +133,7 @@ export const goCartBenefits: ProductFeature[] = [
     icon: "repeat",
     title: "Bring shoppers back automatically",
     description:
-      "Automated pushes — a welcome on every plan; abandoned-cart, back-in-stock and order updates on Pro — keep working while you run the store.",
+      "Automated pushes — a welcome on every plan; abandoned-cart, back-in-stock and order updates on WebView Growth — keep working while you run the store.",
   },
 ];
 
@@ -144,12 +144,13 @@ export const YEARLY_MONTHS_CHARGED = 10;
 export const GOCART_CURRENCY = "USD";
 
 export type GoCartPlan = {
-  id: "basic" | "pro";
+  /** Shopify plan handle (Shopify App Pricing). */
+  id: "webview-starter" | "webview-growth";
   name: string;
   tagline: string;
   /** Monthly price in USD (whole dollars). Yearly = monthly × YEARLY_MONTHS_CHARGED. */
   monthly: number;
-  /** Shown above the feature list, e.g. "Everything in Basic, plus:". */
+  /** Shown above the feature list, e.g. "Everything in WebView Starter, plus:". */
   includes?: string;
   features: string[];
   featured?: boolean;
@@ -159,37 +160,59 @@ export type GoCartPlan = {
 
 export const goCartPlans: GoCartPlan[] = [
   {
-    id: "basic",
-    name: "Basic",
+    id: "webview-starter",
+    name: "WebView Starter",
     tagline: "Everything you need to launch your store's app.",
     monthly: 29,
     features: [
-      "10,000 push notifications / month",
-      "5,000 app users",
-      "Products & customers",
+      "Your whole website in the app — theme and Shopify apps keep working",
+      "Android and iOS apps, with help publishing to Google Play and the App Store",
+      "Your colours, splash screen and onboarding slides",
+      "Native tab bar, cart badge, promo banner and search bar",
+      "Push notifications with images and links, scheduled or instant — 10,000 / month",
       "Welcome automation",
-      "Email support",
+      "App analytics: installs, app opens, push opens",
+      "UPI and Indian checkouts (Shiprocket, GoKwik…) inside the app",
+      "5,000 app users · email support",
     ],
   },
   {
-    id: "pro",
-    name: "Pro",
-    tagline: "For stores ready to automate and grow.",
+    id: "webview-growth",
+    name: "WebView Growth",
+    tagline: "Automations that bring shoppers back and sales in.",
     monthly: 49,
-    includes: "Everything in Basic, plus:",
+    includes: "Everything in WebView Starter, plus:",
     features: [
+      "Abandoned-cart reminders",
+      "Back-in-stock alerts from the Notify-me button",
+      "Order-shipped updates",
+      "Push to specific customers and Shopify segments",
       "50,000 push notifications / month",
-      "25,000 app users",
-      "Audience segments",
-      "Abandoned-cart, order-update and back-in-stock automations",
-      "Priority support",
+      "25,000 app users · priority support",
     ],
     featured: true,
-    badge: "All automations",
+    badge: "Most popular",
   },
 ];
 
 export const yearlyPrice = (plan: GoCartPlan) => plan.monthly * YEARLY_MONTHS_CHARGED;
+
+/** The two WebView plans: the app shows the store's live website. */
+export const GOCART_PLAN_KIND = "WebView app";
+
+/**
+ * Native line — its own set of plans (2–3) later. Shown as "Coming soon": no price, no purchase.
+ * Per docs/ROADMAP.md it is never presented as available.
+ */
+export const goCartComingSoon = {
+  name: "Native app",
+  tagline: "An app built natively in code, with your own design — as its own set of plans.",
+  features: [
+    "Home, product and cart screens built natively in code",
+    "Pick your app's look from ready-made themes",
+    "Everything in WebView Growth",
+  ],
+};
 
 export const goCartFaqs: Faq[] = [
   {
@@ -197,6 +220,12 @@ export const goCartFaqs: Faq[] = [
     question: "Will it work with my Shopify theme and apps?",
     answer:
       "Yes. Your Go Cart app loads your live Shopify store, so your theme, content and installed Shopify apps keep working in the app. Native extras — the tab bar, live cart badge and promo banner — are added on top.",
+  },
+  {
+    id: "webview",
+    question: "What does \"WebView app\" mean?",
+    answer:
+      "Your Go Cart app shows your live Shopify website inside a real Android and iOS app, with native extras on top: the tab bar, cart badge, promo banner, search bar and push notifications. Anything you change on your website shows up in the app straight away. A fully native app with theme selection is coming soon.",
   },
   {
     id: "platforms",
@@ -214,7 +243,7 @@ export const goCartFaqs: Faq[] = [
     id: "push",
     question: "How do push notifications work?",
     answer:
-      "Shoppers who install your app and allow notifications can receive your pushes. Write a message in your Go Cart dashboard, add an image and a deep link to the page it should open, then send it right away or schedule it. On Pro you can target audience segments. Automations send pushes for you: a welcome push on every plan, plus abandoned-cart, order-shipped and back-in-stock pushes on Pro. Each plan includes a monthly push allowance.",
+      "Shoppers who install your app and allow notifications can receive your pushes. Write a message in your Go Cart dashboard, add an image and a deep link to the page it should open, then send it right away or schedule it. On WebView Growth you can target customers and audience segments. Automations send pushes for you: a welcome push on every plan, plus abandoned-cart, order-shipped and back-in-stock pushes on WebView Growth. Each plan includes a monthly push allowance.",
   },
   {
     id: "upi",
@@ -256,7 +285,7 @@ export const goCartComparison: GoCartComparisonRow[] = [
     label: "What the app shows",
     custom: "A separate app your developers build and maintain",
     builders: "Screens you rebuild in the builder's editor",
-    goCart: "Your live Shopify store, with native extras on top",
+    goCart: "Your live Shopify store in a WebView, with native extras on top",
   },
   {
     label: "Your theme & Shopify apps",

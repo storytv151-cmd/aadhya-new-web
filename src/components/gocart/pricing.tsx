@@ -14,7 +14,7 @@ export function GoCartPricing() {
               Simple plans, <GradientText>no commission</GradientText>
             </>
           }
-          description="One flat price, billed through Shopify. Pay yearly and get 2 months free."
+          description="WebView apps are live today: your website runs inside the app, so everything on your store works from day one. Native apps with theme selection come next, with their own plans."
         />
 
         <GoCartPricingPlans />
@@ -22,8 +22,8 @@ export function GoCartPricing() {
         <Reveal delay={0.1}>
           <p className="text-muted-foreground mx-auto mt-10 max-w-xl text-center text-sm">
             Prices in US dollars, on your Shopify invoice. Yearly billing charges{" "}
-            {YEARLY_MONTHS_CHARGED} months — 2 months free. No setup fee and no share of your sales.
-            Apple and Google developer-account fees are paid to them directly.
+            {YEARLY_MONTHS_CHARGED} months — 2 months free. No free trial, no setup fee and no share
+            of your sales. Apple and Google developer-account fees are paid to them directly.
           </p>
         </Reveal>
       </Container>

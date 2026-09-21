@@ -1,10 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Check } from "lucide-react";
+import Link from "next/link";
+import { Check, Clock } from "lucide-react";
 import { Button, Glass, Reveal } from "@/ui";
 import { cn, formatNumber } from "@/utils";
-import { GOCART_CURRENCY, goCartLinks, goCartPlans, yearlyPrice } from "@/content/gocart";
+import {
+  GOCART_CURRENCY, GOCART_PLAN_KIND, goCartComingSoon, goCartLinks, goCartPlans, yearlyPrice,
+} from "@/content/gocart";
 
 type Period = "monthly" | "yearly";
 
@@ -72,7 +75,12 @@ export function GoCartPricingPlans() {
         </p>
       </Reveal>
 
-      <div className="mx-auto mt-10 grid max-w-4xl gap-6 md:grid-cols-2">
+      <Reveal delay={0.05}>
+        <p className="text-primary mx-auto mt-12 max-w-4xl text-center text-xs font-semibold uppercase tracking-[0.14em]">
+          {GOCART_PLAN_KIND} · available now
+        </p>
+      </Reveal>
+      <div className="mx-auto mt-5 grid max-w-4xl gap-6 md:grid-cols-2">
         {goCartPlans.map((plan, index) => (
           <Reveal key={plan.id} delay={index * 0.08} className="h-full">
             <Glass
@@ -126,7 +134,36 @@ export function GoCartPricingPlans() {
             </Glass>
           </Reveal>
         ))}
+
       </div>
+
+      {/* Native: its own line of plans later. Shown so merchants know it's coming — nothing to buy. */}
+      <Reveal delay={0.1}>
+        <div className="border-border/70 mx-auto mt-6 grid max-w-4xl gap-6 rounded-[2rem] border border-dashed p-6 sm:p-8 md:grid-cols-[1fr_1.1fr] md:items-center">
+          <div>
+            <div className="flex flex-wrap items-center gap-3">
+              <h3 className="text-xl font-semibold tracking-tight">{goCartComingSoon.name}</h3>
+              <span className="border-border text-muted-foreground inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold">
+                <Clock aria-hidden="true" className="size-3.5" />
+                Coming soon
+              </span>
+            </div>
+            <p className="text-muted-foreground mt-2 text-sm">{goCartComingSoon.tagline}</p>
+            <p className="text-muted-foreground mt-3 text-sm">Plans and prices announced at launch.</p>
+            <Button asChild className="mt-6 w-full sm:w-auto" variant="glass">
+              <Link href="/contact">Tell me when it&rsquo;s ready</Link>
+            </Button>
+          </div>
+          <ul className="space-y-3">
+            {goCartComingSoon.features.map((feature) => (
+              <li key={feature} className="text-muted-foreground flex items-start gap-3 text-sm">
+                <Check aria-hidden="true" className="mt-0.5 size-4 shrink-0 opacity-60" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Reveal>
     </>
   );
 }
