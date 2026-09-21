@@ -344,3 +344,9 @@ export const goCartReviews: GoCartReview[] = [];
 
 /** Shopify App Store listing, once it is public — used for "Rate us" and review links. */
 export const goCartAppStoreUrl: string | null = null;
+
+/** The walkthrough video (also the Shopify App Store screencast): setup, phone preview, a push, plans. */
+export const goCartDemoVideo = {
+  src: "/videos/go-cart-demo.mp4",
+  poster: "/videos/go-cart-demo.jpg",
+} as const;

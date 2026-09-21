@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GoCartBenefits } from "@/components/gocart/benefits";
 import { GoCartComparison } from "@/components/gocart/comparison";
 import { GoCartCta } from "@/components/gocart/cta";
+import { GoCartDemo } from "@/components/gocart/demo-video";
 import { GoCartFaq } from "@/components/gocart/faq";
 import { GoCartFeatures } from "@/components/gocart/features";
 import { GoCartHero } from "@/components/gocart/hero";
@@ -33,6 +34,7 @@ export default function GoCartPage() {
       <GoCartHero />
       <GoCartComparison />
       <GoCartHowItWorks />
+      <GoCartDemo />
       <GoCartFeatures />
       <GoCartBenefits />
       <GoCartIntegrations />
