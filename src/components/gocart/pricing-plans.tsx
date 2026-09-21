@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import { Button, Glass, Reveal } from "@/ui";
 import { cn, formatNumber } from "@/utils";
-import { goCartLinks, goCartPlans, yearlyPrice } from "@/content/gocart";
+import { GOCART_CURRENCY, goCartLinks, goCartPlans, yearlyPrice } from "@/content/gocart";
 
 type Period = "monthly" | "yearly";
 
@@ -13,12 +13,12 @@ const periods: { id: Period; label: string }[] = [
   { id: "yearly", label: "Yearly" },
 ];
 
-/** ₹1,499 — Indian digit grouping, whole rupees. */
-const formatInr = (amount: number) =>
+/** $29 — whole dollars. */
+const formatPrice = (amount: number) =>
   formatNumber(
     amount,
-    { style: "currency", currency: "INR", minimumFractionDigits: 0, maximumFractionDigits: 0 },
-    "en-IN",
+    { style: "currency", currency: GOCART_CURRENCY, minimumFractionDigits: 0, maximumFractionDigits: 0 },
+    "en-US",
   );
 
 /** Billing-period toggle + the two plan cards. Server-rendered on "monthly". */
@@ -96,7 +96,7 @@ export function GoCartPricingPlans() {
 
               <p className="mt-6 flex flex-wrap items-baseline gap-x-1.5">
                 <span className="text-4xl font-bold tracking-tight sm:text-5xl">
-                  {formatInr(yearly ? yearlyPrice(plan) : plan.monthly)}
+                  {formatPrice(yearly ? yearlyPrice(plan) : plan.monthly)}
                 </span>
                 <span className="text-muted-foreground text-sm">/ {yearly ? "year" : "month"}</span>
               </p>
@@ -110,7 +110,7 @@ export function GoCartPricingPlans() {
                 variant={plan.featured ? "default" : "glass"}
               >
                 <a href={goCartLinks.register}>
-                  Start free trial<span className="sr-only"> on the {plan.name} plan</span>
+                  Get started<span className="sr-only"> with the {plan.name} plan</span>
                 </a>
               </Button>
 

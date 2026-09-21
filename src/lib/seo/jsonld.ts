@@ -1,4 +1,4 @@
-import { goCartPlans } from "@/content/gocart";
+import { GOCART_CURRENCY, goCartPlans } from "@/content/gocart";
 import { siteConfig } from "@/lib/site";
 
 export function organizationJsonLd() {
@@ -49,11 +49,11 @@ export function goCartJsonLd({ description }: { description: string }) {
       name: `Go Cart ${plan.name}`,
       url: `${url}#pricing`,
       price: plan.monthly.toFixed(2),
-      priceCurrency: "INR",
+      priceCurrency: GOCART_CURRENCY,
       priceSpecification: {
         "@type": "UnitPriceSpecification",
         price: plan.monthly.toFixed(2),
-        priceCurrency: "INR",
+        priceCurrency: GOCART_CURRENCY,
         billingDuration: "P1M",
         unitText: "MONTH",
       },

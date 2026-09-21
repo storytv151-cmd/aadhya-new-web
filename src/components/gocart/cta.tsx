@@ -18,13 +18,14 @@ export function GoCartCta() {
                 Put your store in your <GradientText>customers&rsquo; pockets</GradientText>
               </h2>
               <p className="text-muted-foreground mx-auto mt-5 max-w-xl text-pretty text-lg">
-                Start your 14-day free trial — connect your Shopify store and start shaping your app.
+                Connect your Shopify store, shape your app and see it on your phone before it goes
+                to the stores.
               </p>
               <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Magnetic strength={0.35} className="w-full sm:w-auto">
                   <Button asChild size="lg" className="w-full px-6 sm:w-auto sm:px-8">
                     <a href={goCartLinks.register}>
-                      Start free trial
+                      Get started
                       <ArrowRight className="size-4" />
                     </a>
                   </Button>

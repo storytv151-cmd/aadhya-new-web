@@ -73,7 +73,7 @@ export function GoCartHero() {
               <Magnetic strength={0.3} className="w-full sm:w-auto">
                 <Button asChild size="lg" className="w-full px-6 sm:w-auto sm:px-8">
                   <a href={goCartLinks.register}>
-                    Start 14-day free trial
+                    Get started
                     <ArrowRight className="size-4" />
                   </a>
                 </Button>
