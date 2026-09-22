@@ -43,7 +43,7 @@ export const products: Product[] = [
     name: "Go Cart",
     category: "SaaS Platform",
     status: "Live",
-    tagline: "Web to App Builder — your Shopify store as a native app.",
+    tagline: "Web to App Builder — your Shopify store as a mobile app.",
     summary:
       "Turn your Shopify store into a branded Android and iOS app — with push notifications, automations, India-ready checkout and app analytics.",
     features: [
@@ -63,7 +63,7 @@ export const products: Product[] = [
         icon: "zap",
         title: "Automations",
         description:
-          "Welcome push, abandoned-cart reminders, order-shipped updates and back-in-stock alerts (the last three on Pro).",
+          "Welcome push, abandoned-cart reminders, order-shipped updates and back-in-stock alerts (the last three on WebView Growth).",
       },
       {
         icon: "indian-rupee",

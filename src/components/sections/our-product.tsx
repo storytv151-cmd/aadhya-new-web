@@ -94,7 +94,7 @@ const showcase: Record<string, { headline: ReactNode; mockup: ReactNode }> = {
   gocart: {
     headline: (
       <>
-        Go Cart — your Shopify store as a <GradientText>native app</GradientText>
+        Go Cart — your Shopify store as a <GradientText>mobile app</GradientText>
       </>
     ),
     mockup: <GoCartMockup />,

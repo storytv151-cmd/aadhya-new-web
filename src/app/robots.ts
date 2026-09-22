@@ -6,7 +6,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/admin", "/api/"],
+      // The Go Cart dashboard and API are separate apps served on this host.
+      disallow: ["/admin", "/api/", "/GoCart/app/", "/GoCart/api/"],
     },
     sitemap: `${siteConfig.url}/sitemap.xml`,
     host: siteConfig.url,

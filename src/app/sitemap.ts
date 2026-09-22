@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site";
 
-// Indexable pages only (privacy/terms are noindex). /GoCart is this site's Go Cart landing
-// page; the separately hosted apps (/DevStore, and the Go Cart dashboard + API under
-// /GoCart/app and /GoCart/api) are not part of this site and are deliberately not listed.
+// Indexable pages only (/terms is noindex). /GoCart is this site's Go Cart landing page;
+// the separately hosted apps (/DevStore, and the Go Cart dashboard + API under /GoCart/app
+// and /GoCart/api) are not part of this site and are deliberately not listed.
 const routes = [
   "",
   "/services",
@@ -14,6 +14,7 @@ const routes = [
   "/blog",
   "/contact",
   "/careers",
+  "/privacy",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

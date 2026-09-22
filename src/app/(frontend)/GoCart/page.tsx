@@ -11,6 +11,7 @@ import { GoCartIntegrations } from "@/components/gocart/integrations";
 import { GoCartPricing } from "@/components/gocart/pricing";
 import { GoCartReviews } from "@/components/gocart/reviews";
 import { JsonLd } from "@/components/seo/json-ld";
+import { goCartDemoVideo } from "@/content/gocart";
 import { goCartJsonLd } from "@/lib/seo/jsonld";
 import { pageMetadata } from "@/lib/seo/metadata";
 
@@ -25,6 +26,13 @@ export const metadata: Metadata = pageMetadata({
   title: "Go Cart — Shopify store to mobile app",
   description,
   path: "/GoCart",
+  // The demo video's poster frame (1600×900) doubles as the share image.
+  image: {
+    url: goCartDemoVideo.poster,
+    width: 1600,
+    height: 900,
+    alt: "Go Cart — a Shopify store running as a branded Android and iOS app",
+  },
 });
 
 export default function GoCartPage() {

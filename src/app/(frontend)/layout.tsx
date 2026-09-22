@@ -35,8 +35,10 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
   },
+  // No site-wide share image yet, so the small "summary" card; pages with an image pass it
+  // to pageMetadata() and get the large card.
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: siteConfig.title,
     description: siteConfig.description,
   },

@@ -62,7 +62,12 @@ export default function PrivacyPage() {
             <li>your name, email address, phone number and a hashed password (never the password itself);</li>
             <li>your Shopify store domain and the access token Shopify issues when you install the app;</li>
             <li>your app settings — name, colours, tabs, banner, notification and automation setup;</li>
-            <li>billing records: plan, status and payment history. Card details are handled by Razorpay or Shopify and never reach our servers.</li>
+            <li>
+              billing records: plan, status and payment history. If you installed Go Cart from
+              the Shopify App Store you are billed by Shopify; if you signed up outside Shopify,
+              Razorpay processes your subscription payments — either way, card details never
+              reach our servers.
+            </li>
           </ul>
           <p>
             With your permission the app reads — and only reads — your Shopify products, orders,
@@ -97,10 +102,11 @@ export default function PrivacyPage() {
 
         <Section title="Who else processes this data">
           <p>
-            Shopify (store data and app billing), Google Firebase Cloud Messaging (delivering push
-            notifications), DigitalOcean (the servers the app runs on), Razorpay (subscription
-            payments) and our email provider (contact-form and login emails). Each receives only
-            what its job needs.
+            Shopify (store data, and billing for merchants who installed from the Shopify App
+            Store), Google Firebase Cloud Messaging (delivering push notifications), DigitalOcean
+            (the servers the app runs on), Razorpay (subscription payments, only for merchants who
+            signed up outside Shopify) and our email provider (contact-form and login emails).
+            Each receives only what its job needs.
           </p>
         </Section>
 
