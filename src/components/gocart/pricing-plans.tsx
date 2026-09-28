@@ -44,7 +44,7 @@ export function GoCartPricingPlans() {
                   aria-pressed={active}
                   onClick={() => setPeriod(option.id)}
                   className={cn(
-                    "inline-flex h-10 items-center gap-2 rounded-full px-4 text-sm font-medium transition-colors duration-300 sm:px-5",
+                    "inline-flex h-11 items-center gap-2 rounded-full px-4 text-sm font-medium transition-colors duration-300 sm:px-5",
                     active
                       ? "bg-primary text-primary-foreground shadow-glow"
                       : "text-muted-foreground hover:text-foreground",
@@ -74,7 +74,17 @@ export function GoCartPricingPlans() {
 
       <div className="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
         {goCartPlans.map((plan, index) => (
-          <Reveal key={plan.id} delay={index * 0.08} className="h-full">
+          <Reveal
+            key={plan.id}
+            delay={index * 0.08}
+            className={cn(
+              "h-full",
+              // Two columns at md: centre an odd last card instead of leaving it alone on the left.
+              index === goCartPlans.length - 1 &&
+                goCartPlans.length % 2 === 1 &&
+                "md:col-span-2 md:mx-auto md:w-[calc(50%-0.75rem)] lg:col-span-1 lg:w-auto",
+            )}
+          >
             <Glass
               specular
               interactive

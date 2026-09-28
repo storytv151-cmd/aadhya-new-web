@@ -57,24 +57,29 @@ export function Pricing() {
           description="Flexible engagement models tailored to your goals, timeline and budget — these are starting points, not fixed menus."
         />
 
-        <div className="mt-14 grid items-center gap-4 lg:grid-cols-3">
+        {/* Equal-height cards; the featured one stands out by scale, glass level and badge. */}
+        <div className="mt-14 grid gap-4 lg:grid-cols-3">
           {tiers.map((tier, index) => (
-            <Reveal key={tier.name} delay={index * 0.08}>
+            <Reveal key={tier.name} delay={index * 0.08} className="h-full">
               <Glass
                 specular
                 interactive
                 strength={tier.featured ? "floating" : "default"}
                 className={cn(
-                  "relative flex h-full flex-col rounded-[2rem] p-8",
-                  tier.featured && "lg:scale-[1.04] lg:py-10",
+                  "flex h-full flex-col rounded-[2rem] p-8",
+                  tier.featured && "ring-primary/40 ring-1 lg:scale-[1.04]",
                 )}
               >
-                {tier.featured && (
-                  <span className="bg-primary text-primary-foreground shadow-glow absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-xs font-semibold">
-                    Most popular
-                  </span>
-                )}
-                <div className="text-muted-foreground text-sm font-medium">{tier.name}</div>
+                {/* The badge sits in the name row (as on the Go Cart plans): positioned absolutely
+                    it landed inside the card on top of the name, since Glass clips its edges. */}
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="text-muted-foreground text-sm font-medium">{tier.name}</div>
+                  {tier.featured && (
+                    <span className="bg-primary text-primary-foreground shadow-glow rounded-full px-3 py-1 text-xs font-semibold">
+                      Most popular
+                    </span>
+                  )}
+                </div>
                 <div className="mt-2 text-4xl font-bold tracking-tight">{tier.price}</div>
                 <p className="text-muted-foreground mt-2 text-sm">{tier.tagline}</p>
                 <ul className="mt-6 flex-1 space-y-3">
