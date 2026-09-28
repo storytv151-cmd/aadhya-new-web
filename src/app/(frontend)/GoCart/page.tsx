@@ -11,7 +11,7 @@ import { GoCartIntegrations } from "@/components/gocart/integrations";
 import { GoCartPricing } from "@/components/gocart/pricing";
 import { GoCartReviews } from "@/components/gocart/reviews";
 import { JsonLd } from "@/components/seo/json-ld";
-import { goCartDemoVideo } from "@/content/gocart";
+import { goCartDemoVideo, goCartFromPrice } from "@/content/gocart";
 import { goCartJsonLd } from "@/lib/seo/jsonld";
 import { pageMetadata } from "@/lib/seo/metadata";
 
@@ -20,7 +20,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
 // nginx; this site must not define routes under them.
 
 const description =
-  "Turn your Shopify store into a branded Android and iOS app with Go Cart — push notifications, automations, India-ready UPI checkout and app analytics. Plans from $29/month, billed through Shopify, with no commission on your sales.";
+  `Turn your Shopify store into a branded Android and iOS app with Go Cart — push notifications, automations, India-ready UPI checkout and app analytics. Plans from $${goCartFromPrice}/month with unlimited push, billed through Shopify, with no commission on your sales.`;
 
 export const metadata: Metadata = pageMetadata({
   title: "Go Cart — Shopify store to mobile app",
