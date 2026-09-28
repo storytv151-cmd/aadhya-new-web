@@ -51,7 +51,7 @@ export async function LatestBlog() {
                   <h3
                     className={cn(
                       "mt-2 text-2xl font-semibold tracking-tight transition-colors",
-                      featured.href && "group-hover:text-primary",
+                      featured.href && "group-hover:text-primary-text",
                     )}
                   >
                     {featured.title}
@@ -62,7 +62,7 @@ export async function LatestBlog() {
                   {featured.href && (
                     <Link
                       href={featured.href}
-                      className="text-primary mt-5 inline-flex items-center gap-1 text-sm font-medium"
+                      className="text-primary-text mt-5 inline-flex items-center gap-1 text-sm font-medium"
                     >
                       Read more <ArrowRight className="size-4" />
                     </Link>

@@ -158,7 +158,7 @@ export function ContactForm() {
       )}
 
       <div className="flex flex-wrap items-center gap-4">
-        <Button type="submit" size="lg" variant="gradient" disabled={pending}>
+        <Button type="submit" size="lg" disabled={pending}>
           {pending ? "Sending…" : "Send message"}
         </Button>
         <p className="text-muted-foreground text-xs">

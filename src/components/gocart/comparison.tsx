@@ -34,7 +34,7 @@ export function GoCartComparison() {
                 <p className="bg-primary/[0.08] text-foreground mt-3 flex items-start gap-2 rounded-xl px-3 py-2.5 text-sm leading-relaxed">
                   <Check aria-hidden="true" className="text-primary mt-0.5 size-4 shrink-0" />
                   <span>
-                    <span className="text-primary font-semibold">Go Cart: </span>
+                    <span className="text-primary-text font-semibold">Go Cart: </span>
                     {row.goCart}
                   </span>
                 </p>
@@ -66,7 +66,7 @@ export function GoCartComparison() {
                       scope="col"
                       className={cn(
                         "px-5 py-5 font-semibold tracking-tight sm:px-6",
-                        col.key === "goCart" ? "text-primary" : "text-foreground",
+                        col.key === "goCart" ? "text-primary-text" : "text-foreground",
                       )}
                     >
                       {col.label}

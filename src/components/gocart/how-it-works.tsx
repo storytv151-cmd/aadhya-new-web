@@ -28,7 +28,7 @@ export function GoCartHowItWorks() {
                       <span className="glass-floating text-primary flex size-14 items-center justify-center rounded-[1.1rem]">
                         <Icon aria-hidden="true" className="size-6" />
                       </span>
-                      <span className="text-primary text-xs font-semibold uppercase tracking-widest">
+                      <span className="text-primary-text text-xs font-semibold uppercase tracking-widest">
                         Step {index + 1}
                       </span>
                     </div>

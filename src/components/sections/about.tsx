@@ -53,13 +53,13 @@ export function About() {
               className="absolute -inset-8 -z-10 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,var(--glow),transparent_66%)] opacity-[0.1] blur-3xl"
             />
             <Glass strength="floating" specular className="rounded-[2rem] p-9">
-              <span className="text-primary/25 text-6xl font-semibold leading-none">&ldquo;</span>
+              <span aria-hidden="true" className="text-primary/25 text-6xl font-semibold leading-none">&ldquo;</span>
               <p className="mt-2 text-balance text-xl font-medium leading-relaxed tracking-tight">
                 We treat every product like our own — crafted with intent, engineered to last, and
                 shipped with care.
               </p>
               <div className="mt-8 flex items-center gap-3 border-t border-white/[0.06] pt-6">
-                <span className="from-brand-from to-brand-to flex size-10 items-center justify-center rounded-full bg-gradient-to-br text-sm font-semibold text-white">
+                <span aria-hidden="true" className="from-brand-from to-brand-to flex size-10 items-center justify-center rounded-full bg-gradient-to-br text-sm font-semibold text-white">
                   A
                 </span>
                 <div>

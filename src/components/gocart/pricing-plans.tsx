@@ -54,8 +54,8 @@ export function GoCartPricingPlans() {
                   {option.id === "yearly" && (
                     <span
                       className={cn(
-                        "rounded-full px-2 py-0.5 text-[11px] font-semibold",
-                        active ? "bg-white/20 text-white" : "bg-primary/12 text-primary",
+                        "rounded-full px-2 py-0.5 text-xs font-semibold",
+                        active ? "bg-white/20 text-white" : "bg-primary/12 text-primary-text",
                       )}
                     >
                       2 months free

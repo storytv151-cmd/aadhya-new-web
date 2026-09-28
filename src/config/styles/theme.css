@@ -23,6 +23,9 @@
 
   --primary: #0467ff;
   --primary-foreground: #ffffff;
+  /* Blue for TEXT (links, labels, tinted chips). #0467ff is only ~3.8:1 on the tinted
+     chips; this keeps ≥4.5:1 (WCAG AA). Icons and fills keep --primary. */
+  --primary-text: #0057d9;
   --glow: #3d8bff;
   --accent-cyan: #38d7ff;
   --accent-indigo: #5e6dff;
@@ -99,6 +102,8 @@
 
   --primary: #0467ff;
   --primary-foreground: #ffffff;
+  /* #0467ff text on these near-black surfaces is 3.2–4.2:1; the glow blue is ≥4.6:1. */
+  --primary-text: #3d8bff;
   --glow: #3d8bff;
   --accent-cyan: #38d7ff;
   --accent-indigo: #5e6dff;
@@ -158,6 +163,7 @@
   --color-surface-3: var(--surface-3);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-text: var(--primary-text);
   --color-glow: var(--glow);
   --color-accent-cyan: var(--accent-cyan);
   --color-accent-indigo: var(--accent-indigo);

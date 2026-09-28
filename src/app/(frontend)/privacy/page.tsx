@@ -24,7 +24,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 function Mail() {
   return (
-    <a className="text-primary font-medium" href={`mailto:${siteConfig.contact.email}`}>
+    <a className="text-primary-text font-medium" href={`mailto:${siteConfig.contact.email}`}>
       {siteConfig.contact.email}
     </a>
   );

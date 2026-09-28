@@ -24,7 +24,7 @@ export default function CareersPage() {
         <p className="text-muted-foreground mx-auto max-w-xl">
           We don&rsquo;t have any public openings listed right now, but we&rsquo;d still love to
           hear from great people. Send your portfolio or CV to{" "}
-          <a className="text-primary font-medium" href={`mailto:${siteConfig.contact.email}`}>
+          <a className="text-primary-text font-medium" href={`mailto:${siteConfig.contact.email}`}>
             {siteConfig.contact.email}
           </a>
           .

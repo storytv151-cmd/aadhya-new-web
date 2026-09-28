@@ -16,7 +16,7 @@ export function Hero() {
               href={hero.announcement.href}
               className="border-border text-muted-foreground hover:border-primary/50 hover:text-foreground group inline-flex max-w-full items-center gap-2 rounded-full border py-1 pl-1 pr-3.5 text-xs font-medium transition-colors"
             >
-              <span className="bg-primary text-primary-foreground rounded-full px-2 py-0.5 text-[11px] font-semibold">
+              <span className="bg-primary text-primary-foreground rounded-full px-2 py-0.5 text-xs font-semibold">
                 {hero.announcement.badge}
               </span>
               <span className="truncate">{hero.announcement.text}</span>
@@ -55,7 +55,7 @@ export function Hero() {
             </Magnetic>
             <Link
               href={hero.secondaryCta.href}
-              className="text-foreground hover:text-primary group inline-flex items-center gap-1.5 text-sm font-medium transition-colors"
+              className="text-foreground hover:text-primary-text group inline-flex items-center gap-1.5 text-sm font-medium transition-colors"
             >
               {hero.secondaryCta.label}
               <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />

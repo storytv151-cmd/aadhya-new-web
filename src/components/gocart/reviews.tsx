@@ -62,7 +62,7 @@ export function GoCartReviews() {
                     <p className="text-muted-foreground">
                       {review.role},{" "}
                       {review.url ? (
-                        <a href={review.url} className="text-primary hover:underline" rel="noopener noreferrer" target="_blank">
+                        <a href={review.url} className="text-primary-text hover:underline" rel="noopener noreferrer" target="_blank">
                           {review.store}
                         </a>
                       ) : (

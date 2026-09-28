@@ -133,7 +133,7 @@ export function Navbar() {
                             href={link.href}
                             className={cn(
                               "hover:bg-foreground/5 rounded-2xl px-4 py-3 text-base font-medium transition-colors",
-                              isActive(link.href) && "text-primary",
+                              isActive(link.href) && "text-primary-text",
                             )}
                           >
                             {link.label}
@@ -159,7 +159,7 @@ export function Navbar() {
                           href={link.href}
                           className={cn(
                             "hover:bg-foreground/5 rounded-2xl px-4 py-3 text-base font-medium transition-colors",
-                            isActive(link.href) && "text-primary",
+                            isActive(link.href) && "text-primary-text",
                           )}
                         >
                           {link.label}

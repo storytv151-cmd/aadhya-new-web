@@ -110,10 +110,10 @@ function ProductSpotlight({ product, reverse }: { product: Product; reverse: boo
       <div>
         <Reveal direction="none">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="bg-primary/12 text-primary rounded-full px-3 py-1 text-xs font-medium">
+            <span className="bg-primary/12 text-primary-text rounded-full px-3 py-1 text-xs font-medium">
               {product.category}
             </span>
-            <span className="bg-foreground/[0.06] text-muted-foreground rounded-full px-3 py-1 text-xs font-medium">
+            <span className="bg-foreground/[0.06] text-foreground-secondary rounded-full px-3 py-1 text-xs font-medium">
               {product.status}
             </span>
           </div>

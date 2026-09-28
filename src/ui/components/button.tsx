@@ -25,7 +25,7 @@ export const buttonVariants = cva(
         glass: "glass glass-interactive text-foreground",
         outline: "glass-surface glass-interactive text-foreground",
         ghost: "text-foreground hover:bg-foreground/[0.06]",
-        link: "text-primary underline-offset-4 hover:underline",
+        link: "text-primary-text underline-offset-4 hover:underline",
       },
       size: {
         sm: "h-9 px-4 text-sm",
