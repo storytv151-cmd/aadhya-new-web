@@ -70,7 +70,7 @@ export function GoCartMockup({ className }: { className?: string }) {
         </div>
 
         {/* bottom tab bar with live cart badge */}
-        <div className="flex items-center justify-around border-t border-white/[0.06] px-4 pb-5 pt-3">
+        <div className="flex items-center justify-around border-t border-foreground/[0.06] px-4 pb-5 pt-3">
           {tabs.map((Icon, i) => (
             <span
               key={i}

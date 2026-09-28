@@ -58,7 +58,7 @@ export function About() {
                 We treat every product like our own — crafted with intent, engineered to last, and
                 shipped with care.
               </p>
-              <div className="mt-8 flex items-center gap-3 border-t border-white/[0.06] pt-6">
+              <div className="mt-8 flex items-center gap-3 border-t border-foreground/[0.06] pt-6">
                 <span aria-hidden="true" className="from-brand-from to-brand-to flex size-10 items-center justify-center rounded-full bg-gradient-to-br text-sm font-semibold text-white">
                   A
                 </span>

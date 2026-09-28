@@ -33,7 +33,7 @@ function DevStoreMockup() {
         className="overflow-hidden rounded-[1.5rem]"
       >
         {/* browser bar */}
-        <div className="flex items-center gap-3 border-b border-white/[0.06] px-4 py-3">
+        <div className="flex items-center gap-3 border-b border-foreground/[0.06] px-4 py-3">
           <span className="flex gap-1.5">
             <span className="bg-foreground/15 size-2.5 rounded-full" />
             <span className="bg-foreground/15 size-2.5 rounded-full" />

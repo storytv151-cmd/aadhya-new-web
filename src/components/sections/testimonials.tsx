@@ -32,7 +32,7 @@ export async function Testimonials() {
                 <p className="text-foreground-secondary mt-4 flex-1 text-pretty leading-relaxed">
                   {testimonial.quote}
                 </p>
-                <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
+                <div className="mt-6 flex items-center gap-3 border-t border-foreground/10 pt-5">
                   <div className="from-brand-from to-brand-to flex size-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br text-sm font-semibold text-white">
                     {testimonial.name.charAt(0)}
                   </div>

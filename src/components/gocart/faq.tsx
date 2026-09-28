@@ -42,7 +42,7 @@ export function GoCartFaq() {
           <div className="glass rounded-[2rem] px-6 sm:px-8">
             <Accordion type="single" collapsible className="w-full">
               {goCartFaqs.map((faq) => (
-                <AccordionItem key={faq.id} value={faq.id} className="border-white/10">
+                <AccordionItem key={faq.id} value={faq.id} className="border-foreground/10">
                   <AccordionTrigger>{faq.question}</AccordionTrigger>
                   <AccordionContent>{faq.answer}</AccordionContent>
                 </AccordionItem>
