@@ -20,7 +20,7 @@ export default function PortfolioPage() {
         title="Work we're proud of"
         description="A selection of the products we've designed, built and shipped for our clients."
       />
-      <Portfolio />
+      <Portfolio showHeader={false} />
       <Technologies />
       <CTA />
     </main>

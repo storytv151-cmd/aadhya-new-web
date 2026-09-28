@@ -20,7 +20,7 @@ export default function AboutPage() {
         title="A software studio built on craft and trust"
         description="We design, build and distribute software products and services that solve real problems and drive growth."
       />
-      <About />
+      <About showMoreLink={false} />
       <WhyChooseUs />
       <CTA />
     </main>

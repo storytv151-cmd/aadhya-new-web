@@ -1,35 +1,38 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Newspaper } from "lucide-react";
 import { Button, Container, Eyebrow, Glass, GradientText, Reveal, Section } from "@/ui";
 import { cn, formatDate, formatReadingTime } from "@/utils";
 import { getLatestPosts } from "@/lib/content";
 
-export async function LatestBlog() {
+/** `showHeader={false}` on /blog, where the page header already introduces the posts. */
+export async function LatestBlog({ showHeader = true }: { showHeader?: boolean } = {}) {
   const posts = await getLatestPosts(3);
   const [featured, ...rest] = posts;
 
   return (
     <Section id="blog">
       <Container>
-        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-          <div className="max-w-xl">
-            <Reveal direction="none">
-              <Eyebrow>From the blog</Eyebrow>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05]">
-                Latest <GradientText>insights</GradientText>
-              </h2>
+        {showHeader && (
+          <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+            <div className="max-w-xl">
+              <Reveal direction="none">
+                <Eyebrow>From the blog</Eyebrow>
+              </Reveal>
+              <Reveal delay={0.05}>
+                <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05]">
+                  Latest <GradientText>insights</GradientText>
+                </h2>
+              </Reveal>
+            </div>
+            <Reveal delay={0.1}>
+              <Button asChild variant="outline">
+                <Link href="/blog">Read the blog</Link>
+              </Button>
             </Reveal>
           </div>
-          <Reveal delay={0.1}>
-            <Button asChild variant="outline">
-              <Link href="/blog">Read the blog</Link>
-            </Button>
-          </Reveal>
-        </div>
+        )}
 
-        <div className="mt-14 grid gap-4 lg:grid-cols-2">
+        <div className={cn("grid gap-4 lg:grid-cols-2", showHeader && "mt-14")}>
           {/* Featured */}
           {featured && (
             <Reveal>
@@ -39,7 +42,9 @@ export async function LatestBlog() {
                 className="group flex h-full flex-col overflow-hidden rounded-[2rem]"
               >
                 <div className="from-brand-from/20 via-brand-via/10 to-brand-to/20 relative flex aspect-[16/9] items-center justify-center bg-gradient-to-br">
-                  <span className="glass-floating absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-medium">
+                  {/* No cover images yet — a quiet mark instead of an empty block. */}
+                  <Newspaper aria-hidden="true" className="text-foreground/15 size-16" strokeWidth={1.25} />
+                  <span className="bg-background/80 text-foreground shadow-soft absolute left-4 top-4 rounded-full border border-[var(--glass-border)] px-3 py-1 text-xs font-medium backdrop-blur-md">
                     {featured.category}
                   </span>
                 </div>

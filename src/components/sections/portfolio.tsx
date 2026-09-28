@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Button, Container, Eyebrow, Glass, GradientText, Reveal, Section } from "@/ui";
 import type { PortfolioProject } from "@/types";
 import { getPortfolioProjects } from "@/lib/content";
+import { cn } from "@/utils";
 
 function ProjectCard({ project }: { project: PortfolioProject }) {
   return (
@@ -30,7 +31,8 @@ function ProjectCard({ project }: { project: PortfolioProject }) {
             <span className="text-foreground/15 text-6xl font-bold">{project.title.charAt(0)}</span>
           </div>
         )}
-        <span className="glass-floating absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-medium">
+        {/* A solid-ish theme fill, not clear glass: the chip sits on busy artwork. */}
+        <span className="bg-background/80 text-foreground shadow-soft absolute left-4 top-4 rounded-full border border-[var(--glass-border)] px-3 py-1 text-xs font-medium backdrop-blur-md">
           {project.category}
         </span>
       </div>
@@ -57,32 +59,35 @@ function ProjectCard({ project }: { project: PortfolioProject }) {
   );
 }
 
-export async function Portfolio() {
+/** `showHeader={false}` on /portfolio, where the page header already says all of this. */
+export async function Portfolio({ showHeader = true }: { showHeader?: boolean } = {}) {
   const projects = await getPortfolioProjects();
 
   return (
     <Section id="portfolio">
       <Container>
-        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-          <div className="max-w-xl">
-            <Reveal direction="none">
-              <Eyebrow>Project showcase</Eyebrow>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05]">
-                Work we&rsquo;re <GradientText>proud of</GradientText>
-              </h2>
+        {showHeader && (
+          <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+            <div className="max-w-xl">
+              <Reveal direction="none">
+                <Eyebrow>Project showcase</Eyebrow>
+              </Reveal>
+              <Reveal delay={0.05}>
+                <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05]">
+                  Work we&rsquo;re <GradientText>proud of</GradientText>
+                </h2>
+              </Reveal>
+            </div>
+            <Reveal delay={0.1}>
+              <Button asChild variant="outline">
+                <Link href="/portfolio">View all projects</Link>
+              </Button>
             </Reveal>
           </div>
-          <Reveal delay={0.1}>
-            <Button asChild variant="outline">
-              <Link href="/portfolio">View all projects</Link>
-            </Button>
-          </Reveal>
-        </div>
+        )}
 
         {/* Ordered app → game → website, so each row of three reads as one category. */}
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={cn("grid gap-5 sm:grid-cols-2 lg:grid-cols-3", showHeader && "mt-14")}>
           {projects.map((project, index) => (
             <Reveal key={project.slug} delay={0.05 + (index % 3) * 0.06}>
               {project.href ? (

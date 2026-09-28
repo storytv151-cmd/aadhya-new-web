@@ -3,7 +3,8 @@ import { ArrowRight, Check } from "lucide-react";
 import { Button, Container, Eyebrow, Glass, Reveal, Section } from "@/ui";
 import { getAboutContent } from "@/lib/content";
 
-export function About() {
+/** `showMoreLink={false}` on /about itself, where "Learn more about us" would link to the same page. */
+export function About({ showMoreLink = true }: { showMoreLink?: boolean } = {}) {
   const about = getAboutContent();
 
   return (
@@ -35,14 +36,16 @@ export function About() {
               ))}
             </ul>
           </Reveal>
-          <Reveal delay={0.35}>
-            <Button asChild variant="outline" className="mt-9">
-              <Link href="/about">
-                Learn more about us
-                <ArrowRight className="size-4" />
-              </Link>
-            </Button>
-          </Reveal>
+          {showMoreLink && (
+            <Reveal delay={0.35}>
+              <Button asChild variant="outline" className="mt-9">
+                <Link href="/about">
+                  Learn more about us
+                  <ArrowRight className="size-4" />
+                </Link>
+              </Button>
+            </Reveal>
+          )}
         </div>
 
         {/* Calm editorial visual — a single elegant glass statement, no bars or stats */}

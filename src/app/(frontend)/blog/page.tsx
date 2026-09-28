@@ -18,7 +18,7 @@ export default function BlogPage() {
         title="Insights & ideas"
         description="Notes on engineering, design and growing digital products."
       />
-      <LatestBlog />
+      <LatestBlog showHeader={false} />
     </main>
   );
 }
