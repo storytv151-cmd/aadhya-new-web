@@ -20,17 +20,18 @@ export function CTA() {
                 Let&rsquo;s turn your idea into a software masterpiece. Tell us about your project
                 and we&rsquo;ll get back to you fast.
               </p>
-              <div className="mt-9 flex flex-wrap justify-center gap-3">
-                <Magnetic strength={0.35}>
-                  <Button asChild size="lg">
+              {/* Full-width stacked on phones, side by side from sm — as on the Go Cart CTA. */}
+              <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <Magnetic strength={0.35} className="w-full sm:w-auto">
+                  <Button asChild size="lg" className="w-full sm:w-auto">
                     <Link href="/contact">
                       Let&rsquo;s Connect
                       <ArrowRight className="size-4" />
                     </Link>
                   </Button>
                 </Magnetic>
-                <Magnetic strength={0.35}>
-                  <Button asChild size="lg" variant="glass">
+                <Magnetic strength={0.35} className="w-full sm:w-auto">
+                  <Button asChild size="lg" variant="glass" className="w-full sm:w-auto">
                     <Link href="/portfolio">View our work</Link>
                   </Button>
                 </Magnetic>

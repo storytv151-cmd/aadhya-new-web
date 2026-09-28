@@ -23,7 +23,8 @@ export function GoCartFaq() {
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05]">
-              Go Cart questions, <GradientText>answered</GradientText>
+              {/* Non-breaking spaces keep "Go Cart questions," on one line (no lone "Go Cart"). */}
+              Go&nbsp;Cart&nbsp;questions, <GradientText>answered</GradientText>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
