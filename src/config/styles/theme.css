@@ -284,19 +284,22 @@
 }
 
 /* ============================ GLASS MATERIALS ============================ */
+/* Keep `-webkit-backdrop-filter` BEFORE `backdrop-filter`. With the unprefixed one first, the
+   production CSS minifier folds the pair into the prefixed declaration only — which Chrome,
+   Edge and Android ignore, so every glass surface (the nav included) lost its blur. */
 /* Level 1 — quiet surfaces / form fields. */
 @utility glass-surface {
   background-color: var(--glass-bg);
-  backdrop-filter: blur(12px) saturate(130%);
   -webkit-backdrop-filter: blur(12px) saturate(130%);
+  backdrop-filter: blur(12px) saturate(130%);
   border: 1px solid var(--glass-border);
 }
 
 /* Level 2 — default translucent surface. */
 @utility glass {
   background-color: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
   border: 1px solid var(--glass-border);
   box-shadow:
     var(--glass-shadow),
@@ -306,8 +309,8 @@
 /* Level 3 — elevated (nav, key cards). */
 @utility glass-floating {
   background-color: var(--glass-bg-strong);
-  backdrop-filter: blur(calc(var(--glass-blur) + 4px)) saturate(var(--glass-saturate));
   -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 4px)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(calc(var(--glass-blur) + 4px)) saturate(var(--glass-saturate));
   border: 1px solid var(--glass-border);
   box-shadow:
     var(--glass-shadow),
@@ -317,8 +320,8 @@
 /* Level 4 — hero showcase (a little more presence). */
 @utility glass-showcase {
   background-color: var(--glass-bg-strong);
-  backdrop-filter: blur(calc(var(--glass-blur) + 8px)) saturate(var(--glass-saturate));
   -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 8px)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(calc(var(--glass-blur) + 8px)) saturate(var(--glass-saturate));
   border: 1px solid var(--glass-border);
   box-shadow:
     0 40px 100px -32px rgba(0, 0, 0, 0.45),
@@ -346,8 +349,8 @@
 @utility glass-nav {
   position: relative;
   background: linear-gradient(180deg, var(--nav-inner-light) 0%, transparent 55%), var(--nav-fill);
-  backdrop-filter: blur(28px) saturate(135%);
   -webkit-backdrop-filter: blur(28px) saturate(135%);
+  backdrop-filter: blur(28px) saturate(135%);
   box-shadow: var(--nav-shadow);
   /* soft specular — a feathered dome of light near the top-centre that fades in every
      direction (its centre sits above the edge, and it narrows to ~90% width so it never
