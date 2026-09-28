@@ -11,6 +11,12 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  /* In-page anchors (/services#web-development, #pricing…) land below the fixed header
+     (20px gap + 52px pill), not underneath it. */
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
   /* Lenis smooth-scroll integration. */
   html.lenis,
   html.lenis body {

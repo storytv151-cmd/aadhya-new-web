@@ -15,7 +15,7 @@ export async function Process() {
           description="A structured, transparent process — so you always know exactly what happens next."
         />
 
-        <div className="mt-20 grid gap-x-8 gap-y-14 md:grid-cols-4 lg:gap-x-12">
+        <div className="mt-20 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-12">
           {steps.map((step, index) => {
             const Icon = getIcon(step.icon);
             return (

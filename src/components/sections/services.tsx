@@ -21,13 +21,15 @@ export async function Services() {
         />
 
         {/* Asymmetric bento — first & last cards span wide */}
-        <div className="mt-14 grid gap-4 lg:grid-cols-4">
+        {/* Two columns from md (tablet), the asymmetric bento from lg. */}
+        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => {
             const Icon = getIcon(service.icon);
             const wide = index === 0 || index === services.length - 1;
             return (
               <Reveal
                 key={service.slug}
+                id={service.slug}
                 delay={(index % 4) * 0.05}
                 className={cn(wide && "lg:col-span-2")}
               >
