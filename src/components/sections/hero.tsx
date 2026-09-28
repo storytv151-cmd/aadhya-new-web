@@ -10,17 +10,19 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden pt-36 sm:pt-44">
       <Container className="relative flex flex-col items-center text-center">
-        <Reveal direction="none">
+        {/* max-w-full + min-w-0 let the pill shrink and truncate on narrow phones; without
+            them its nowrap text set its width and it ran past both screen edges at 360px. */}
+        <Reveal direction="none" className="max-w-full">
           {hero.announcement ? (
             <Link
               href={hero.announcement.href}
               // after: an invisible 8px taller hit area, so the slim pill is a 44px tap target.
               className="border-border text-muted-foreground hover:border-primary/50 hover:text-foreground group relative inline-flex max-w-full items-center gap-2 rounded-full border py-1 pl-1 pr-3.5 text-xs font-medium transition-colors after:absolute after:inset-x-0 after:-inset-y-2"
             >
-              <span className="bg-primary text-primary-foreground rounded-full px-2 py-0.5 text-xs font-semibold">
+              <span className="bg-primary text-primary-foreground shrink-0 rounded-full px-2 py-0.5 text-xs font-semibold">
                 {hero.announcement.badge}
               </span>
-              <span className="truncate">{hero.announcement.text}</span>
+              <span className="min-w-0 truncate">{hero.announcement.text}</span>
               <ArrowRight
                 className="size-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5"
                 aria-hidden="true"

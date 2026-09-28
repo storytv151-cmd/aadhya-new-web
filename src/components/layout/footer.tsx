@@ -66,7 +66,7 @@ export function Footer() {
                     <li key={`${column.title}-${link.href}`}>
                       <Link
                         href={link.href}
-                        className="text-muted-foreground hover:text-foreground inline-flex min-h-11 items-center text-sm transition-colors lg:min-h-0"
+                        className="text-muted-foreground hover:text-foreground inline-flex min-h-11 min-w-11 items-center text-sm transition-colors lg:min-h-0 lg:min-w-0"
                       >
                         {link.label}
                       </Link>
