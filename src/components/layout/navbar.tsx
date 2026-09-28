@@ -23,15 +23,18 @@ export function Navbar() {
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[1200] flex justify-center px-4 pt-5">
+    // The header strip is full width but only the pill is interactive, so the transparent
+    // area either side of it doesn't swallow taps meant for the page underneath.
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-[1200] flex justify-center px-4 pt-5">
       <div
         className={cn(
-          "glass-nav relative flex h-[52px] w-full items-center justify-between gap-6 rounded-full py-1.5 pl-6 pr-2 transition-[max-width] duration-500 ease-out",
+          // py-1 below lg leaves exactly 44px for the touch-sized buttons.
+          "glass-nav pointer-events-auto relative flex h-[52px] w-full items-center justify-between gap-6 rounded-full py-1 pl-6 pr-2 transition-[max-width] duration-500 ease-out lg:py-1.5",
           scrolled ? "max-w-3xl" : "max-w-4xl",
         )}
       >
         <div className="relative z-[1]">
-          <Logo />
+          <Logo className="min-h-11 lg:min-h-0" />
         </div>
 
         {/* Centered menu (desktop) */}
@@ -115,7 +118,7 @@ export function Navbar() {
           <div className="lg:hidden">
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="size-9" aria-label="Open menu">
+                <Button variant="ghost" size="icon" className="size-11" aria-label="Open menu">
                   <Menu className="size-[18px]" />
                 </Button>
               </SheetTrigger>
@@ -123,7 +126,7 @@ export function Navbar() {
                 <SheetTitle className="sr-only">Navigation menu</SheetTitle>
                 <nav
                   aria-label="Mobile"
-                  className="mt-14 flex max-h-[calc(100dvh-8rem)] flex-col gap-1 overflow-y-auto p-6"
+                  className="mt-14 flex max-h-[calc(100dvh-3.5rem)] flex-col gap-1 overflow-y-auto p-6"
                 >
                   {mainNav.map((link) =>
                     link.children && link.children.length > 0 ? (
@@ -145,7 +148,7 @@ export function Navbar() {
                               <SiteLink
                                 href={child.href}
                                 external={child.external}
-                                className="text-muted-foreground hover:text-foreground rounded-xl px-3 py-2 text-sm transition-colors"
+                                className="text-muted-foreground hover:text-foreground rounded-xl px-3 py-3 text-sm transition-colors"
                               >
                                 {child.label}
                               </SiteLink>

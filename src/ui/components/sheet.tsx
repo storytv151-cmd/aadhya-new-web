@@ -56,7 +56,8 @@ export const SheetContent = forwardRef<
     <SheetOverlay />
     <SheetPrimitive.Content ref={ref} className={cn(sheetVariants({ side }), className)} {...props}>
       {children}
-      <SheetPrimitive.Close className="text-muted-foreground focus-visible:ring-ring absolute right-5 top-5 rounded-full p-1 opacity-80 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2">
+      {/* p-3 around the 20px icon = a 44px touch target, centred where the old p-1 one was. */}
+      <SheetPrimitive.Close className="text-muted-foreground focus-visible:ring-ring absolute right-3 top-3 rounded-full p-3 opacity-80 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2">
         <X className="size-5" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
