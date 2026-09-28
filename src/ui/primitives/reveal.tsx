@@ -11,9 +11,15 @@ export type RevealProps = {
   distance?: number;
   delay?: number;
   once?: boolean;
-  /** Fraction of the element that must be visible to trigger (0..1). */
+  /**
+   * Fraction of the element that must be visible to trigger (0..1). Kept low: at 0.3 a
+   * block only partly on screen — the CTA above the footer when you jump to the end of a
+   * page, or a tall band on a phone — stayed invisible until scrolled further.
+   */
   amount?: number;
   className?: string;
+  /** Anchor target (e.g. `/services#web-development`). */
+  id?: string;
 };
 
 const offsetFor = (direction: RevealDirection, distance: number): { x?: number; y?: number } => {
@@ -41,11 +47,13 @@ export function Reveal({
   distance = 28,
   delay = 0,
   once = true,
-  amount = 0.3,
+  amount = 0.1,
   className,
+  id,
 }: RevealProps) {
   return (
     <m.div
+      id={id}
       className={cn(className)}
       initial={{ opacity: 0, ...offsetFor(direction, distance) }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
