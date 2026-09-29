@@ -5,13 +5,14 @@ import { footerColumns } from "@/lib/navigation";
 import { siteConfig } from "@/lib/site";
 import { Logo } from "./logo";
 import { NewsletterForm } from "./newsletter-form";
+import { GiantWord, StudioClock } from "@/components/aurora/giant-word";
 
 export function Footer() {
   const year = new Date().getFullYear();
   const { contact } = siteConfig;
 
   return (
-    <footer className="relative pb-8 pt-10">
+    <footer className="relative overflow-hidden pt-10">
       <Container>
         <div className="glass rounded-[2.5rem] p-8 sm:p-12">
           {/* Below lg the link columns sit side by side (2 on phones, 3 from sm) with 44px-tall
@@ -81,10 +82,13 @@ export function Footer() {
             <p className="text-muted-foreground text-sm">
               © {year} {siteConfig.name}. All rights reserved.
             </p>
-            <p className="text-muted-foreground text-sm">Crafted with care · Surat, India</p>
+            <p className="text-muted-foreground text-sm">
+              Surat, India · <StudioClock /> IST
+            </p>
           </div>
         </div>
       </Container>
+      <GiantWord />
     </footer>
   );
 }

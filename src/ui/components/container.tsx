@@ -34,7 +34,7 @@ export function Eyebrow({ className, children }: { className?: string; children:
   return (
     <span
       className={cn(
-        "border-border bg-accent/40 text-accent-foreground inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium uppercase tracking-widest",
+        "border-border bg-accent/40 text-accent-foreground inline-flex items-center gap-2 rounded-full border px-3 py-1 font-mono text-[11.5px] font-medium uppercase tracking-[0.08em]",
         className,
       )}
     >

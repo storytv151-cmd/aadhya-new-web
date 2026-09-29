@@ -46,6 +46,11 @@ function HeroVisual() {
 export function GoCartHero() {
   return (
     <section className="relative isolate overflow-hidden pb-10 pt-32 sm:pt-40 lg:pb-16">
+      <div aria-hidden="true" className="aur-aurora -z-10">
+        <i />
+        <i />
+        <i />
+      </div>
       <div
         aria-hidden="true"
         className="bg-grid pointer-events-none absolute inset-0 -z-10 opacity-[0.1] [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]"
@@ -56,7 +61,7 @@ export function GoCartHero() {
             <Eyebrow>Go Cart for Shopify</Eyebrow>
           </Reveal>
 
-          <h1 className="mt-6 text-balance text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.045em] sm:text-6xl lg:text-[4.1rem] lg:leading-[1.02]">
+          <h1 className="mt-6 text-balance text-[2.5rem] font-bold leading-[1.04] tracking-[-0.045em] sm:text-6xl lg:text-[4.1rem] lg:leading-[1.02]">
             <TextReveal text="Turn your Shopify store into a" /> <GradientText>mobile app</GradientText>
           </h1>
 

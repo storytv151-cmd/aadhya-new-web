@@ -1,15 +1,13 @@
 import { cn } from "@/utils";
 import type { ReactNode } from "react";
 
-/** Brand gradient applied to text via background-clip. Server component (no JS). */
+/**
+ * Accent words in headings: the Aurora serif italic filled with the violet → cyan → lime
+ * gradient (see .aur-grad). Server component (no JS).
+ */
 export function GradientText({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <span
-      className={cn(
-        "from-brand-from via-brand-via to-brand-to bg-gradient-to-r bg-clip-text text-transparent",
-        className,
-      )}
-    >
+    <span className={cn("aur-em aur-grad pr-[0.06em]", className)}>
       {children}
     </span>
   );

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { ProcessTimeline } from "@/components/aurora/process-timeline";
+import { ServicesBento } from "@/components/aurora/services-bento";
 import { CTA } from "@/components/sections/cta";
-import { Process } from "@/components/sections/process";
-import { Services } from "@/components/sections/services";
+import { Pricing } from "@/components/sections/pricing";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { PageHeader } from "@/components/layout/page-header";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -18,11 +19,12 @@ export default function ServicesPage() {
     <main>
       <PageHeader
         eyebrow="Our services"
-        title="Services that move your business forward"
+        title="Services that move your business *forward*"
         description="One team for the full journey — from a first idea to a shipped product and the growth that follows."
       />
-      <Services />
-      <Process />
+      <ServicesBento kicker="(01) What we do" detail />
+      <ProcessTimeline kicker="(02) How we work" />
+      <Pricing />
       <WhyChooseUs />
       <CTA />
     </main>

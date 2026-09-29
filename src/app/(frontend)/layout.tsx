@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { Instrument_Serif, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import {
   AuroraBackground,
@@ -13,10 +12,23 @@ import { cn } from "@/utils";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { Cursor } from "@/components/aurora/cursor";
 import { JsonLd } from "@/components/seo/json-ld";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo/jsonld";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
+
+// Aurora type: Space Grotesk for everything, Instrument Serif italics for accents,
+// JetBrains Mono for small labels.
+const sans = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk", display: "swap" });
+const serif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument-serif",
+  display: "swap",
+});
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -51,14 +63,14 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   colorScheme: "light dark",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b1220" },
+    { media: "(prefers-color-scheme: light)", color: "#f5f4ff" },
+    { media: "(prefers-color-scheme: dark)", color: "#07060d" },
   ],
 };
 
 export default function FrontendLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={cn(GeistSans.variable, GeistMono.variable)}>
+    <html lang="en" suppressHydrationWarning className={cn(sans.variable, serif.variable, mono.variable)}>
       {/* suppressHydrationWarning: browser extensions (ColorZilla's cz-shortcut-listen,
           Grammarly, etc.) mutate <body> before hydration; ignore those attribute diffs. */}
       <body
@@ -76,6 +88,7 @@ export default function FrontendLayout({ children }: { children: ReactNode }) {
               <Navbar />
               {children}
               <Footer />
+              <Cursor />
             </LenisProvider>
           </MotionProvider>
         </ThemeProvider>

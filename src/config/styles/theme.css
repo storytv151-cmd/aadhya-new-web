@@ -1,6 +1,6 @@
 /**
- * Aadhya design system — Liquid Glass, premium & calm. Tailwind v4, CSS-first.
- * Subtle translucency · hairline borders · soft shadow · ~90% neutral, 10% accent.
+ * Aadhya design system — "Aurora": violet + cyan with a lime spark, dark-first.
+ * Liquid-glass surfaces · hairline borders · soft shadow. Tailwind v4, CSS-first.
  */
 
 /* Class-based dark mode: `dark:` applies inside a `.dark` ancestor (set on <html>). */
@@ -8,72 +8,75 @@
 
 /* ============================ LIGHT THEME ============================ */
 :root {
-  --background: #f7f8fb;
-  --background-secondary: #eef1f6;
-  --foreground: #0f1115;
-  --foreground-secondary: #454b57;
+  /* Aurora — violet + cyan with a lime spark. Light theme. */
+  --background: #f5f4ff;
+  --background-secondary: #eceaf9;
+  --foreground: #0d0c1d;
+  --foreground-secondary: #45435e;
   --card: #ffffff;
-  --card-foreground: #0f1115;
+  --card-foreground: #0d0c1d;
   --popover: #ffffff;
-  --popover-foreground: #0f1115;
+  --popover-foreground: #0d0c1d;
 
   --surface-1: #ffffff;
-  --surface-2: #f3f5f8;
-  --surface-3: #e9edf2;
+  --surface-2: #f1f0fb;
+  --surface-3: #e7e5f6;
 
-  --primary: #0467ff;
+  --primary: #6f52ff;
   --primary-foreground: #ffffff;
-  /* Blue for TEXT (links, labels, tinted chips). #0467ff is only ~3.8:1 on the tinted
-     chips; this keeps ≥4.5:1 (WCAG AA). Icons and fills keep --primary. */
-  --primary-text: #0057d9;
-  --glow: #3d8bff;
-  --accent-cyan: #38d7ff;
-  --accent-indigo: #5e6dff;
+  /* Violet for TEXT (links, labels, tinted chips) — ≥4.5:1 on the light surfaces.
+     Icons and fills keep --primary. */
+  --primary-text: #5b3df5;
+  --glow: #8f76ff;
+  --accent-cyan: #22d3ee;
+  --accent-indigo: #7c5cff;
+  --accent-lime: #a3e635;
 
-  --secondary: #eef1f6;
-  --secondary-foreground: #0f1115;
-  --muted: #eef1f6;
-  --muted-foreground: #6b7280;
-  --accent: #eef1f6;
-  --accent-foreground: #454b57;
+  --secondary: #eceaf9;
+  --secondary-foreground: #0d0c1d;
+  --muted: #eceaf9;
+  --muted-foreground: #5d5b78;
+  --accent: #eceaf9;
+  --accent-foreground: #45435e;
 
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --success: #22c55e;
   --success-foreground: #ffffff;
   --warning: #f59e0b;
-  --warning-foreground: #0f1115;
+  --warning-foreground: #0d0c1d;
 
-  --border: #e5e8ee;
-  --input: #e5e8ee;
-  --ring: #0467ff;
+  --border: #e2e0f2;
+  --input: #e2e0f2;
+  --ring: #6f52ff;
   --skeleton-shine: #ffffff;
 
-  /* Premium glass (light) — translucent white, hairline dark edge, soft shadow */
+  /* Premium glass (light) — translucent white, hairline violet-ink edge, soft shadow */
   --glass-bg: rgba(255, 255, 255, 0.62);
-  --glass-bg-strong: rgba(255, 255, 255, 0.76);
-  --glass-border: rgba(17, 24, 39, 0.07);
+  --glass-bg-strong: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(13, 12, 29, 0.08);
   --glass-highlight: rgba(255, 255, 255, 0.85);
-  --glass-shadow: 0 20px 45px -24px rgba(15, 23, 42, 0.16);
+  --glass-shadow: 0 20px 45px -24px rgba(40, 20, 120, 0.18);
   --glass-blur: 16px;
   --glass-saturate: 150%;
 
   /* Navigation — layered physical glass material */
   --nav-fill: rgba(255, 255, 255, 0.72);
   --nav-inner-light: rgba(255, 255, 255, 0.75);
-  --nav-border: rgba(15, 23, 42, 0.07);
+  --nav-border: rgba(13, 12, 29, 0.08);
   --nav-sheen: rgba(255, 255, 255, 0.5);
-  --nav-shadow: 0 14px 34px -16px rgba(15, 23, 42, 0.22);
+  --nav-shadow: 0 14px 34px -16px rgba(40, 20, 120, 0.22);
 
-  --brand-from: #0467ff;
-  --brand-via: #4f8bff;
-  --brand-to: #38d7ff;
+  --brand-from: #7c5cff;
+  --brand-via: #6a7bff;
+  --brand-to: #22d3ee;
 
   --radius: 1rem;
 
   --font-sans:
-    var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+    var(--font-space-grotesk), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
@@ -87,65 +90,67 @@
 
 /* ============================ ULTRA DARK (default) ============================ */
 .dark {
-  --background: #08090c;
-  --background-secondary: #0c0d11;
-  --foreground: #f5f6f8;
-  --foreground-secondary: #b9bfca;
-  --card: #101116;
-  --card-foreground: #f5f6f8;
-  --popover: #101116;
-  --popover-foreground: #f5f6f8;
+  /* Aurora — dark (default). */
+  --background: #07060d;
+  --background-secondary: #0c0b16;
+  --foreground: #eef0ff;
+  --foreground-secondary: #b8b9d6;
+  --card: #100e1c;
+  --card-foreground: #eef0ff;
+  --popover: #100e1c;
+  --popover-foreground: #eef0ff;
 
-  --surface-1: #101116;
-  --surface-2: #15161c;
-  --surface-3: #1b1c23;
+  --surface-1: #100e1c;
+  --surface-2: #15132a;
+  --surface-3: #1b1934;
 
-  --primary: #0467ff;
+  --primary: #6f52ff;
   --primary-foreground: #ffffff;
-  /* #0467ff text on these near-black surfaces is 3.2–4.2:1; the glow blue is ≥4.6:1. */
-  --primary-text: #3d8bff;
-  --glow: #3d8bff;
-  --accent-cyan: #38d7ff;
-  --accent-indigo: #5e6dff;
+  /* Lighter violet for text on the near-black surfaces (≥4.5:1). */
+  --primary-text: #a996ff;
+  --glow: #8f76ff;
+  --accent-cyan: #22d3ee;
+  --accent-indigo: #7c5cff;
+  --accent-lime: #c6ff3d;
 
-  --secondary: #16171d;
-  --secondary-foreground: #f5f6f8;
-  --muted: #16171d;
-  --muted-foreground: #8b91a1;
-  --accent: #1a1b22;
-  --accent-foreground: #e8eaf0;
+  --secondary: #14122a;
+  --secondary-foreground: #eef0ff;
+  --muted: #14122a;
+  --muted-foreground: #9a9cb8;
+  --accent: #181634;
+  --accent-foreground: #e6e6ff;
 
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --success: #22c55e;
   --success-foreground: #ffffff;
   --warning: #f59e0b;
-  --warning-foreground: #0f1115;
+  --warning-foreground: #0d0c1d;
 
-  --border: #202128;
-  --input: #202128;
-  --ring: #3d8bff;
-  --skeleton-shine: #22232b;
+  --border: #1f1d33;
+  --input: #1f1d33;
+  --ring: #a996ff;
+  --skeleton-shine: #22203a;
 
   /* Premium glass (dark) — a whisper of frost, hairline light edge, soft shadow */
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-bg-strong: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-highlight: rgba(255, 255, 255, 0.16);
-  --glass-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.6);
+  --glass-border: rgba(238, 240, 255, 0.09);
+  --glass-highlight: rgba(255, 255, 255, 0.14);
+  --glass-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.65);
   --glass-blur: 16px;
   --glass-saturate: 140%;
 
   /* Navigation — layered physical glass material (ultra subtle) */
-  --nav-fill: rgba(17, 18, 24, 0.62);
+  --nav-fill: rgba(16, 14, 28, 0.62);
   --nav-inner-light: rgba(255, 255, 255, 0.06);
-  --nav-border: rgba(255, 255, 255, 0.07);
-  --nav-sheen: rgba(255, 255, 255, 0.11);
-  --nav-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.62);
+  --nav-border: rgba(238, 240, 255, 0.08);
+  --nav-sheen: rgba(255, 255, 255, 0.1);
+  --nav-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.65);
 
-  --brand-from: #0467ff;
-  --brand-via: #4f8bff;
-  --brand-to: #38d7ff;
+  --brand-from: #7c5cff;
+  --brand-via: #6a7bff;
+  --brand-to: #22d3ee;
 }
 
 /* ============================ TAILWIND THEME MAP ============================ */
@@ -167,6 +172,7 @@
   --color-glow: var(--glow);
   --color-accent-cyan: var(--accent-cyan);
   --color-accent-indigo: var(--accent-indigo);
+  --color-accent-lime: var(--accent-lime);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -188,6 +194,7 @@
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
 
   --radius-sm: calc(var(--radius) - 6px);
   --radius-md: calc(var(--radius) - 3px);
@@ -204,7 +211,7 @@
 
   --shadow-soft: 0 1px 2px rgb(15 23 42 / 0.04), 0 8px 24px rgb(15 23 42 / 0.06);
   --shadow-elevated: 0 2px 4px rgb(15 23 42 / 0.05), 0 20px 48px rgb(15 23 42 / 0.12);
-  --shadow-glow: 0 0 0 1px rgb(4 103 255 / 0.14), 0 12px 40px -10px rgb(61 139 255 / 0.45);
+  --shadow-glow: 0 0 0 1px rgb(111 82 255 / 0.16), 0 12px 40px -10px rgb(143 118 255 / 0.45);
 
   --animate-gradient: gradient-shift 8s ease infinite;
   --animate-float: float 8s ease-in-out infinite;

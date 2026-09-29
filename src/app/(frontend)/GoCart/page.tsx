@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoCartMorph } from "@/components/aurora/gocart-morph";
 import { GoCartBenefits } from "@/components/gocart/benefits";
 import { GoCartComparison } from "@/components/gocart/comparison";
 import { GoCartCta } from "@/components/gocart/cta";
@@ -11,7 +12,7 @@ import { GoCartIntegrations } from "@/components/gocart/integrations";
 import { GoCartPricing } from "@/components/gocart/pricing";
 import { GoCartReviews } from "@/components/gocart/reviews";
 import { JsonLd } from "@/components/seo/json-ld";
-import { goCartDemoVideo, goCartFromPrice } from "@/content/gocart";
+import { goCartDemoVideo, goCartFromPrice, goCartLinks } from "@/content/gocart";
 import { goCartJsonLd } from "@/lib/seo/jsonld";
 import { pageMetadata } from "@/lib/seo/metadata";
 
@@ -40,6 +41,7 @@ export default function GoCartPage() {
     <main>
       <JsonLd data={goCartJsonLd({ description })} />
       <GoCartHero />
+      <GoCartMorph kicker="Go Cart · see it in motion" cta={{ href: goCartLinks.register, label: "Get started", external: true }} />
       <GoCartComparison />
       <GoCartHowItWorks />
       <GoCartDemo />

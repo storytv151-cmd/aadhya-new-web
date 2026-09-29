@@ -26,10 +26,16 @@ export const heroContent = {
     href: "/GoCart",
   },
   headline: "We Craft Software Masterpieces.",
+  /** Home hero (Aurora): the last line ends with a word that cycles through `words`. */
+  aurora: {
+    lines: ["We engineer", "digital"],
+    lead: "We engineer digital",
+    words: ["products", "games", "platforms", "apps"],
+  },
   subhead:
-    "A software company providing app, game and web development, design, cloud, security and digital solutions — engineered to help your business grow.",
-  primaryCta: { label: "Let's Connect", href: "/contact" },
-  secondaryCta: { label: "View our work", href: "/portfolio" },
+    "Apps, games, websites and cloud platforms — designed and built by one friendly team, from sketch to store.",
+  primaryCta: { label: "Start a project", href: "/contact" },
+  secondaryCta: { label: "See our work", href: "/portfolio" },
   marquee: ["App Development", "Game Development", "UI/UX Design", "Digital Marketing", "Cloud"],
 };
 

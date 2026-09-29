@@ -8,21 +8,23 @@
  */
 
 export const brand = {
-  primary: "#0467ff",
-  surfaceDark: "#07080e",
+  primary: "#6f52ff",
+  surfaceDark: "#07060d",
+  surfaceLight: "#f5f4ff",
   gradient: {
-    from: "#0467ff",
-    via: "#4361ff",
+    from: "#7c5cff",
+    via: "#6a7bff",
     to: "#22d3ee",
   },
+  lime: "#c6ff3d",
   success: "#10b981",
   warning: "#f59e0b",
   error: "#ef4444",
 } as const;
 
-/** Aurora backdrop bloom colours — blue / cyan / indigo, kept subtle & neutral. */
+/** Aurora backdrop bloom colours — violet / cyan / lime. */
 export const aurora = {
-  colors: ["#0467ff", "#38d7ff", "#5e6dff"],
+  colors: ["#7c5cff", "#22d3ee", "#c6ff3d"],
 } as const;
 
 /** Seconds — Framer/Motion transitions consume these. */

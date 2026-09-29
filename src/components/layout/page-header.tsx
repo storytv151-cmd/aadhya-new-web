@@ -1,5 +1,10 @@
-import { AnimatedGradient, Container, Eyebrow, Reveal, TextReveal } from "@/ui";
+import { SectionTitle } from "@/components/aurora/section-title";
+import { Container } from "@/ui";
 
+/**
+ * Inner-page header in the Aurora style: aurora glow, a mono kicker and a big title whose
+ * words rise in. Wrap a word in *…* to set it in the serif italic.
+ */
 export function PageHeader({
   eyebrow,
   title,
@@ -10,28 +15,18 @@ export function PageHeader({
   description?: string;
 }) {
   return (
-    <section className="border-border relative isolate overflow-hidden border-b pb-16 pt-32">
-      <AnimatedGradient className="opacity-20" />
+    <section className="border-border relative isolate overflow-hidden border-b pb-16 pt-36 lg:pb-20 lg:pt-44">
+      <div aria-hidden="true" className="aur-aurora -z-10">
+        <i />
+        <i />
+        <i />
+      </div>
       <div
         aria-hidden="true"
-        className="bg-grid pointer-events-none absolute inset-0 -z-10 opacity-[0.1] [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]"
+        className="bg-grid pointer-events-none absolute inset-0 -z-10 opacity-[0.08] [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]"
       />
-      <Container className="text-center">
-        {eyebrow && (
-          <Reveal direction="none">
-            <Eyebrow>{eyebrow}</Eyebrow>
-          </Reveal>
-        )}
-        <h1 className="mx-auto mt-4 max-w-3xl text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
-          <TextReveal text={title} />
-        </h1>
-        {description && (
-          <Reveal delay={0.2}>
-            <p className="text-muted-foreground mx-auto mt-5 max-w-2xl text-pretty text-lg">
-              {description}
-            </p>
-          </Reveal>
-        )}
+      <Container>
+        <SectionTitle as="h1" kicker={eyebrow} title={title} description={description} className="mb-0 lg:mb-0" />
       </Container>
     </section>
   );

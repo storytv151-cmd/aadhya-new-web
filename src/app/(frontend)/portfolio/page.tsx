@@ -17,7 +17,7 @@ export default function PortfolioPage() {
     <main>
       <PageHeader
         eyebrow="Project showcase"
-        title="Work we're proud of"
+        title="Work we're *proud* of"
         description="A selection of the products we've designed, built and shipped for our clients."
       />
       <Portfolio showHeader={false} />

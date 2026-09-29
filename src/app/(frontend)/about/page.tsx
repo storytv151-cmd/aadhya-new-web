@@ -17,7 +17,7 @@ export default function AboutPage() {
     <main>
       <PageHeader
         eyebrow="About us"
-        title="A software studio built on craft and trust"
+        title="A software studio built on *craft* and trust"
         description="We design, build and distribute software products and services that solve real problems and drive growth."
       />
       <About showMoreLink={false} />

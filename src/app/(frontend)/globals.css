@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "../../config/styles/theme.css";
+@import "../../config/styles/aurora.css";
 
 /* Scan this app's own source (src/) for class names — includes the inlined ui/, hooks/, etc. */
 @source "../../";
