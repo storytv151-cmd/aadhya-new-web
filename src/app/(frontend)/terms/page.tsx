@@ -91,8 +91,7 @@ export default function TermsPage() {
             You can cancel at any time from the plan page in Go Cart or by uninstalling the app from
             your Shopify admin; standalone accounts cancel from the Go Cart dashboard. Your app and
             dashboard keep working until the end of the period you have already paid for, after
-            which the subscription ends and no further charge is made. Seven days later your app
-            pauses for shoppers until you choose a plan again. We do not refund partial
+            which the subscription ends and no further charge is made. We do not refund partial
             months or years, except where the law requires us to.
           </p>
         </Section>
@@ -100,10 +99,8 @@ export default function TermsPage() {
         <Section title="Your responsibilities">
           <ul className="list-disc space-y-1 pl-5">
             <li>
-              Apps are published either under Go Cart&apos;s developer accounts (included in every
-              plan; we move the app to your own accounts on request) or, if you choose, under your
-              own Google Play Console and Apple Developer Program accounts, which you open, pay for
-              and keep in good standing.
+              Apps are published under your own Google Play Console and Apple Developer Program
+              accounts. You open and pay for those accounts and keep them in good standing.
             </li>
             <li>
               Your store — its products, prices, content and policies — is yours. Everything the app

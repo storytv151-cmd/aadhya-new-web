@@ -63,7 +63,7 @@ export const products: Product[] = [
         icon: "zap",
         title: "Automations",
         description:
-          "Welcome push, abandoned-cart reminders, order-shipped updates and back-in-stock alerts, on every plan.",
+          "Welcome push, abandoned-cart reminders, order-shipped updates and back-in-stock alerts (the last three on WebView Growth).",
       },
       {
         icon: "indian-rupee",

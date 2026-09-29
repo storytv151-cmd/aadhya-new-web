@@ -14,18 +14,16 @@ export function GoCartPricing() {
               Simple plans, <GradientText>no commission</GradientText>
             </>
           }
-          description="Three plans, each with everything in the one before: WebView runs your live website inside the app, Native builds your screens natively in code, and Brand does it for you."
+          description="WebView apps are live today: your website runs inside the app, so everything on your store works from day one. Native apps with theme selection come next, with their own plans."
         />
 
         <GoCartPricingPlans />
 
         <Reveal delay={0.1}>
           <p className="text-muted-foreground mx-auto mt-10 max-w-xl text-center text-sm">
-            One price worldwide, in US dollars on your Shopify invoice (or the same amount in rupees
-            by Razorpay if you sign up on our website). Yearly billing charges{" "}
-            {YEARLY_MONTHS_CHARGED} months — 2 months free. Unlimited push notifications and app users on
-            every plan. No free trial, no setup fee and no share of your sales. Publishing under Go
-            Cart&rsquo;s developer account is included.
+            Prices in US dollars, on your Shopify invoice. Yearly billing charges{" "}
+            {YEARLY_MONTHS_CHARGED} months — 2 months free. No free trial, no setup fee and no share
+            of your sales. Apple and Google developer-account fees are paid to them directly.
           </p>
         </Reveal>
       </Container>
