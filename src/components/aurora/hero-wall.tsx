@@ -6,7 +6,6 @@ import { gsap, useGSAP } from "@/lib/gsap";
 import { heroContent } from "@/content/site-content";
 import { heroWall } from "@/content/visuals";
 import { AuroraButton } from "./aurora-button";
-import { onIntroDone } from "./intro";
 import { Photo } from "./photo";
 import { scramble } from "./scramble";
 
@@ -20,19 +19,18 @@ export function HeroWall() {
   const columns = Array.from({ length: COLUMNS }, (_, c) => heroWall.slice(c * perColumn, (c + 1) * perColumn));
 
   useGSAP(
-    (context, contextSafe) => {
+    () => {
       const el = root.current;
-      if (!el || !contextSafe) return;
+      if (!el) return;
       const mm = gsap.matchMedia();
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        // Intro — waits for the preloader's curtain on a first visit.
-        const intro = gsap.timeline({ paused: true });
-        intro
+        // Intro: the headline rises, the rest fades up, the wall settles in.
+        gsap
+          .timeline()
           .from(".aur-w, .aur-rot", { yPercent: 115, duration: 1.15, ease: "power4.out", stagger: 0.07 })
           .from("[data-in]", { y: 26, opacity: 0, duration: 0.9, ease: "power3.out", stagger: 0.07 }, 0.35)
           .from(".aur-wall", { opacity: 0, scale: 1.12, duration: 2, ease: "power2.out" }, 0);
-        const stop = onIntroDone(contextSafe(() => intro.play()));
 
         // Drift away while scrolling past.
         gsap.to(".aur-hero-in", {
@@ -73,7 +71,6 @@ export function HeroWall() {
           }, 2800);
         }
         return () => {
-          stop();
           if (timer) clearInterval(timer);
         };
       });

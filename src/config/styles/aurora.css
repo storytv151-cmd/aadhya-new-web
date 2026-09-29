@@ -404,37 +404,6 @@
     linear-gradient(180deg, var(--background) 0%, transparent 24%, transparent 76%, var(--background) 100%);
 }
 
-/* ---------- preloader ---------- */
-.aur-intro {
-  position: fixed;
-  inset: 0;
-  z-index: 1500;
-  color: #fff;
-  cursor: pointer;
-  /* Without JS the intro still gets out of the way. */
-  animation: aur-intro-out 0.6s 3.2s forwards;
-}
-.intro-seen .aur-intro {
-  display: none;
-}
-@keyframes aur-intro-out {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-.aur-intro .l1,
-.aur-intro .l2 {
-  position: absolute;
-  inset: 0;
-}
-.aur-intro .l1 {
-  background: var(--brand-from);
-}
-.aur-intro .l2 {
-  background: var(--brand-to);
-}
-
 /* ---------- Go Cart morph (the store mock is plain CSS so it scales crisply) ---------- */
 .gcm-pin {
   position: relative;
@@ -641,11 +610,7 @@
   .aur-aurora i,
   .aur-dot,
   .aur-ring,
-  .gcm-float,
-  .aur-intro {
+  .gcm-float {
     animation: none;
-  }
-  .aur-intro {
-    display: none;
   }
 }

@@ -3,7 +3,6 @@ import { BigCta } from "@/components/aurora/big-cta";
 import { GoCartMorph } from "@/components/aurora/gocart-morph";
 import { HeroWall } from "@/components/aurora/hero-wall";
 import { MarqueeBand } from "@/components/aurora/marquee-band";
-import { Preloader } from "@/components/aurora/preloader";
 import { ProcessTimeline } from "@/components/aurora/process-timeline";
 import { ServicesBento } from "@/components/aurora/services-bento";
 import { StudioStatement, type Fact } from "@/components/aurora/studio-statement";
@@ -28,7 +27,6 @@ const facts: Fact[] = [
 export default function Home() {
   return (
     <main>
-      <Preloader />
       <HeroWall />
       <MarqueeBand />
       <StudioStatement facts={facts} />
