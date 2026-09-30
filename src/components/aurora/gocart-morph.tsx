@@ -21,7 +21,7 @@ const I = {
   bell: <svg viewBox="0 0 24 24" fill="none" stroke="#0b0d12" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0" /></svg>,
 };
 
-const POINTS = ["Android and iOS apps", "Push notifications with images and links", "Automations that bring shoppers back"];
+const POINTS = ["Android and iOS apps", "Unlimited push notifications", "Automations that bring shoppers back"];
 
 function Badge({ className, icon, small, big }: { className: string; icon: React.ReactNode; small: string; big: string }) {
   return (
@@ -291,7 +291,7 @@ export function GoCartMorph({
           </div>
           <Badge className="b1" icon={I.apple} small="Live on the" big="App Store" />
           <Badge className="b2" icon={I.play} small="Get it on" big="Google Play" />
-          <Badge className="b3" icon={I.bell} small="Rich" big="Push notifications" />
+          <Badge className="b3" icon={I.bell} small="Every plan" big="Unlimited push" />
         </div>
 
         <div className="gcm-steps absolute bottom-[18px] left-1/2 z-[3] flex -translate-x-1/2 gap-1.5" aria-hidden="true">
