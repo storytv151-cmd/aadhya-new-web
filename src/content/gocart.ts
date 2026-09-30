@@ -249,7 +249,7 @@ export const goCartFaqs: Faq[] = [
     id: "push",
     question: "How do push notifications work?",
     answer:
-      "Shoppers who install your app and allow notifications can receive your pushes. Write a message in your Go Cart dashboard, add an image and a deep link to the page it should open, then send it right away or schedule it. On WebView Growth you can target customers and audience segments. Automations send pushes for you: welcome, abandoned-cart, order-shipped and back-in-stock pushes, on every plan. Push notifications and app users are unlimited on every plan; to keep your app from feeling like spam, up to 30 notifications to your shoppers go out in any 24 hours (automations and test sends don't count).",
+      "Shoppers who install your app and allow notifications can receive your pushes. Write a message in your Go Cart dashboard, add an image and a deep link to the page it should open, then send it right away or schedule it. On every plan you can target one customer or a Shopify segment. Automations send pushes for you: welcome, abandoned-cart, order-shipped and back-in-stock pushes, on every plan. Push notifications and app users are unlimited on every plan; to keep your app from feeling like spam, up to 30 notifications to your shoppers go out in any 24 hours (automations and test sends don't count).",
   },
   {
     id: "upi",
