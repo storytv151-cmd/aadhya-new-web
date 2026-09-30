@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, Check, ChartColumn, IndianRupee } from "lucide-react";
 import { Button, Container, Eyebrow, GradientText, Magnetic, Reveal, TextReveal } from "@/ui";
 import { cn } from "@/utils";
@@ -58,7 +59,18 @@ export function GoCartHero() {
       <Container className="grid items-center gap-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
         <div className="text-center lg:text-left">
           <Reveal direction="none">
-            <Eyebrow>Go Cart for Shopify</Eyebrow>
+            {/* The owner's Go Cart logo (tile, cart and wordmark). */}
+            <div className="flex flex-col items-center gap-5 lg:items-start">
+              <Image
+                src="/brand/gocart-logo.png"
+                alt="Go Cart"
+                width={112}
+                height={112}
+                priority
+                className="drop-shadow-[0_18px_40px_rgba(55,30,224,0.35)]"
+              />
+              <Eyebrow>Go Cart for Shopify</Eyebrow>
+            </div>
           </Reveal>
 
           <h1 className="mt-6 text-balance text-[2.5rem] font-bold leading-[1.04] tracking-[-0.045em] sm:text-6xl lg:text-[4.1rem] lg:leading-[1.02]">
