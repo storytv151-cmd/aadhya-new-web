@@ -59,15 +59,15 @@ export function GoCartHero() {
       <Container className="grid items-center gap-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
         <div className="text-center lg:text-left">
           <Reveal direction="none">
-            {/* The owner's Go Cart logo (tile, cart and wordmark). */}
+            {/* The owner's Go Cart logo (GC mark and wordmark on its lavender tile). */}
             <div className="flex flex-col items-center gap-5 lg:items-start">
               <Image
                 src="/brand/gocart-logo.png"
                 alt="Go Cart"
-                width={112}
-                height={112}
+                width={128}
+                height={128}
                 priority
-                className="drop-shadow-[0_18px_40px_rgba(55,30,224,0.35)]"
+                className="rounded-[28px] shadow-[0_18px_40px_rgba(88,52,190,0.28)] ring-1 ring-white/60"
               />
               <Eyebrow>Go Cart for Shopify</Eyebrow>
             </div>
