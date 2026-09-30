@@ -2,7 +2,7 @@ import { Container, GradientText, Reveal, Section } from "@/ui";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { goCartDemoVideo } from "@/content/gocart";
 
-/** A three-minute walkthrough recorded from the real dashboard and a phone. */
+/** A walkthrough of the real dashboard (inside the Shopify admin) and a phone. */
 export function GoCartDemo() {
   return (
     <Section id="demo">
