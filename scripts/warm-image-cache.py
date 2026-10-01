@@ -1,7 +1,8 @@
-"""Warm the nginx image cache of www.aadhya-infotech.com (company site, /GoCart, /DevStore).
+"""Warm the nginx caches of www.aadhya-infotech.com (company site, /GoCart, /DevStore): the
+page cache (every page fetched, incl. all of /sitemap.xml) and the image cache.
 
 Run after a deploy that changes images, or after clearing /var/cache/nginx/aadhya_img:
-    python scripts/warm-image-cache.py            # the default pages, plus every DevStore product
+    python scripts/warm-image-cache.py            # the sitemap + default pages, every DevStore product
     python scripts/warm-image-cache.py /about     # just these pages
 
 For each page it requests every next/image URL a browser would pick on common screens
@@ -73,6 +74,10 @@ def pick(srcset, sizes, vw, dpr):
 
 urls, seen_pages = set(), set()
 queue = list(PAGES)
+if not sys.argv[1:]:
+    # Every company-site page, so the nginx page cache holds them all.
+    sitemap = get(BASE + "/sitemap.xml", "application/xml")[0].decode("utf-8")
+    queue += [u[len(BASE):] or "/" for u in re.findall(r"<loc>([^<]+)</loc>", sitemap) if u.startswith(BASE)]
 while queue:
     page = queue.pop(0)
     if page in seen_pages:
