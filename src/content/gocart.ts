@@ -356,5 +356,5 @@ export const goCartDemoVideo = {
   // ?v= changes with each new cut so browsers fetch it again (the file path stays the same:
   // the Shopify listing links the bare /videos/go-cart-demo.mp4 as its screencast).
   src: "/videos/go-cart-demo.mp4?v=20261001",
-  poster: "/videos/go-cart-demo.jpg?v=20261001",
+  poster: "/videos/go-cart-demo.jpg?v=20261001b",
 } as const;

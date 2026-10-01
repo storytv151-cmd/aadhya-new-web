@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
@@ -8,7 +9,6 @@ import { services } from "@/content/site-content";
 import { serviceVisuals } from "@/content/visuals";
 import { getIcon } from "@/components/sections/icon-map";
 import { Container } from "@/ui";
-import { Photo } from "./photo";
 import { SectionTitle } from "./section-title";
 
 // Cards 1, 4 and 6 span two columns; together the six fill a 3×3 grid.
@@ -93,7 +93,7 @@ export function ServicesBento({
                       wide ? "lg:w-[42%]" : "lg:w-[46%]",
                     )}
                   >
-                    <Photo
+                    <Image
                       src={visual.src}
                       alt={visual.alt}
                       fill

@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { portfolioProjects } from "@/content/site-content";
-import { Photo } from "./photo";
 import { SectionTitle } from "./section-title";
 
 /**
@@ -80,7 +80,7 @@ export function WorkShowcase({ kicker = "(04) Selected work" }: { kicker?: strin
             >
               <div className="bg-card relative aspect-[4/3] overflow-hidden rounded-[22px]">
                 {project.image && (
-                  <Photo
+                  <Image
                     src={project.image.url}
                     alt={project.image.alt}
                     fill

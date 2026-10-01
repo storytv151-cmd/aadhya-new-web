@@ -1,12 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { heroContent } from "@/content/site-content";
 import { heroWall } from "@/content/visuals";
 import { AuroraButton } from "./aurora-button";
-import { Photo } from "./photo";
 import { scramble } from "./scramble";
 
 const COLUMNS = 5;
@@ -105,7 +105,17 @@ export function HeroWall() {
               <div key={c} className="aur-wcol">
                 {[...items, ...items].map((item, i) => (
                   <figure key={`${c}-${i}`}>
-                    <Photo src={item.src} alt="" fill sizes="(min-width: 1024px) 300px, 180px" className="object-cover" />
+                    {/* The wall fills the first screen: its top photos are the page's largest
+                        paint, so they load at once (React also preloads eager images). */}
+                    <Image
+                      src={item.src}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 300px, 180px"
+                      className="object-cover"
+                      priority={i === 0}
+                      loading={i < 2 ? "eager" : "lazy"}
+                    />
                   </figure>
                 ))}
               </div>

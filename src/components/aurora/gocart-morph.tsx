@@ -1,11 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { goCartFromPrice } from "@/content/gocart";
 import { storeMock } from "@/content/visuals";
 import { AuroraButton } from "./aurora-button";
-import { Photo } from "./photo";
 
 const I = {
   lock: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>,
@@ -198,7 +198,7 @@ export function GoCartMorph({
               </div>
               <div className="grid grid-cols-[580px_1fr] gap-3 px-6 pt-4">
                 <div className="relative h-[292px] overflow-hidden rounded-[14px] bg-[#eee]">
-                  <Photo src={storeMock.hero} alt="" fill sizes="580px" className="object-cover" />
+                  <Image src={storeMock.hero} alt="" fill sizes="580px" className="object-cover" />
                   <div className="absolute bottom-6 left-7 text-white [text-shadow:0_2px_20px_rgba(0,0,0,.25)]">
                     <small className="block text-[11px] font-bold uppercase tracking-[0.22em]">Summer &apos;26</small>
                     <p className="my-1.5 mb-3.5 font-serif text-5xl leading-none">{storeMock.edit}</p>
@@ -206,7 +206,7 @@ export function GoCartMorph({
                   </div>
                 </div>
                 <div className="relative h-[292px] overflow-hidden rounded-[14px] bg-[#eee]">
-                  <Photo src={storeMock.promo} alt="" fill sizes="320px" className="object-cover" />
+                  <Image src={storeMock.promo} alt="" fill sizes="320px" className="object-cover" />
                   <span className="absolute bottom-3.5 left-3.5 rounded-full bg-white px-3 py-2 text-xs font-bold">New in · Shirts</span>
                 </div>
               </div>
@@ -214,7 +214,7 @@ export function GoCartMorph({
                 {products.map((p) => (
                   <div key={p.name}>
                     <div className="relative h-[118px] overflow-hidden rounded-[10px] bg-[#f3f1ee]">
-                      <Photo src={p.src} alt="" fill sizes="220px" className="object-cover" />
+                      <Image src={p.src} alt="" fill sizes="220px" className="object-cover" />
                     </div>
                     <div className="flex justify-between pt-[7px] text-[12.5px] font-semibold">
                       {p.name}
@@ -244,7 +244,7 @@ export function GoCartMorph({
                 </span>
               </div>
               <div className="relative mx-3 mt-1 h-[176px] overflow-hidden rounded-[14px] bg-[#eee]">
-                <Photo src={storeMock.hero} alt="" fill sizes="280px" className="object-cover" />
+                <Image src={storeMock.hero} alt="" fill sizes="280px" className="object-cover" />
                 <div className="absolute bottom-3.5 left-3.5 text-white [text-shadow:0_2px_14px_rgba(0,0,0,.3)]">
                   <small className="block text-[8.5px] font-bold uppercase tracking-[0.22em]">Summer &apos;26</small>
                   <p className="mt-1 font-serif text-[26px] leading-none">{storeMock.edit}</p>
@@ -261,7 +261,7 @@ export function GoCartMorph({
                 {products.map((p) => (
                   <div key={p.name}>
                     <div className="relative h-[92px] overflow-hidden rounded-[10px] bg-[#f3f1ee]">
-                      <Photo src={p.src} alt="" fill sizes="140px" className="object-cover" />
+                      <Image src={p.src} alt="" fill sizes="140px" className="object-cover" />
                     </div>
                     <div className="flex justify-between pt-[5px] text-[10.5px] font-semibold">
                       {p.name}

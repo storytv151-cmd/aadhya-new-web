@@ -4,6 +4,9 @@ const nextConfig = {
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
+    // Optimized images are cached (server and browser) for 30 days instead of 60 s, so the
+    // small server re-encodes them rarely. Give a changed image a new file name.
+    minimumCacheTTL: 2592000,
   },
   experimental: {
     optimizePackageImports: ["lucide-react", "motion"],
