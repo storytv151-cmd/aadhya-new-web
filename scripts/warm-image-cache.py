@@ -6,8 +6,9 @@ Run after a deploy that changes images, or after clearing /var/cache/nginx/aadhy
     python scripts/warm-image-cache.py /about     # just these pages
 
 For each page it requests every next/image URL a browser would pick on common screens
-(desktop 1x/2x, phones 1.75x/3x). The server answers WebP. One request at a time with a
-pause, backing off when the 1-vCPU server is slow: never run several of these at once.
+(desktop 1x-2x incl. 125%/150% Windows scaling, phones 1.75x-3x). The server answers WebP.
+One request at a time with a pause, backing off when the 1-vCPU server is slow: never run
+several of these at once.
 """
 import html, re, sys, time, urllib.request
 from html.parser import HTMLParser
@@ -15,7 +16,8 @@ from html.parser import HTMLParser
 BASE = "https://www.aadhya-infotech.com"
 PAGES = sys.argv[1:] or ["/", "/GoCart", "/about", "/services", "/portfolio", "/products", "/contact",
                          "/careers", "/blog", "/DevStore", "/DevStore/products"]
-PROFILES = [(1440, 1), (1440, 2), (412, 1.75), (390, 3)]
+# (viewport width, device pixel ratio): desktop 1x/2x, Windows laptops at 125%/150%, phones.
+PROFILES = [(1440, 1), (1440, 1.25), (1440, 1.5), (1440, 2), (412, 1.75), (412, 2.625), (390, 3), (360, 2)]
 ACCEPT = "image/avif,image/webp,image/apng,image/*,*/*;q=0.8"  # Chrome's; the server answers WebP
 UA = "Mozilla/5.0 (cache warm-up; aadhya-infotech.com)"
 
