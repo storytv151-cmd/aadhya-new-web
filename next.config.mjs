@@ -3,9 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
-    formats: ["image/avif", "image/webp"],
-    // Optimized images are cached (server and browser) for 30 days instead of 60 s, so the
-    // small server re-encodes them rarely. Give a changed image a new file name.
+    // WebP only: AVIF is ~15% smaller but its encoder needs far more CPU and memory than the
+    // 1-vCPU server can spare (it pushed the box into swap). Optimized images are cached
+    // (nginx, server and browser) for 30 days instead of 60 s, so the server re-encodes
+    // them rarely. Give a changed image a new file name.
+    formats: ["image/webp"],
     minimumCacheTTL: 2592000,
   },
   experimental: {
