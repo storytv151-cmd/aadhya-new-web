@@ -13,7 +13,7 @@ import { GoCartPricing } from "@/components/gocart/pricing";
 import { GoCartReviews } from "@/components/gocart/reviews";
 import { JsonLd } from "@/components/seo/json-ld";
 import { goCartDemoVideo, goCartFromPrice, goCartLinks } from "@/content/gocart";
-import { goCartJsonLd } from "@/lib/seo/jsonld";
+import { goCartFaqJsonLd, goCartJsonLd, goCartVideoJsonLd } from "@/lib/seo/jsonld";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 // Served at /GoCart (App Router paths are case-sensitive — the folder name is the URL).
@@ -40,6 +40,8 @@ export default function GoCartPage() {
   return (
     <main>
       <JsonLd data={goCartJsonLd({ description })} />
+      <JsonLd data={goCartFaqJsonLd()} />
+      <JsonLd data={goCartVideoJsonLd()} />
       <GoCartHero />
       <GoCartMorph kicker="Go Cart · see it in motion" cta={{ href: goCartLinks.register, label: "Get started", external: true }} />
       <GoCartComparison />

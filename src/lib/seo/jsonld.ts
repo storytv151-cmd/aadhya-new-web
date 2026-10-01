@@ -1,4 +1,4 @@
-import { GOCART_CURRENCY, goCartPlans } from "@/content/gocart";
+import { GOCART_CURRENCY, goCartDemoVideo, goCartFaqs, goCartPlans } from "@/content/gocart";
 import { siteConfig } from "@/lib/site";
 
 export function organizationJsonLd() {
@@ -31,7 +31,7 @@ export function websiteJsonLd() {
   };
 }
 
-/** Go Cart (/GoCart) as a SoftwareApplication with its monthly INR plans as offers. */
+/** Go Cart (/GoCart) as a SoftwareApplication with its monthly USD plans as offers. */
 export function goCartJsonLd({ description }: { description: string }) {
   const url = `${siteConfig.url}/GoCart`;
   return {
@@ -58,5 +58,37 @@ export function goCartJsonLd({ description }: { description: string }) {
         unitText: "MONTH",
       },
     })),
+  };
+}
+
+
+/** The /GoCart FAQ section as FAQPage, so search engines can read the questions and answers. */
+export function goCartFaqJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${siteConfig.url}/GoCart#faq`,
+    mainEntity: goCartFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+}
+
+/** The /GoCart walkthrough video (the same file is the Shopify App Store screencast). */
+export function goCartVideoJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "@id": `${siteConfig.url}/GoCart#demo`,
+    name: "Go Cart walkthrough: Shopify store to Android and iOS app",
+    description:
+      "Set up Go Cart inside the Shopify admin, preview the app on a phone, send a push notification and choose a plan (WebView, Native or Brand).",
+    thumbnailUrl: `${siteConfig.url}${goCartDemoVideo.poster}`,
+    contentUrl: `${siteConfig.url}${goCartDemoVideo.src}`,
+    uploadDate: "2026-10-01",
+    duration: "PT2M46S",
+    publisher: { "@id": `${siteConfig.url}/#organization` },
   };
 }
