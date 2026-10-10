@@ -11,7 +11,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/privacy",
 });
 
-const UPDATED = "21 September 2026";
+const UPDATED = "11 October 2026";
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -87,6 +87,16 @@ export default function PrivacyPage() {
           <ul className="list-disc space-y-1 pl-5">
             <li>a random device identifier and the push token needed to deliver notifications;</li>
             <li>app events — install, app opens, and whether a notification was opened;</li>
+            <li>
+              usage statistics through Google Firebase Analytics: which store pages are viewed (the
+              page path only, never search terms or personal details), add-to-cart, a completed
+              order (without amounts or items) and opened notifications;
+            </li>
+            <li>
+              crash reports through Google Firebase Crashlytics if the app fails: error details, app
+              version, device model and operating-system version, used only to fix problems. They
+              don&apos;t include your name, email or orders;
+            </li>
             <li>&ldquo;Notify me&rdquo; requests: the product and variant you asked to be told about;</li>
             <li>
               if you sign in to the store inside the app, the Shopify customer id, name and email of
@@ -103,7 +113,8 @@ export default function PrivacyPage() {
         <Section title="Who else processes this data">
           <p>
             Shopify (store data, and billing for merchants who installed from the Shopify App
-            Store), Google Firebase Cloud Messaging (delivering push notifications), DigitalOcean
+            Store), Google Firebase (Cloud Messaging to deliver push notifications, Analytics for the
+            usage statistics above and Crashlytics for crash reports), DigitalOcean
             (the servers the app runs on), Razorpay (subscription payments, only for merchants who
             signed up outside Shopify) and our email provider (contact-form and login emails).
             Each receives only what its job needs.
