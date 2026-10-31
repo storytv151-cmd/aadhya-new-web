@@ -15,6 +15,7 @@ const routes = [
   "/contact",
   "/careers",
   "/privacy",
+  "/refund-policy",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
