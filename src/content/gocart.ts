@@ -53,7 +53,7 @@ export const goCartFeatures: ProductFeature[] = [
     icon: "shopping-cart",
     title: "Native tab bar & live cart badge",
     description:
-      "A native bottom tab bar for quick navigation, with a cart badge that updates as shoppers add items.",
+      "A native bottom tab bar for quick navigation and, with a Shopify store, a cart badge that updates as shoppers add items.",
   },
   {
     icon: "ticket-percent",
@@ -70,13 +70,13 @@ export const goCartFeatures: ProductFeature[] = [
     icon: "bell-ring",
     title: "Push notifications",
     description:
-      "Rich pushes with images and deep links, unlimited on every plan. Schedule them ahead, and target customers and Shopify segments.",
+      "Rich pushes with images and deep links, unlimited on every plan. Schedule them ahead and send to all app users or one device — with a Shopify store, target customers and Shopify segments too.",
   },
   {
     icon: "zap",
     title: "Automations",
     description:
-      "Welcome push, abandoned-cart reminders, order-shipped updates, back-in-stock alerts and win-back pushes — on every plan.",
+      "Welcome and win-back pushes on every plan. With a Shopify store, also abandoned-cart reminders, order-shipped updates and back-in-stock alerts.",
   },
   {
     icon: "indian-rupee",
@@ -127,13 +127,13 @@ export const goCartBenefits: ProductFeature[] = [
     icon: "smartphone",
     title: "An app-like experience",
     description:
-      "A native tab bar and live cart badge make it easy to browse, come back and get to checkout.",
+      "A native tab bar (plus a live cart badge on Shopify stores) makes it easy to browse, come back and get to checkout.",
   },
   {
     icon: "repeat",
     title: "Bring shoppers back automatically",
     description:
-      "Automated pushes — a welcome, abandoned-cart reminders, back-in-stock alerts and order updates, on every plan — keep working while you run the store.",
+      "Automated pushes — a welcome and win-back on every plan, plus abandoned-cart reminders, back-in-stock alerts and order updates with a Shopify store — keep working while you run the store.",
   },
 ];
 
