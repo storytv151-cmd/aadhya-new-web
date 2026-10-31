@@ -78,8 +78,8 @@ export default function RefundPolicyPage() {
 
         <Section title="Currency">
           <p>
-            You pay in the currency shown at checkout: Indian rupees (INR) or US dollars (USD). If
-            your card or bank account uses another currency, your bank may add conversion fees.
+            Razorpay charges in US dollars (USD); Shopify bills in US dollars too. Your bank may add
+            currency-conversion fees.
           </p>
         </Section>
 
