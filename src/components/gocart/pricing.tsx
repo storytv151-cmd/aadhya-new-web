@@ -21,8 +21,8 @@ export function GoCartPricing() {
 
         <Reveal delay={0.1}>
           <p className="text-muted-foreground mx-auto mt-10 max-w-xl text-center text-sm">
-            One price worldwide, in US dollars on your Shopify invoice (or the same amount in rupees
-            by Razorpay if you sign up on our website). Yearly billing charges{" "}
+            One price worldwide, in US dollars on your Shopify invoice (or the same amount in US
+            dollars through Razorpay if you sign up on our website). Yearly billing charges{" "}
             {YEARLY_MONTHS_CHARGED} months — 2 months free. Unlimited push notifications and app users on
             every plan. No free trial, no setup fee and no share of your sales. Publishing under Go
             Cart&rsquo;s developer account is included.

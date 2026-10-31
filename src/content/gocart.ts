@@ -264,7 +264,7 @@ export const goCartFaqs: GoCartFaqItem[] = [
     id: "billing",
     question: "How am I billed?",
     answer:
-      "Through Shopify. Your Go Cart plan appears on your regular Shopify invoice, in US dollars, monthly or yearly — the same price in every country. If you sign up on our website instead, Razorpay charges the same amount in rupees. Pay yearly and you pay for 10 months instead of 12.",
+      "Through Shopify. Your Go Cart plan appears on your regular Shopify invoice, in US dollars, monthly or yearly — the same price in every country. If you sign up on our website instead, you pay the same amount in US dollars through Razorpay. Pay yearly and you pay for 10 months instead of 12.",
   },
   {
     id: "trial",
