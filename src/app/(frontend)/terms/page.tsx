@@ -24,7 +24,8 @@ export default function TermsPage() {
       <PageHeader eyebrow="Legal" title="Terms of Service" />
       <Container className="text-muted-foreground mx-auto max-w-2xl space-y-10 py-16 lg:py-24">
         <p className="text-sm">
-          Last updated: {UPDATED} · Version {POLICY_VERSION}
+          Last updated: {UPDATED} ·{" "}
+          <span className="whitespace-nowrap">Version {POLICY_VERSION}</span>
         </p>
 
         <p>
