@@ -14,7 +14,7 @@ export function GoCartPricing() {
               Simple plans, <GradientText>no commission</GradientText>
             </>
           }
-          description="Three plans, each with everything in the one before: WebView runs your live website inside the app, Native builds your screens natively in code, and Brand does it for you."
+          description="Three plans, each with everything in the one before: WebView runs your live website inside the app, Native builds your screens natively in code, and Brand does it for you. Native and Brand need a Shopify store."
         />
 
         <GoCartPricingPlans />

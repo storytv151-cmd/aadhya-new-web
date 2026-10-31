@@ -166,20 +166,20 @@ export const goCartPlans: GoCartPlan[] = [
   {
     id: "webview",
     name: "WebView",
-    tagline: "Your website as an app, with every tool to grow.",
+    tagline: "Your website as an app, with the tools to grow.",
     monthly: 59,
     features: [
-      "Your whole website in the app — theme and Shopify apps keep working",
+      "Your whole website in the app — your theme, plugins and Shopify apps keep working",
       "Android and iOS apps, published for you to Google Play and the App Store",
       "Your colours, splash screen, onboarding slides and popup",
-      "Native tab bar, cart badge, promo banner and search bar",
+      "Native tab bar, promo banner and search bar (plus a cart badge on Shopify stores)",
       "Unlimited push notifications — images, links, scheduled or instant",
       "Unlimited app users",
-      "Automations: welcome, abandoned cart, back in stock, order updates, win-back and more",
-      "Push to specific customers and Shopify segments",
+      "Automations: welcome and win-back — plus abandoned cart, back in stock, order updates and more with a Shopify store",
+      "Push to all app users or one device — or, with a Shopify store, to specific customers and Shopify segments",
       "App-only discount",
       "Full analytics and a monthly report of what your app sold",
-      "Klaviyo and ads tracking (Meta, Google, TikTok)",
+      "Ads tracking (Meta, Google, TikTok), and Klaviyo with a Shopify store",
       "UPI and Indian checkouts (Shiprocket, GoKwik…) inside the app",
       "Email support",
     ],
@@ -187,7 +187,7 @@ export const goCartPlans: GoCartPlan[] = [
   {
     id: "native",
     name: "Native",
-    tagline: "A fully native app, designed by you.",
+    tagline: "A fully native app, designed by you. Needs a Shopify store.",
     monthly: 199,
     includes: "Everything in WebView, plus:",
     features: [
@@ -203,7 +203,7 @@ export const goCartPlans: GoCartPlan[] = [
   {
     id: "brand",
     name: "Brand",
-    tagline: "For bigger brands that want it done for them.",
+    tagline: "For bigger brands that want it done for them. Needs a Shopify store.",
     monthly: 449,
     includes: "Everything in Native, plus:",
     features: [
@@ -295,7 +295,7 @@ export const goCartComparison: GoCartComparisonRow[] = [
     label: "What the app shows",
     custom: "A separate app your developers build and maintain",
     builders: "Screens you rebuild in the builder's editor",
-    goCart: "Your live Shopify store with native extras on top — or a fully native app on the Native plan",
+    goCart: "Your live website or Shopify store with native extras on top — or, for Shopify stores, a fully native app on the Native plan",
   },
   {
     label: "Your theme & Shopify apps",
