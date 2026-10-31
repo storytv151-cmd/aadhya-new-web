@@ -220,7 +220,10 @@ export const yearlyPrice = (plan: GoCartPlan) => plan.monthly * YEARLY_MONTHS_CH
 /** The lowest monthly price, for "Plans from $…" lines. */
 export const goCartFromPrice = Math.min(...goCartPlans.map((plan) => plan.monthly));
 
-export const goCartFaqs: Faq[] = [
+/** A /GoCart FAQ. When `link` is set, its `text` appears in `answer` and is shown as a link. */
+export type GoCartFaqItem = Faq & { link?: { text: string; href: string } };
+
+export const goCartFaqs: GoCartFaqItem[] = [
   {
     id: "theme-apps",
     question: "Will it work with my Shopify theme and apps?",
@@ -279,7 +282,8 @@ export const goCartFaqs: Faq[] = [
     id: "cancel",
     question: "Can I cancel?",
     answer:
-      "Yes. Change or cancel your plan from the Go Cart dashboard, or uninstall Go Cart from your Shopify admin. Because billing runs through Shopify, the charges stop with it.",
+      "Yes, at any time. If you pay through Razorpay, cancel from Plan & billing in the Go Cart dashboard. If Shopify bills you, uninstall Go Cart from your Shopify admin or cancel from Plan & billing. Either way, your app and dashboard keep working until the end of the period you have already paid for, and no further charge is made. The details are in our Subscription, Cancellation & Refund Policy.",
+    link: { text: "Subscription, Cancellation & Refund Policy", href: "/refund-policy" },
   },
 ];
 

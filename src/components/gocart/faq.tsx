@@ -11,7 +11,22 @@ import {
   Reveal,
   Section,
 } from "@/ui";
-import { goCartFaqs } from "@/content/gocart";
+import { goCartFaqs, type GoCartFaqItem } from "@/content/gocart";
+
+/** The answer text, with `faq.link.text` (when set) shown as a link. */
+function FaqAnswer({ faq }: { faq: GoCartFaqItem }) {
+  const at = faq.link ? faq.answer.indexOf(faq.link.text) : -1;
+  if (!faq.link || at < 0) return <>{faq.answer}</>;
+  return (
+    <>
+      {faq.answer.slice(0, at)}
+      <Link className="text-primary-text font-medium" href={faq.link.href}>
+        {faq.link.text}
+      </Link>
+      {faq.answer.slice(at + faq.link.text.length)}
+    </>
+  );
+}
 
 export function GoCartFaq() {
   return (
@@ -45,7 +60,9 @@ export function GoCartFaq() {
               {goCartFaqs.map((faq) => (
                 <AccordionItem key={faq.id} value={faq.id} className="border-foreground/10">
                   <AccordionTrigger>{faq.question}</AccordionTrigger>
-                  <AccordionContent>{faq.answer}</AccordionContent>
+                  <AccordionContent>
+                    <FaqAnswer faq={faq} />
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
