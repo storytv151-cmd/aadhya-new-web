@@ -31,19 +31,21 @@ export default function TermsPage() {
         <p>
           These terms are an agreement between you and Aadhya Infotech (
           {siteConfig.contact.address}). They cover this website and{" "}
-          <strong className="text-foreground">Go Cart</strong>, our Shopify app. By using either,
-          you agree to them. Custom software and design work for clients is governed by the
-          separate agreement signed for each project, not by these terms.
+          <strong className="text-foreground">Go Cart</strong>, which turns your website or Shopify
+          store into an Android and iPhone app. By using either, you agree to them. Custom software
+          and design work for clients is governed by the separate agreement signed for each
+          project, not by these terms.
         </p>
 
         <Section title="What Go Cart is">
           <p>
-            Go Cart is a Shopify app that runs your Shopify store inside a branded Android and iOS
-            mobile app. The app loads your live store, so your theme, content and installed Shopify
-            apps keep working, and adds native extras on top — a tab bar, cart badge, promo banner,
-            search bar and push notifications. You manage the app, its notifications and automations
-            from the Go Cart dashboard. To use Go Cart you need a Shopify store that you are
-            authorised to connect.
+            Go Cart turns your website (any website, such as WordPress or a custom site) or your
+            Shopify store into a branded Android and iPhone app. The app loads your live site, so
+            your theme and content keep working (on Shopify, so do your installed Shopify apps), and
+            adds native extras on top — a tab bar, cart badge, promo banner, search bar and push
+            notifications. You manage the app, its notifications and automations from the Go Cart
+            dashboard. To use Go Cart you need a website or Shopify store that you are authorised to
+            connect; the Native and Brand plans need a Shopify store.
           </p>
         </Section>
 
