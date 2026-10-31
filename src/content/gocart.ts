@@ -234,7 +234,7 @@ export const goCartFaqs: GoCartFaqItem[] = [
     id: "webview",
     question: "What does \"WebView app\" mean?",
     answer:
-      "Your Go Cart app shows your live Shopify website inside a real Android and iOS app, with native extras on top: the tab bar, cart badge, promo banner, search bar and push notifications. Anything you change on your website shows up in the app straight away. Want screens built natively in code instead? That's the Native plan.",
+      "Your Go Cart app shows your live website or Shopify store inside a real Android and iOS app, with native extras on top: the tab bar, promo banner, search bar and push notifications (plus a cart badge on Shopify stores). Anything you change on your website shows up in the app straight away. Want screens built natively in code instead? That's the Native plan, for Shopify stores.",
   },
   {
     id: "platforms",
@@ -252,7 +252,7 @@ export const goCartFaqs: GoCartFaqItem[] = [
     id: "push",
     question: "How do push notifications work?",
     answer:
-      "Shoppers who install your app and allow notifications can receive your pushes. Write a message in your Go Cart dashboard, add an image and a deep link to the page it should open, then send it right away or schedule it. On every plan you can target one customer or a Shopify segment. Automations send pushes for you: welcome, abandoned-cart, order-shipped and back-in-stock pushes, on every plan. Push notifications and app users are unlimited on every plan; to keep your app from feeling like spam, up to 30 notifications to your shoppers go out in any 24 hours (automations and test sends don't count).",
+      "Shoppers who install your app and allow notifications can receive your pushes. Write a message in your Go Cart dashboard, add an image and a deep link to the page it should open, then send it right away or schedule it. On every plan you can send to all app users or a single device; with a Shopify store you can also target one customer or a Shopify segment. Automations send pushes for you: welcome and win-back pushes on every plan, plus abandoned-cart, order-shipped and back-in-stock pushes with a Shopify store. Push notifications and app users are unlimited on every plan; to keep your app from feeling like spam, up to 30 notifications to your shoppers go out in any 24 hours (automations and test sends don't count).",
   },
   {
     id: "upi",
