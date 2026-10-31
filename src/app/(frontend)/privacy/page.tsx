@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/ui";
 import { PageHeader } from "@/components/layout/page-header";
+import { Mail, Section } from "@/components/layout/legal";
 import { siteConfig } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo/metadata";
 
@@ -12,23 +13,6 @@ export const metadata: Metadata = pageMetadata({
 });
 
 const UPDATED = "11 October 2026";
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="space-y-3">
-      <h2 className="text-foreground text-lg font-semibold tracking-tight">{title}</h2>
-      {children}
-    </section>
-  );
-}
-
-function Mail() {
-  return (
-    <a className="text-primary-text font-medium" href={`mailto:${siteConfig.contact.email}`}>
-      {siteConfig.contact.email}
-    </a>
-  );
-}
 
 export default function PrivacyPage() {
   return (
