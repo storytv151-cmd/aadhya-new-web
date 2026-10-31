@@ -62,14 +62,14 @@ export default function RefundPolicyPage() {
           <p>
             If you installed Go Cart from the Shopify App Store, you pay through Shopify (see
             &ldquo;Shopify merchants&rdquo; below). Everyone else pays through Razorpay
-            Subscriptions, which charges your payment method automatically for each billing
-            period.
+            Subscriptions, which charges your card in US dollars (USD) automatically for each
+            billing period.
           </p>
           <ul className="list-disc space-y-1 pl-5">
-            <li>In India you can pay by card, UPI or eMandate (a mandate on your bank account).</li>
             <li>
-              Card and UPI can auto-debit up to ₹15,000 per charge. If a charge is more than
-              ₹15,000, you pay by eMandate.
+              Cards issued in India must allow international (USD) payments, and Indian rules limit
+              automatic card charges to about ₹15,000 each; for a larger plan your bank may ask you
+              to approve each charge.
             </li>
             <li>Before each automatic charge, Razorpay sends you a pre-debit notification.</li>
             <li>After every charge, Razorpay sends you a receipt.</li>
@@ -100,15 +100,14 @@ export default function RefundPolicyPage() {
           </ul>
         </Section>
 
-        <Section title="Cancelling a bank mandate">
+        <Section title="Cancelling a card mandate">
           <p>
             Cancelling your plan in Plan &amp; billing stops all future charges, so you don&apos;t
-            need to contact your bank. If you also want to remove the mandate itself, cancel it in
-            your UPI app (for UPI AutoPay), with the bank that issued your card (for a card), or
-            through your bank&apos;s net banking or branch (for an eMandate).
+            need to contact your bank. If you also want to remove the mandate on your card itself,
+            ask the bank that issued your card.
           </p>
           <p>
-            If you cancel only the mandate and not your plan, your next charge fails and the rules
+            If you cancel only the card mandate and not your plan, your next charge fails and the rules
             under &ldquo;Failed payments&rdquo; apply. To end your plan, cancel it in Plan &amp;
             billing.
           </p>

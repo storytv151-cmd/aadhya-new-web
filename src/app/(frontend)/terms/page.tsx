@@ -100,7 +100,7 @@ export default function TermsPage() {
             dashboard keep working until the end of the period you have already paid for, and no
             further charge is made; seven days later your app pauses for shoppers until you choose
             a plan again. We do not refund partial months or years, except where the law requires
-            us to. The full rules, including how to ask for a refund and how to cancel a bank
+            us to. The full rules, including how to ask for a refund and how to cancel a card
             mandate, are in our{" "}
             <Link className="text-primary-text font-medium" href="/refund-policy">
               Subscription, Cancellation &amp; Refund Policy
