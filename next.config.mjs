@@ -19,11 +19,14 @@ const nextConfig = {
   },
   // The old per-product detail pages now point straight at the products. /GoCart is a page
   // of this site; /DevStore is a separate app on this domain (served by nginx, not Next).
+  // The usual other names for the refund policy point at /refund-policy.
   async redirects() {
     return [
       { source: "/products/gocart", destination: "/GoCart", permanent: true },
       { source: "/products/GoTechCart", destination: "/GoCart", permanent: true },
       { source: "/products/devstore", destination: "/DevStore", permanent: true },
+      { source: "/cancellation-policy", destination: "/refund-policy", permanent: true },
+      { source: "/refund", destination: "/refund-policy", permanent: true },
     ];
   },
 };
