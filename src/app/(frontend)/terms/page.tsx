@@ -68,8 +68,8 @@ export default function TermsPage() {
             on your regular Shopify invoice, in US dollars, and is charged monthly or yearly in
             advance. If you sign up for Go Cart outside Shopify, Razorpay bills you in Indian rupees
             on the same monthly or yearly terms. We take no commission or fee on the orders placed
-            in your app. Prices exclude any taxes that apply to you, and we may change them for
-            future billing periods with at least 30 days&apos; notice by email and in the dashboard.
+            in your app. Prices are shown at checkout, and we may change them for future billing
+            periods with at least 30 days&apos; notice by email and in the dashboard.
           </p>
           <p>
             If a Razorpay payment fails, Razorpay tries it again; if it has still not gone through 7
