@@ -57,13 +57,13 @@ export const products: Product[] = [
         icon: "bell-ring",
         title: "Push notifications",
         description:
-          "Rich pushes with images and deep links, scheduling and audience segments.",
+          "Rich pushes with images and deep links, scheduling, and audience segments with a Shopify store.",
       },
       {
         icon: "zap",
         title: "Automations",
         description:
-          "Welcome push, abandoned-cart reminders, order-shipped updates and back-in-stock alerts, on every plan.",
+          "Welcome and win-back pushes on every plan, plus abandoned-cart reminders, order-shipped updates and back-in-stock alerts with a Shopify store.",
       },
       {
         icon: "indian-rupee",
@@ -75,7 +75,7 @@ export const products: Product[] = [
         icon: "palette",
         title: "Native extras",
         description:
-          "Bottom tab bar, live cart badge, promo banner with tap-to-copy coupon, your colours and splash screen.",
+          "Bottom tab bar, promo banner with tap-to-copy coupon, your colours and splash screen, plus a live cart badge on Shopify stores.",
       },
       {
         icon: "chart-column",
