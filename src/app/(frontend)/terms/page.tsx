@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/ui";
 import { PageHeader } from "@/components/layout/page-header";
 import { Mail, Section } from "@/components/layout/legal";
 import { goCartPlans, yearlyPrice } from "@/content/gocart";
+import { POLICY_VERSION } from "@/content/legal";
 import { siteConfig } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo/metadata";
 
@@ -14,14 +16,16 @@ export const metadata: Metadata = pageMetadata({
   noIndex: true,
 });
 
-const UPDATED = "22 September 2026";
+const UPDATED = "1 November 2026";
 
 export default function TermsPage() {
   return (
     <main>
       <PageHeader eyebrow="Legal" title="Terms of Service" />
       <Container className="text-muted-foreground mx-auto max-w-2xl space-y-10 py-16 lg:py-24">
-        <p className="text-sm">Last updated: {UPDATED}</p>
+        <p className="text-sm">
+          Last updated: {UPDATED} · Version {POLICY_VERSION}
+        </p>
 
         <p>
           These terms are an agreement between you and Aadhya Infotech (
@@ -53,12 +57,28 @@ export default function TermsPage() {
             ))}
           </ul>
           <p>
+            <strong className="text-foreground">
+              Your plan renews automatically and we charge the payment method you authorised at the
+              start of every billing period (monthly or yearly) until you cancel.
+            </strong>
+          </p>
+          <p>
             If you install Go Cart from the Shopify App Store, Shopify bills you: the plan appears
             on your regular Shopify invoice, in US dollars, and is charged monthly or yearly in
             advance. If you sign up for Go Cart outside Shopify, Razorpay bills you in Indian rupees
             on the same monthly or yearly terms. We take no commission or fee on the orders placed
             in your app. Prices exclude any taxes that apply to you, and we may change them for
-            future billing periods with notice in the dashboard or by email.
+            future billing periods with at least 30 days&apos; notice by email and in the dashboard.
+          </p>
+          <p>
+            If a Razorpay payment fails, Razorpay tries it again; if it has still not gone through 7
+            days after its due date, your plan stops and your app pauses for shoppers until you pay
+            again. Renewal, payment methods, failed payments and price changes are explained in
+            full in our{" "}
+            <Link className="text-primary-text font-medium" href="/refund-policy">
+              Subscription, Cancellation &amp; Refund Policy
+            </Link>
+            , which is part of these terms.
           </p>
         </Section>
 
@@ -72,12 +92,17 @@ export default function TermsPage() {
 
         <Section title="Cancellation and refunds">
           <p>
-            You can cancel at any time from the plan page in Go Cart or by uninstalling the app from
-            your Shopify admin; standalone accounts cancel from the Go Cart dashboard. Your app and
-            dashboard keep working until the end of the period you have already paid for, after
-            which the subscription ends and no further charge is made. Seven days later your app
-            pauses for shoppers until you choose a plan again. We do not refund partial
-            months or years, except where the law requires us to.
+            You can cancel at any time from Plan &amp; billing in the Go Cart dashboard or, if
+            Shopify bills you, by uninstalling Go Cart from your Shopify admin. Your app and
+            dashboard keep working until the end of the period you have already paid for, and no
+            further charge is made; seven days later your app pauses for shoppers until you choose
+            a plan again. We do not refund partial months or years, except where the law requires
+            us to. The full rules, including how to ask for a refund and how to cancel a bank
+            mandate, are in our{" "}
+            <Link className="text-primary-text font-medium" href="/refund-policy">
+              Subscription, Cancellation &amp; Refund Policy
+            </Link>
+            .
           </p>
         </Section>
 
