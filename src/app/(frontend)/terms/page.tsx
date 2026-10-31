@@ -42,8 +42,8 @@ export default function TermsPage() {
             Go Cart turns your website (any website, such as WordPress or a custom site) or your
             Shopify store into a branded Android and iPhone app. The app loads your live site, so
             your theme and content keep working (on Shopify, so do your installed Shopify apps), and
-            adds native extras on top — a tab bar, cart badge, promo banner, search bar and push
-            notifications. You manage the app, its notifications and automations from the Go Cart
+            adds native extras on top — a tab bar, cart badge (Shopify stores), promo banner, search
+            bar and push notifications. You manage the app, its notifications and automations from the Go Cart
             dashboard. To use Go Cart you need a website or Shopify store that you are authorised to
             connect; the Native and Brand plans need a Shopify store.
           </p>
