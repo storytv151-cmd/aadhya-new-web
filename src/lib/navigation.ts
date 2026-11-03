@@ -11,12 +11,12 @@ export const mainNav: NavLink[] = [
     label: "Services",
     href: "/services",
     children: [
-      { label: "App Development", href: "/services#app-development" },
-      { label: "Game Development", href: "/services#game-development" },
-      { label: "Web Development", href: "/services#web-development" },
-      { label: "UI/UX Design", href: "/services#ui-ux-design" },
-      { label: "Cyber Security", href: "/services#cyber-security" },
-      { label: "Cloud Services", href: "/services#cloud-services" },
+      { label: "App Development", href: "/services/app-development" },
+      { label: "Game Development", href: "/services/game-development" },
+      { label: "Web Development", href: "/services/web-development" },
+      { label: "UI/UX Design", href: "/services/ui-ux-design" },
+      { label: "Cyber Security", href: "/services/cyber-security" },
+      { label: "Cloud Services", href: "/services/cloud-services" },
     ],
   },
   {
@@ -39,12 +39,12 @@ export const footerColumns: FooterColumn[] = [
   {
     title: "Services",
     links: [
-      { label: "App Development", href: "/services#app-development" },
-      { label: "Game Development", href: "/services#game-development" },
-      { label: "Web Development", href: "/services#web-development" },
-      { label: "UI/UX Design", href: "/services#ui-ux-design" },
-      { label: "Cyber Security", href: "/services#cyber-security" },
-      { label: "Cloud Services", href: "/services#cloud-services" },
+      { label: "App Development", href: "/services/app-development" },
+      { label: "Game Development", href: "/services/game-development" },
+      { label: "Web Development", href: "/services/web-development" },
+      { label: "UI/UX Design", href: "/services/ui-ux-design" },
+      { label: "Cyber Security", href: "/services/cyber-security" },
+      { label: "Cloud Services", href: "/services/cloud-services" },
     ],
   },
   {

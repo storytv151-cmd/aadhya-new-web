@@ -20,7 +20,7 @@ export function ServicesBento({
   detail = false,
 }: {
   kicker?: string;
-  /** On /services each card is an anchor target (#app-development…) instead of a link. */
+  /** On /services each card also keeps its old anchor (#app-development…) for older links. */
   detail?: boolean;
 }) {
   const root = useRef<HTMLElement>(null);
@@ -115,12 +115,15 @@ export function ServicesBento({
                 </div>
               </>
             );
-            return detail ? (
-              <article key={service.slug} id={service.slug} data-card="" className={className}>
-                {body}
-              </article>
-            ) : (
-              <Link key={service.slug} href={`/services#${service.slug}`} data-card="" data-cursor="Explore" className={className}>
+            return (
+              <Link
+                key={service.slug}
+                id={detail ? service.slug : undefined}
+                href={`/services/${service.slug}`}
+                data-card=""
+                data-cursor="Explore"
+                className={className}
+              >
                 {body}
               </Link>
             );

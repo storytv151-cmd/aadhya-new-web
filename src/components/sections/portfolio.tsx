@@ -59,6 +59,17 @@ function ProjectCard({ project }: { project: PortfolioProject }) {
   );
 }
 
+/** A project card, linked to the live site when the project has one. */
+export function ProjectTile({ project }: { project: PortfolioProject }) {
+  return project.href ? (
+    <a href={project.href} target="_blank" rel="noopener noreferrer" className="block h-full">
+      <ProjectCard project={project} />
+    </a>
+  ) : (
+    <ProjectCard project={project} />
+  );
+}
+
 /** `showHeader={false}` on /portfolio, where the page header already says all of this. */
 export async function Portfolio({ showHeader = true }: { showHeader?: boolean } = {}) {
   const projects = await getPortfolioProjects();
@@ -90,18 +101,7 @@ export async function Portfolio({ showHeader = true }: { showHeader?: boolean } 
         <div className={cn("grid gap-5 sm:grid-cols-2 lg:grid-cols-3", showHeader && "mt-14")}>
           {projects.map((project, index) => (
             <Reveal key={project.slug} delay={0.05 + (index % 3) * 0.06}>
-              {project.href ? (
-                <a
-                  href={project.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block h-full"
-                >
-                  <ProjectCard project={project} />
-                </a>
-              ) : (
-                <ProjectCard project={project} />
-              )}
+              <ProjectTile project={project} />
             </Reveal>
           ))}
         </div>

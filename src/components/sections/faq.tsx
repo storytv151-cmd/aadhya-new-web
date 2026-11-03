@@ -12,9 +12,11 @@ import {
   Section,
 } from "@/ui";
 import { getFaqs } from "@/lib/content";
+import type { Faq } from "@/types";
 
-export async function Faqs() {
-  const faqs = await getFaqs();
+/** The site FAQ; a service page passes its own `items`. */
+export async function Faqs({ items }: { items?: Faq[] } = {}) {
+  const faqs = items ?? (await getFaqs());
 
   return (
     <Section id="faq">

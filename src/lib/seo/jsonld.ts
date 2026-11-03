@@ -1,5 +1,12 @@
 import { GOCART_CURRENCY, goCartDemoVideo, goCartFaqs, goCartPlans } from "@/content/gocart";
+import type { ServicePage } from "@/content/service-pages";
 import { siteConfig } from "@/lib/site";
+import type { Faq } from "@/types";
+
+const areaServed = [
+  { "@type": "City", name: siteConfig.contact.city },
+  { "@type": "Country", name: "India" },
+];
 
 export function organizationJsonLd() {
   return {
@@ -19,10 +26,7 @@ export function organizationJsonLd() {
       addressRegion: siteConfig.contact.region,
       addressCountry: "IN",
     },
-    areaServed: [
-      { "@type": "City", name: siteConfig.contact.city },
-      { "@type": "Country", name: "India" },
-    ],
+    areaServed,
   };
 }
 
@@ -68,16 +72,50 @@ export function goCartJsonLd({ description }: { description: string }) {
 }
 
 
-/** The /GoCart FAQ section as FAQPage, so search engines can read the questions and answers. */
-export function goCartFaqJsonLd() {
+/** A page's FAQ section as FAQPage, so search engines can read the questions and answers. */
+export function faqPageJsonLd(path: string, faqs: Pick<Faq, "question" | "answer">[]) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": `${siteConfig.url}/GoCart#faq`,
-    mainEntity: goCartFaqs.map((faq) => ({
+    "@id": `${siteConfig.url}${path}#faq`,
+    mainEntity: faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+}
+
+export function goCartFaqJsonLd() {
+  return faqPageJsonLd("/GoCart", goCartFaqs);
+}
+
+/** A /services/<slug> page: the service we offer, provided by the organization. */
+export function serviceJsonLd(page: ServicePage, name: string) {
+  const url = `${siteConfig.url}/services/${page.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    name,
+    serviceType: name,
+    url,
+    description: page.metaDescription,
+    provider: { "@id": `${siteConfig.url}/#organization` },
+    areaServed,
+  };
+}
+
+/** Breadcrumb trail; `items` are [name, site-relative path] from the home page down. */
+export function breadcrumbJsonLd(items: [name: string, path: string][]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map(([name, path], i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name,
+      item: `${siteConfig.url}${path}`,
     })),
   };
 }

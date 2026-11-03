@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { servicePages } from "@/content/service-pages";
 import { siteConfig } from "@/lib/site";
 
 // Indexable pages only (/terms is noindex). /GoCart is this site's Go Cart landing page;
@@ -7,6 +8,7 @@ import { siteConfig } from "@/lib/site";
 const routes = [
   "",
   "/services",
+  ...servicePages.map((page) => `/services/${page.slug}`),
   "/products",
   "/GoCart",
   "/portfolio",

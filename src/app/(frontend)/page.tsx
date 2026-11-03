@@ -9,8 +9,10 @@ import { StudioStatement, type Fact } from "@/components/aurora/studio-statement
 import { WorkShowcase } from "@/components/aurora/work-showcase";
 import { Faqs } from "@/components/sections/faq";
 import { OurProduct } from "@/components/sections/our-product";
-import { portfolioProjects, services } from "@/content/site-content";
+import { JsonLd } from "@/components/seo/json-ld";
+import { faqs, portfolioProjects, services } from "@/content/site-content";
 import { products } from "@/content/products";
+import { faqPageJsonLd } from "@/lib/seo/jsonld";
 
 // Title/description/Open Graph come from the root layout; only the canonical is page-specific.
 export const metadata: Metadata = {
@@ -27,6 +29,7 @@ const facts: Fact[] = [
 export default function Home() {
   return (
     <main>
+      <JsonLd data={faqPageJsonLd("/", faqs)} />
       <HeroWall />
       <MarqueeBand />
       <StudioStatement facts={facts} />
