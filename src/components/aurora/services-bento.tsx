@@ -78,7 +78,8 @@ export function ServicesBento({
             const visual = serviceVisuals[service.slug];
             const wide = WIDE.has(i);
             const className = cn(
-              "aur-bento-card group bg-card border-border flex flex-col justify-end overflow-hidden rounded-[26px] border p-6 pt-[84px] lg:pt-6",
+              // pt-[84px] keeps the text below the icon tile (22px + 46px) at every width.
+              "aur-bento-card group bg-card border-border flex flex-col justify-end overflow-hidden rounded-[26px] border p-6 pt-[84px]",
               wide && "lg:col-span-2",
             );
             const body = (
