@@ -20,11 +20,12 @@ import { pageMetadata } from "@/lib/seo/metadata";
 // The Go Cart dashboard (/GoCart/app) and API (/GoCart/api) are separate apps behind
 // nginx; this site must not define routes under them.
 
+// Kept under ~160 characters so search results show it whole.
 const description =
-  `Turn your Shopify store into a branded Android and iOS app with Go Cart — push notifications, automations, India-ready UPI checkout and app analytics. Plans from $${goCartFromPrice}/month with unlimited push, billed through Shopify, with no commission on your sales.`;
+  `Go Cart turns your Shopify store into a branded Android and iOS app with push notifications, automations and UPI checkout. From $${goCartFromPrice}/month, no commission.`;
 
 export const metadata: Metadata = pageMetadata({
-  title: "Go Cart — Shopify store to mobile app",
+  title: "Go Cart: Shopify Mobile App Builder",
   description,
   path: "/GoCart",
   // The demo video's poster frame (1600×900) doubles as the share image.
