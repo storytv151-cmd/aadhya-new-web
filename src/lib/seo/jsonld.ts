@@ -14,9 +14,15 @@ export function organizationJsonLd() {
     description: siteConfig.description,
     address: {
       "@type": "PostalAddress",
-      streetAddress: siteConfig.contact.address,
+      streetAddress: siteConfig.contact.street,
+      addressLocality: siteConfig.contact.city,
+      addressRegion: siteConfig.contact.region,
       addressCountry: "IN",
     },
+    areaServed: [
+      { "@type": "City", name: siteConfig.contact.city },
+      { "@type": "Country", name: "India" },
+    ],
   };
 }
 

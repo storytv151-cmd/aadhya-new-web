@@ -6,9 +6,9 @@ import { PageHeader } from "@/components/layout/page-header";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = pageMetadata({
-  title: "About",
+  title: "About Us: Software Company in Surat",
   description:
-    "Aadhya Infotech is a software company delivering app, web and game development, design, cloud and security solutions for businesses.",
+    "Aadhya Infotech is a software company in Surat, Gujarat that builds apps, games and websites for clients and runs its own products, Go Cart and DevStore.",
   path: "/about",
 });
 

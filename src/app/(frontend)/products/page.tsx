@@ -8,8 +8,9 @@ import { products } from "@/content/products";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Products",
-  description: "Software products designed, built and maintained end-to-end by Aadhya Infotech.",
+  title: "Products: Go Cart & DevStore",
+  description:
+    "Go Cart turns a Shopify store into a mobile app, and DevStore sells ready-made app source code and templates. Both are built and run by Aadhya Infotech.",
   path: "/products",
 });
 

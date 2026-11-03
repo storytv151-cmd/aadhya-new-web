@@ -8,9 +8,9 @@ import { PageHeader } from "@/components/layout/page-header";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Services",
+  title: "Software & Game Development Services in Surat",
   description:
-    "App, game and web development, UI/UX design, cyber security and cloud services — everything you need to design, build and scale software.",
+    "Custom software, app, game and web development, UI/UX design, cloud and cyber security services from Aadhya Infotech in Surat, Gujarat.",
   path: "/services",
 });
 

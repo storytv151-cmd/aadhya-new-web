@@ -6,9 +6,9 @@ import { PageHeader } from "@/components/layout/page-header";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Portfolio",
+  title: "Portfolio: Apps & Games We Built",
   description:
-    "A selection of apps, games and products Aadhya Infotech has designed, built and shipped.",
+    "Apps, games and software products designed, built and shipped by Aadhya Infotech in Surat, from utility apps to mobile games.",
   path: "/portfolio",
 });
 

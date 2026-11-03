@@ -8,9 +8,9 @@ import { siteConfig } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Contact",
+  title: "Contact Us: Office in Surat",
   description:
-    "Get in touch with Aadhya Infotech. Tell us about your app, web, game or design project and we'll get back to you fast.",
+    "Call +91 91046 22842, email aadhyainfotech02@gmail.com or visit us at 307 Dhara Trade Center, Lajamani Chowk, Surat, to discuss your software project.",
   path: "/contact",
 });
 

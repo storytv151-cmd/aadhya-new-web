@@ -6,9 +6,9 @@ import { siteConfig } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Careers",
+  title: "Careers: Software Jobs in Surat",
   description:
-    "Join Aadhya Infotech. We're always looking for talented engineers, designers and problem-solvers.",
+    "Join Aadhya Infotech in Surat. We're always looking for talented engineers, designers and problem-solvers.",
   path: "/careers",
 });
 
