@@ -30,7 +30,9 @@ export function Navbar() {
         className={cn(
           // py-1 below lg leaves exactly 44px for the touch-sized buttons.
           "glass-nav pointer-events-auto relative flex h-[52px] w-full items-center justify-between gap-6 rounded-full py-1 pl-6 pr-2 transition-[max-width] duration-500 ease-out lg:py-1.5",
-          scrolled ? "max-w-3xl" : "max-w-4xl",
+          // Scrolled, the pill narrows only to 54rem: the centred menu is ~433px wide and the
+          // logo ~180px, so at max-w-3xl (768px) "Services" ran into the wordmark.
+          scrolled ? "max-w-[54rem]" : "max-w-4xl",
         )}
       >
         <div className="relative z-[1]">
