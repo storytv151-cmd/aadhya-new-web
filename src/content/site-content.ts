@@ -22,7 +22,7 @@ export const heroContent = {
   /** Optional launch pill shown instead of the eyebrow; links to the product page. */
   announcement: {
     badge: "New",
-    text: "Go Cart — turn your Shopify store into a mobile app",
+    text: "Go Cart — turn your website or Shopify store into a mobile app",
     href: "/GoCart",
   },
   headline: "We Craft Software Masterpieces.",

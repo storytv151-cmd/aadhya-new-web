@@ -12,7 +12,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/privacy",
 });
 
-const UPDATED = "11 October 2026";
+const UPDATED = "5 November 2026";
 
 export default function PrivacyPage() {
   return (
@@ -23,8 +23,8 @@ export default function PrivacyPage() {
 
         <p>
           Aadhya Infotech ({siteConfig.contact.address}) builds software, including{" "}
-          <strong className="text-foreground">Go Cart</strong>, which turns a Shopify store into a
-          branded mobile app. This policy covers three groups of people: visitors to this website,
+          <strong className="text-foreground">Go Cart</strong>, which turns a website or Shopify
+          store into a branded mobile app. This policy covers three groups of people: visitors to this website,
           merchants who use the Go Cart dashboard, and shoppers who use an app a merchant published
           with Go Cart. Questions or deletion requests: <Mail />.
         </p>

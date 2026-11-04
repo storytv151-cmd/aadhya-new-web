@@ -22,10 +22,10 @@ import { pageMetadata } from "@/lib/seo/metadata";
 
 // Kept under ~160 characters so search results show it whole.
 const description =
-  `Go Cart turns your Shopify store into a branded Android and iOS app with push notifications, automations and UPI checkout. From $${goCartFromPrice}/month, no commission.`;
+  `Go Cart turns your website or Shopify store into a branded Android and iOS app with push, automations and UPI checkout. From $${goCartFromPrice}/month, no commission.`;
 
 export const metadata: Metadata = pageMetadata({
-  title: "Go Cart: Shopify Mobile App Builder",
+  title: "Go Cart: Website & Shopify Mobile App Builder",
   description,
   path: "/GoCart",
   // The demo video's poster frame (1600×900) doubles as the share image.
@@ -33,7 +33,7 @@ export const metadata: Metadata = pageMetadata({
     url: goCartDemoVideo.poster,
     width: 1600,
     height: 900,
-    alt: "Go Cart — a Shopify store running as a branded Android and iOS app",
+    alt: "Go Cart — a website or Shopify store running as a branded Android and iOS app",
   },
 });
 

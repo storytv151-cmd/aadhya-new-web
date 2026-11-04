@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
 export const metadata: Metadata = pageMetadata({
   title: "Products: Go Cart & DevStore",
   description:
-    "Go Cart turns a Shopify store into a mobile app, and DevStore sells ready-made app source code and templates. Both are built and run by Aadhya Infotech.",
+    "Go Cart turns a website or Shopify store into a mobile app, and DevStore sells ready-made app source code and templates. Both are run by Aadhya Infotech.",
   path: "/products",
 });
 

@@ -37,7 +37,7 @@ export const goCartSteps: GoCartStep[] = [
     icon: "rocket",
     title: "Publish to Google Play & the App Store",
     description:
-      "Store publishing support: we help you get your app live on Google Play and the App Store, under your own developer accounts.",
+      "We publish your app on Google Play and the App Store under Go Cart's developer account, included in every plan. You can move it to your own account at any time, free.",
     points: ["Google Play", "App Store"],
   },
 ];
@@ -47,7 +47,7 @@ export const goCartFeatures: ProductFeature[] = [
     icon: "tablet-smartphone",
     title: "Your whole store in the app",
     description:
-      "The app loads your live Shopify store, so your theme and installed Shopify apps keep working — nothing to rebuild.",
+      "The app loads your live website or Shopify store, so your theme, plugins and Shopify apps keep working — nothing to rebuild.",
   },
   {
     icon: "shopping-cart",

@@ -16,7 +16,7 @@ export const metadata: Metadata = pageMetadata({
   noIndex: true,
 });
 
-const UPDATED = "1 November 2026";
+const UPDATED = "5 November 2026";
 
 export default function TermsPage() {
   return (
@@ -136,7 +136,8 @@ export default function TermsPage() {
         <Section title="Publishing to the app stores">
           <p>
             When you ask us to, we build your Android and iOS apps and submit them to Google Play
-            and the App Store under your developer accounts, and we help you through the review.
+            and the App Store under Go Cart&apos;s developer accounts, or under your own if you choose
+            that, and we help you through the review.
             Whether an app is approved, and how long review takes, is decided by Google and Apple,
             not by us; if a store asks for changes we will work with you on them, but we cannot
             guarantee approval or a launch date.

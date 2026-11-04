@@ -43,15 +43,15 @@ export const products: Product[] = [
     name: "Go Cart",
     category: "SaaS Platform",
     status: "Live",
-    tagline: "Web to App Builder — your Shopify store as a mobile app.",
+    tagline: "Web to App Builder — your website or Shopify store as a mobile app.",
     summary:
-      "Turn your Shopify store into a branded Android and iOS app — with push notifications, automations, India-ready checkout and app analytics.",
+      "Turn your website or Shopify store into a branded Android and iOS app — with push notifications, automations, India-ready checkout and app analytics.",
     features: [
       {
         icon: "tablet-smartphone",
         title: "Your store, as an app",
         description:
-          "A branded Android and iOS app that loads your live Shopify store — every theme feature and app keeps working.",
+          "A branded Android and iOS app that loads your live website or Shopify store — your theme, plugins and Shopify apps keep working.",
       },
       {
         icon: "bell-ring",

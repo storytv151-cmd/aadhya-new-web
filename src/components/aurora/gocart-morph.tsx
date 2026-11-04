@@ -141,7 +141,7 @@ export function GoCartMorph({
             {kicker}
           </span>
           <h2 id="gocart-title" className="mt-3.5 text-[clamp(34px,5.4vw,82px)] font-bold leading-[.98] tracking-[-0.05em]">
-            Your Shopify store<span className="aur-em">…</span>
+            Your online store<span className="aur-em">…</span>
           </h2>
           <p className="gcm-head-note mt-3 font-mono text-[11.5px] uppercase tracking-[0.08em] opacity-75">Keep scrolling ↓</p>
         </div>
