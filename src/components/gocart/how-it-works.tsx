@@ -11,7 +11,7 @@ export function GoCartHowItWorks() {
           eyebrow="How it works"
           title={
             <>
-              From Shopify store to app in <GradientText>three steps</GradientText>
+              From your website to an app in <GradientText>three steps</GradientText>
             </>
           }
           description="No code and nothing to rebuild — your app runs on the store you already have."

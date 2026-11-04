@@ -21,10 +21,10 @@ export type GoCartStep = ProductFeature & { points: string[] };
 export const goCartSteps: GoCartStep[] = [
   {
     icon: "plug",
-    title: "Connect your Shopify store",
+    title: "Connect your website or Shopify store",
     description:
-      "Sign up and connect your store through Shopify's secure OAuth. Your app runs on the store you already have, so there's nothing to migrate.",
-    points: ["Secure OAuth", "Nothing to migrate"],
+      "Sign up with your website address, or connect your Shopify store through Shopify's secure OAuth. Your app runs on the site you already have, so there's nothing to migrate.",
+    points: ["Website or Shopify", "Nothing to migrate"],
   },
   {
     icon: "palette",

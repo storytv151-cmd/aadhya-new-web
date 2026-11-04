@@ -138,7 +138,7 @@ export function HeroWall() {
           </span>
           <Link href={announcement.href} className="aur-pill">
             <span className="aur-tag">{announcement.badge}</span>
-            Go Cart for Shopify →
+            Go Cart for websites &amp; Shopify →
           </Link>
         </div>
         <h1 className="aur-h1" aria-label={`${aurora.lead} ${aurora.words[0]}`}>
