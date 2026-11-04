@@ -69,12 +69,12 @@ export function GoCartHero() {
                 priority
                 className="rounded-[28px] shadow-[0_18px_40px_rgba(88,52,190,0.28)] ring-1 ring-white/60"
               />
-              <Eyebrow>Go Cart for Shopify</Eyebrow>
+              <Eyebrow>Go Cart for websites &amp; Shopify</Eyebrow>
             </div>
           </Reveal>
 
           <h1 className="mt-6 text-balance text-[2.5rem] font-bold leading-[1.04] tracking-[-0.045em] sm:text-6xl lg:text-[4.1rem] lg:leading-[1.02]">
-            <TextReveal text="Turn your Shopify store into a" /> <GradientText>mobile app</GradientText>
+            <TextReveal text="Turn your website or Shopify store into a" /> <GradientText>mobile app</GradientText>
           </h1>
 
           <Reveal delay={0.2}>
